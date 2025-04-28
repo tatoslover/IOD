@@ -40,7 +40,8 @@ mv file2.txt file2_renamed.txt
 cat file1.txt
 
 # Find file1_copy.txt starting from the current directory
-find . -name "file1_copy.txt"
+# Supress permission denied errors
+find . -name "file1_copy.txt" 2>/dev/null 
 
 # Clean up example files
 rm file1.txt file1_copy.txt file2_renamed.txt

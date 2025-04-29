@@ -9,7 +9,7 @@ This file contains the exercises for IOD Labs
 ## Exercise 2
 ## Exercise 3
 
-![E3](./Extras/E3.png)
+![E3](/Users/samuellove/Documents/GitHub/IOD/Extras/E3.png)
 
 Using this code as a starter:
 1. Add an image to each column

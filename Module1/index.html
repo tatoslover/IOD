@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Simple Online Shop</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header>
+            <h1 id="header">Simple Shop</h1>
+        </header>
+
+        <section class="main-content">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <article>
+                <h2>Featured Product</h2>
+                <img
+                    src="https://i.natgeofe.com/n/8e3af918-ba9a-4a31-8baf-f5b2244811e1/19991130_jab_cs9_163_3x2.jpg?wp=1&w=1638&h=1092"
+                    alt="Product Image"
+                    width="200"
+                />
+                <p>A blobfish!</p>
+                <a href="https://en.wikipedia.org/wiki/Psychrolutes_marcidus"
+                    >Learn more...</a
+                >
+            </article>
+        </section>
+
+        <aside id="aside">
+            <h2>Related Products</h2>
+            <ul>
+                <li><a href="#">Product 1</a></li>
+                <li><a href="#">Product 2</a></li>
+            </ul>
+        </aside>
+
+        <section>
+            <h2>Shipping Address</h2>
+            <form id="shipping-form">
+                <label for="name">Full Name:</label><br />
+                <input type="text" id="name" name="name" required /><br /><br />
+
+                <label for="address">Address:</label><br />
+                <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    required
+                /><br /><br />
+
+                <label for="city">City:</label><br />
+                <input type="text" id="city" name="city" required /><br /><br />
+
+                <label for="postcode">Postcode:</label><br />
+                <input
+                    type="text"
+                    id="postcode"
+                    name="postcode"
+                    required
+                /><br /><br />
+
+                <button type="button" onclick="orderNow()">Order Now</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2050 Simple Shop. All rights reserved.</p>
+        </footer>
+
+        <script>
+            // Change header text and aside background
+            document.getElementById("header").innerText =
+                "Welcome to Simple Shop";
+            document.getElementById("aside").style.backgroundColor =
+                "lightgreen";
+
+            // Function to alert when ordering
+            function orderNow() {
+                alert("Your order will be shipped soon.");
+            }
+        </script>
+    </body>
+</html>

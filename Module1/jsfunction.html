@@ -1,0 +1,22 @@
+<!-- jsfunction.html -->
+<html>
+    <body>
+        <h2>A Simple JavaScript Function</h2>
+
+        <!-- This example button calls a function which changes the button color: -->
+
+        <p id="demo"></p>
+        <button id="myButton" onclick="changeColor()">Say Hello</button>
+
+        <script>
+            function changeColor() {
+                // Change the button color
+                document.getElementById("myButton").style.backgroundColor =
+                    "lightblue";
+
+                // Also show an alert if you still want
+                alert("Hello World!");
+            }
+        </script>
+    </body>
+</html>

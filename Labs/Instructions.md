@@ -27,7 +27,7 @@ Extension: Research the cp, mv, cat and find commands, and experiment!
 
 ## Exercise 3
 
-<img src="Extras/E3.png" alt="E3" style="max-width: 400px; height: auto;" />
+<img src="Extras/E3.png" alt="E3" style="max-width: 50%; height: auto;" />
 
 Using this code as a starter:
 1. Add an image to each column

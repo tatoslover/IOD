@@ -1,4 +1,4 @@
-// node /Users/samuellove/Documents/GitHub/IOD/Labs/Lab2/Exercise4.js
+// node "/Users/samuellove/Documents/GitHub/IOD/Labs/Lab2/Exercise4.js"
 
 // Four math functions
 

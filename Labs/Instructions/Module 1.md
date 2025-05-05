@@ -26,7 +26,45 @@ Practice using the commands you learnt to solve the following:
 
 ## Exercise 3
 
-<img src="Extras/E3.png" alt="E3" style="max-width: 20%; height: auto;" />
+```html
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Module 1 Exercise 3</title>
+        <style>
+            body {
+                font-family: sans-serif;
+                margin: 0;
+            }
+            .container {
+                display: flex;
+                min-height: 100vh;
+                align-items: stretch;
+            }
+            .column {
+                background: goldenrod;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                flex: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="column" id="column1">
+                <h1 id="heading1">Hello</h1>
+            </div>
+            <div class="column" id="column2">
+                <h1 id="heading2">World</h1>
+            </div>
+        </div>
+    </body>
+</html>
+```
 
 Using this code as a starter:
 1. Add an image to each column

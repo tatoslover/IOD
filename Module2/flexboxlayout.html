@@ -14,9 +14,9 @@
                 /* Flex container #1 */
                 background: black;
                 padding: 1em;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
+                display: flex; /* flex container */
+                justify-content: space-between; /* logo to left, nav to right */
+                align-items: center; /* center items vertically */
             }
             #logo {
                 width: 60px;
@@ -30,8 +30,8 @@
                 padding: 0;
                 margin: 0;
                 color: yellow;
-                display: flex;
-                gap: 1em;
+                display: flex; /* flex container */
+                gap: 1em; /* add spacing between menu items */
             }
             main {
                 max-width: 80%;
@@ -45,12 +45,13 @@
                 background: #b2b2b2;
                 margin: 1em;
             }
+            /* new section for the boxes ID selector */
             #boxes {
                 /* Flex container #3 */
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 1em;
+                display: flex; /* flex container */
+                justify-content: center; /* center the boxes horizontally */
+                flex-wrap: wrap; /* add spacing between boxes */
+                gap: 1em; /* allows boxes to wrap to next line if needed */
             }
         </style>
     </head>

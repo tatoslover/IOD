@@ -1,24 +1,104 @@
 /* I. Selectors */
 /* Put styles for questions 1.1, 1.2, 1.3 and 1.4 here */
 
+/* 1.1 - Type selector for all <article> elements */
+article {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+/* 1.2 - Class selector */
+.style-me1 {
+    color: red;
+}
+
+/* 1.3 - ID selector */
+#style-me2 {
+    color: blue;
+}
+
+/* 1.4 - Specific selector: both class and ID */
+.style-me1#style-me2 {
+    color: purple;
+}
+
 /* Put styles for questions 2.1 and 2.2 here */
 
+/* 2.1 - Descendant combinator */
+.my-descendants-are-styled p {
+    background: red;
+}
+
+/* 2.2 - Child combinator */
+.my-children-are-styled > p {
+    background: lightgreen;
+}
 
 /* II. Box model and common properties */
 /* Put styles for questions 1-8 here */
 
+.box {
+    /* 1.1 - Visualize box boundaries */
+    background-color: lightblue;
+
+    /* 1.2 - Different margin & padding syntaxes */
+    margin: 10px 15px 20px 25px; /* top right bottom left */
+    padding: 1em 2em; /* top/bottom, left/right */
+    padding: 5%; /* all sides equal to 5% of parent/container */
+
+    /* 2.1 - Width & height with different units */
+    width: 50vw; /* 50% of viewport width */
+    height: 30vh; /* 30% of viewport height */
+    max-width: 400px; /* constrain growth on large screens */
+    min-height: 6.25rem; /* ensure some height */
+
+    /* 2.2 - Force override of inline height */
+    height: 150px !important;
+
+    /* 3.1 & 3.2 - Border styling */
+    border: 10px solid darkblue;
+    /* Try alternative borders below:
+  border: 10px dashed green;
+  border: 10px dotted orange;
+  */
+
+    /* 4.1 - Box sizing */
+    box-sizing: border-box; /* try content-box vs. border-box */
+
+    /* 5.2 - Overflow behavior */
+    overflow: auto; /* try visible, hidden, scroll, auto */
+
+    /* 6.1 - Outline */
+    outline: 10px solid purple;
+
+    /* 7.1 - Rounded corners */
+    border-radius: 1em;
+
+    /* 7.2 - Circle effect (optional on specific .box) */
+    /* width: 200px;
+     height: 200px;
+     border-radius: 50%;
+  */
+
+    /* 7.3 - Padding to prevent clipping */
+    padding: 20px;
+
+    /* 8.1 to 8.4 - Background image */
+    background-image: url("./assets/images/img1.png");
+    background-size: cover; /* try contain, auto */
+    background-repeat: no-repeat; /* try repeat, repeat-x, repeat-y */
+    background-position: center; /* try top, bottom, left, right */
+}
 
 /* III. Positioning */
 /* Put styles for questions 1-3 here */
 
-
 /* IV. Styling text */
 /* Put styles for questions 1-10 here */
 
-
 /* V. Styling links */
 /* Put styles for questions 1-3 here */
-
 
 /* VI. calc() */
 /* Put styles for questions 1-3 here */

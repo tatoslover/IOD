@@ -2,36 +2,42 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Module 1 Exercise 3</title>
+        <title>Box Sizing Example</title>
         <style>
-            body {
-                font-family: sans-serif;
-                margin: 0;
+            .box {
+                padding: 20px;
+                border: 2px solid black;
+                margin: 40px;
+                width: 200px;
+                height: 200px;
+                text-align: center;
             }
-            .container {
-                display: flex;
-                min-height: 100vh;
-                align-items: stretch;
+
+            .content-box {
+                box-sizing: content-box;
+                background: lightblue;
             }
-            .column {
-                background: goldenrod;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                flex: 1;
+
+            .border-box {
+                box-sizing: border-box;
+                background: lightgreen;
             }
         </style>
     </head>
     <body>
-        <div class="container">
-            <div class="column" id="column1">
-                <h1 id="heading1">Hello</h1>
-            </div>
-            <div class="column" id="column2">
-                <h1 id="heading2">World</h1>
-            </div>
-        </div>
+        <section class="content-box box">
+            <p>200px x 200px content box</p>
+            <p>
+                Actual width is 244px = 200px + 2px + 2px (border) + 20px + 20px
+                (padding)
+            </p>
+        </section>
+
+        <section class="border-box box">
+            <p>200px x 200px border box</p>
+            <p>
+                Actual width is 200px (border and padding contribute to total)
+            </p>
+        </section>
     </body>
 </html>

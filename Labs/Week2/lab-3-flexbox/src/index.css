@@ -9,19 +9,19 @@ a {
 }
 
 .background-1 {
-    background: #68B0AB;
+    background: #68b0ab;
 }
 
 .background-2 {
-    background: #8FC0A9;
+    background: #8fc0a9;
 }
 
 .background-3 {
-    background: #C8D5B9;
+    background: #c8d5b9;
 }
 
 .background-4 {
-    background: #FAF3DD;
+    background: #faf3dd;
 }
 
 .m-20 {
@@ -38,4 +38,31 @@ a {
 
 .w-80 {
     width: 80px;
+}
+
+/* 2 basic flexbox */
+
+.flex-container {
+    display: flex;
+}
+
+.flex-item-1 {
+    flex: 1;
+}
+.flex-item-2 {
+    flex: 2;
+}
+.flex-item-3 {
+    flex: 3;
+}
+.flex-item-4 {
+    flex: 4;
+}
+
+/* 3 centering with flexbox */
+
+.flex-center {
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
 }

@@ -62,7 +62,72 @@ a {
 /* 3 centering with flexbox */
 
 .flex-center {
-    display: flex;
     justify-content: center; /* horizontal */
     align-items: center; /* vertical */
+}
+
+/* Assigning leftover space */
+
+.flex-space-between {
+    justify-content: space-between;
+}
+
+/* Wrapping items */
+
+.flex-wrap {
+    flex-wrap: wrap; /* try wrap-reverse too */
+}
+
+.flex-basis-item-50 {
+    flex-basis: 25%;
+}
+
+/* Changing direction */
+
+.flex-container {
+    flex-direction: row; /* Try column, row-reverse, column-reverse */
+}
+
+/* Flexbox for horizontal navigation */
+
+.flex-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 40px;
+    gap: 10px;
+    width: 100%; /* Ensure full width for justify-content to work */
+}
+
+/* 7.2: Align menu items to the RIGHT */
+.flex-menu.right-align {
+    justify-content: flex-end;
+}
+
+/* 7.3: Align menu items to the CENTER */
+.flex-menu.center-align {
+    justify-content: center;
+}
+
+/* 7.4 + 7.5: FAQs moved to end + equal space distribution */
+.flex-menu.space-evenly {
+    justify-content: space-between; /* or space-evenly */
+}
+
+.flex-menu li {
+    flex-grow: 1; /* Distributes space evenly */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers text horizontally */
+}
+
+/* 7.4: Move FAQs to last position */
+.fourth-item {
+    order: 5;
+}
+
+.flex-menu a {
+    text-decoration: none;
+    color: black;
+    padding: 0 10px; /* Improves click area */
 }

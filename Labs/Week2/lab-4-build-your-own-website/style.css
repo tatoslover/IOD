@@ -1,0 +1,148 @@
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #222;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    margin-bottom: 10px;
+}
+
+.header-text {
+    margin-left: 20px;
+    text-align: left;
+}
+
+.header-text h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+/* Nav */
+nav ul {
+    display: flex;
+    list-style: none;
+    background: #444;
+    padding: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #222;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #222;
+    color: white;
+    font-size: 0.9em;
+}
+
+/* ---------------------
+   Responsive Design
+------------------------*/
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-text {
+        margin-left: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+
+    section {
+        margin-bottom: 25px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+}

@@ -1,148 +1,149 @@
-/* Import Google Font */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+/* === Header Section === */
 
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: "Open Sans", sans-serif;
-    line-height: 1.6;
-    background-color: #f9f9f9;
-    color: #333;
-}
-
-/* Header */
-header {
-    background: #222;
-    color: #fff;
-    padding: 20px 0;
-}
-
-.container {
+.header-flex {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
-.profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+.header-image {
+    width: 150px;
+    height: 150px;
     object-fit: cover;
-    border: 3px solid #fff;
-    margin-bottom: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .header-text {
-    margin-left: 20px;
+    max-width: 500px;
     text-align: left;
 }
 
-.header-text h1 {
-    font-size: 2em;
-    margin-bottom: 5px;
-}
-
-/* Nav */
-nav ul {
+/* === Contact Section === */
+#contact {
     display: flex;
-    list-style: none;
-    background: #444;
-    padding: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-nav li {
-    margin: 0 15px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Main Content */
-main {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 0 20px;
-}
-
-section {
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 40px;
 }
 
-h2 {
+#contact h2 {
     margin-bottom: 10px;
-    color: #222;
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 5px;
 }
 
-ul {
-    padding-left: 20px;
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-footer {
+.contact-item {
     text-align: center;
-    padding: 15px;
-    background: #222;
-    color: white;
-    font-size: 0.9em;
 }
 
-/* ---------------------
-   Responsive Design
-------------------------*/
-@media (max-width: 768px) {
-    body {
-        font-size: 16px;
-    }
+.contact-item i {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    color: var(--text); /* Ensure icons have the correct color */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
 
-    .container {
-        flex-direction: column;
-        text-align: center;
-    }
+/* Hover effect for the entire contact item */
+.contact-item:hover i {
+    color: var(--link); /* Change color of icon on hover */
+}
 
-    .header-text {
-        margin-left: 0;
-    }
+.contact-item p {
+    margin: 0;
+    font-size: 1.1rem;
+    opacity: 0; /* Hide text by default */
+    transition: opacity 0.3s ease;
+}
 
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
+.contact-item:hover p {
+    opacity: 1; /* Show text when hovered */
+}
 
-    nav li {
-        margin: 10px 0;
-    }
+/* Ensure phone link changes cursor */
+.contact-item a {
+    text-decoration: none;
+}
 
-    main {
-        padding: 10px;
-    }
+.contact-item a:hover {
+    cursor: pointer;
+}
 
-    .profile-pic {
-        width: 100px;
-        height: 100px;
-    }
+/* Optional: Add color to text on hover as well */
+.contact-item:hover p {
+    color: var(--link); /* Color change for text when hovered */
+}
 
-    section {
-        margin-bottom: 25px;
-    }
+/* === Base Styles === */
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    text-align: justify;
+}
 
-    footer {
-        padding: 10px;
+/* === Theme Variables === */
+:root {
+    --bg: #f9f9f9;
+    --text: #111;
+    --accent: #336699;
+    --link: #0044cc;
+    --link-hover: #002288;
+    --button-bg: #d3d3d3;
+    --button-text: #111;
+    --header: #222;
+    --card-bg: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #1e1e2f;
+        --text: #e0e0e0;
+        --accent: #607d8b;
+        --link: #99ccff;
+        --link-hover: #cce6ff;
+        --button-bg: #2c3e50;
+        --button-text: silver;
+        --header: palegoldenrod;
+        --card-bg: #2a2a3d;
     }
+}
+
+/* === General Styles === */
+main {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10%;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--header);
+}
+
+/* === Buttons and Other Elements === */
+button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: darken(var(--button-bg), 10%);
 }

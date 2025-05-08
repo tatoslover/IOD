@@ -48,37 +48,209 @@
     font-size: 2rem;
     margin-bottom: 5px;
     color: var(--text); /* Ensure icons have the correct color */
-    transition: color 0.3s ease; /* Smooth transition for color change */
-}
-
-/* Hover effect for the entire contact item */
-.contact-item:hover i {
-    color: var(--link); /* Change color of icon on hover */
+    /* Remove transition and hover effect */
 }
 
 .contact-item p {
     margin: 0;
     font-size: 1.1rem;
-    opacity: 0; /* Hide text by default */
-    transition: opacity 0.3s ease;
-}
-
-.contact-item:hover p {
-    opacity: 1; /* Show text when hovered */
+    opacity: 1; /* Always visible */
+    color: var(--text); /* Use default text color */
 }
 
 /* Ensure phone link changes cursor */
 .contact-item a {
     text-decoration: none;
-}
-
-.contact-item a:hover {
     cursor: pointer;
 }
 
-/* Optional: Add color to text on hover as well */
-.contact-item:hover p {
-    color: var(--link); /* Color change for text when hovered */
+/* === Project Section === */
+
+#projects {
+    padding: 2rem;
+    margin-bottom: 40px;
+}
+
+.project-category {
+    margin-bottom: 2rem;
+}
+
+.project-category h3 {
+    font-size: 1.8rem;
+    color: var(--header);
+    margin-bottom: 1rem;
+}
+
+.project {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+}
+
+.project h4 {
+    font-size: 1.4rem;
+    color: var(--accent);
+}
+
+.project p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.project a {
+    background-color: var(
+        --accent
+    ); /* Use the accent color for the background */
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.project a:hover {
+    background-color: var(--link-hover);
+}
+
+.add-more p a {
+    color: var(--accent);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.collapsible {
+    display: block;
+    flex-direction: column;
+    align-items: flex-start;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+.collapsible h3 {
+    margin: 0;
+}
+
+.toggle-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-light); /* Use a lighter shade, or set your own */
+    margin-top: 0.25rem;
+    padding-left: 0.1rem;
+}
+
+/* Hide the content by default */
+.project-grid-content {
+    display: none;
+}
+
+/* === Theme Variables === */
+:root {
+    --bg: #f9f9f9;
+    --text: #111;
+    --accent: #336699; /* This is your main blue color */
+    --link: #0044cc;
+    --link-hover: #002288;
+    --button-bg: #d3d3d3;
+    --button-text: #111;
+    --header: #222;
+    --card-bg: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #1e1e2f;
+        --text: #e0e0e0;
+        --accent: #607d8b;
+        --link: #99ccff;
+        --link-hover: #cce6ff;
+        --button-bg: #2c3e50;
+        --button-text: silver;
+        --header: palegoldenrod;
+        --card-bg: #2a2a3d;
+    }
+}
+
+/* === CV Section === */
+
+#cv {
+    text-align: center;
+    padding: 2rem;
+}
+
+#cv ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#cv ul li {
+    margin-bottom: 0.5rem;
+}
+
+.cv-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.cv-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.cv-links a {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 6px;
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
+}
+
+.cv-links a:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.cv-download-btn {
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.cv-download-btn:hover {
+    background-color: #0056b3;
+}
+
+details {
+    margin-top: 1.5rem;
+    text-align: left;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+details summary {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.4rem;
+    font-size: 1.1rem;
+}
+
+details[open] summary {
+    margin-bottom: 0.5rem;
 }
 
 /* === Base Styles === */
@@ -90,6 +262,52 @@ body {
     padding: 0;
     line-height: 1.6;
     text-align: justify;
+}
+
+/* FontAwesome icon size and color adjustments */
+i {
+    color: #007bff; /* Blue color for Python/R, change for other icons */
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Specific color for each icon */
+.fa-code {
+    color: #007bff; /* Python/R related */
+}
+.fa-laptop-code {
+    color: #28a745; /* Web development (green) */
+}
+.fa-cogs {
+    color: #ffc107; /* Data science tools (yellow) */
+}
+.fa-tools {
+    color: #6c757d; /* General tools (gray) */
+}
+
+/* Add hover effect */
+i:hover {
+    font-size: 25px; /* Make the icon bigger on hover */
+}
+
+/* Increase size on hover for all icons, including Python and R */
+.skill-icon {
+    font-size: 40px;
+    transition: all 0.3s ease;
+}
+
+.skill-icon:hover {
+    transform: scale(1.2); /* Increase size on hover */
+}
+
+/* Add any specific styling for Python and R images */
+.skill-icon img {
+    width: 40px; /* Adjust size of images */
+    transition: transform 0.3s ease;
+}
+
+.skill-icon img:hover {
+    transform: scale(1.2); /* Increase size on hover */
 }
 
 /* === Theme Variables === */

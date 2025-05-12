@@ -74,14 +74,36 @@ const toobig = 1e350; // 1 * 10^350 - overflows storage
 console.log(toobig); // Infinity
 console.log(Number.MAX_VALUE); // 1.7976931348623157e+308
 
+const point1 = 0.1;
+const point2 = 0.2;
+console.log(`${point1} + ${point2} = ${point1 + point2}`); // 0.1 + 0.2 = 0.30000000000000004
+
+// Numeric literals with absolute values equal to 2^53 or greater are too large to be represented accurately as integers.
+console.log(9_999_999_999_999_999); // 16 digits, prints as 10000000000000000
+console.log(Number.MAX_SAFE_INTEGER); // 9_007_199_254_740_991
+
 console.log(`
 ========================
-
+Tests: isFinite and isNaN
 ========================
 `);
 
+console.log(isNaN(NaN)); // true
+console.log(NaN == NaN); // false
+
+console.log(isFinite(1 / 3)); // true, regular number
+console.log(isFinite("string")); // false, because converts to NaN
+console.log(isFinite(Infinity)); // false, because represents infinite number
+
 console.log(`
 ========================
-
+parseInt and parseFloat
 ========================
 `);
+
+console.log(+"100px"); // NaN - 100px is not a valid number
+
+console.log(parseInt("150px")); // 150 - stops at 'px'
+console.log(parseFloat("2.5em")); // 2.5 - stops at 'em'
+console.log(parseFloat("12.34.56")); // 12.34 - stops at second invalid decimal
+console.log(parseInt("a123")); // NaN - can't parse the 'a' so stops

@@ -214,6 +214,156 @@ console.log(shirt); // { id: 1, title: 'Sleeveless Tee', price: 23.95, category:
 
 console.log(`
 ========================
-
+filter
 ========================
 `);
+
+// const result = arr.find(function(item, index, array) {
+//    If true is pushed to result and the iterayion continues, and returns empty array if nothing found
+// });
+
+const products2 = [
+  { id: 1, title: "Sleeveless Tee", price: 23.95, category: "Shirts" },
+  { id: 2, title: "Men's Hoodie", price: 54.95, category: "Winter" },
+  { id: 3, title: "Denim Jeans", price: 49.95, category: "Pants" },
+  { id: 4, title: "Ladies Tee", price: 25.95, category: "Shirts" },
+];
+// we usually use an arrow function - runs once for each element, returns array of matches
+let shirts = products2.filter((products2) => products2.category == "Shirts");
+let under50 = products2.filter((products2) => products2.price < 50);
+console.log(shirts); // 2 matching items in shirts array
+console.log(under50); // 3 matching items in under50 array
+
+console.log(`
+========================
+map
+========================
+`);
+
+// const result = arr.find(function (item, index, array) {
+//     return the new value instead of item
+// });
+
+let titles = products.map((product) => product.title);
+let h2titles = products.map((product) => "<h2>" + product.title + "</h2>");
+let raisedPrices = products.map((product) => ({
+  ...product,
+  price: product.price + 5,
+}));
+console.log(titles); // [ 'Sleeveless Tee', "Men's Hoodie", 'Denim Jeans', 'Ladies Tee' ]
+console.log(h2titles); // [ '<h2>Sleeveless Tee</h2>', "<h2>Men's Hoodie</h2>", '<h2>Denim Jeans</h2>', '<h2>Ladies Tee</h2>' ]
+console.log(raisedPrices); // all prices increased by $5
+
+console.log(`
+========================
+sort
+========================
+`);
+
+// arr.sort(function compare(firstEl, secondE1) {..})
+
+products.sort((product1, product2) => product1.price - product2.price);
+console.log(products); // original array is modified to new low-high price sorting order: 1,4,3,2
+products.sort((p1, p2) => (p1.title > p2.title ? 1 : -1));
+console.log(products); // original array is modified to new title sorting order: 3,4,2,1
+
+const numbers2 = [4, 8, 1, 5, 66, 23, 41];
+console.log(numbers2.sort()); // [ 1, 23, 4, 41, 5, 66, 8 ] : string comparisons
+console.log(numbers2.sort((num1, num2) => num1 - num2)); // [ 1, 4, 5, 8, 23, 41, 66 ]
+
+const stringNums = ["1", "81", "41", "102", "35", "1004"];
+console.log(stringNums.sort()); // [ '1', '1004', '102', '35', '41', '81' ] : string comparisons
+console.log(stringNums.sort((a, b) => a - b)); // [ '1', '35', '41', '81', '102', '1004' ]
+
+const sortedNums = [...stringNums].sort();
+console.log(stringNums); // [ '1', '81', '41', '102', '35', '1004' ]
+console.log(sortedNums); // [ '1', '1004', '102', '35', '41', '81' ]
+
+console.log(`
+========================
+reserve
+========================
+`);
+
+// Arr.reverse();
+
+const elements2 = ["Wind", "Water", "Fire", "Air"];
+const reversed1 = elements.reverse(); // modifies the original
+const reversed2 = [...elements].reverse(); // clone first to preserve the original
+
+console.log(reversed1); // [ 'Air', 'Fire', 'Water', 'Wind' ]
+console.log(reversed2); // [ 'Wind', 'Water', 'Fire', 'Air' ] (reversed twice)
+
+console.log(`
+========================
+reduce
+========================
+`);
+
+// const value = arr.reduce(function(accumulator, item, index, array) {
+//    . . .
+// },[initial]);
+
+const products3 = [
+  {
+    id: 1,
+    title: "Sleeveless Tee",
+    price: 23.95,
+    category: "Shirts",
+    quantity: 2,
+  },
+  {
+    id: 2,
+    title: "Men's Hoodie",
+    price: 54.95,
+    category: "Winter",
+    quantity: 3,
+  },
+  { id: 3, title: "Denim Jeans", price: 49.95, category: "Pants", quantity: 5 },
+]; // initial (below) should be 0 for reliability in calculating totals
+const totalPrice = products3.reduce(
+  (currentTotal, currentProduct) => currentTotal + currentProduct.price,
+  0,
+);
+const totalQty = products3.reduce(
+  (currentQty, currentProduct) => currentQty + currentProduct.quantity,
+  0,
+);
+console.log(totalPrice); // 128.85000000000002
+console.log(totalQty); // 10
+
+console.log(`
+========================
+combos
+========================
+`);
+
+const products4 = [
+  {
+    id: 1,
+    title: "Sleeveless Tee",
+    price: 23.95,
+    category: "Shirts",
+    quantity: 2,
+  },
+  {
+    id: 2,
+    title: "Men's Hoodie",
+    price: 54.95,
+    category: "Winter",
+    quantity: 3,
+  },
+  { id: 3, title: "Denim Jeans", price: 49.95, category: "Pants", quantity: 5 },
+];
+// get the titles of all products over $25:
+const over25Titles = products4
+  .filter((prod) => prod.price > 25)
+  .map((prod) => prod.title);
+console.log(over25Titles); // [ "Men's Hoodie", 'Denim Jeans' ]
+// list product ids and titles in descending order of price:
+const hiloProducts = [...products4]
+  .sort((p1, p2) => p1.price - p2.price)
+  .reverse()
+  .map((prod) => ({ id: prod.id, title: prod.title }));
+console.log(hiloProducts);
+// [ {id: 2, title: "Men's Hoodie"}, {id: 3, title: 'Denim Jeans'}, {id: 1, title: 'Sleeveless Tee'} ]

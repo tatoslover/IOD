@@ -39,7 +39,7 @@ Binary & Octal
 ========================
 `);
 
-const mobile = 041234567;
+const mobile = 0o41234567;
 console.log(mobile); // 8730999 - decimal equivalent
 
 const binary = 0b11111111; // binary form of 255

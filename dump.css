@@ -1,6 +1,0 @@
-.box {
-    color: var(--secondary-color);
-    background: var(--primary-color);
-    border: var(--border-1);
-    padding: calc(var(--spacing) * 4);
-}

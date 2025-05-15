@@ -397,7 +397,7 @@ console.log(
   person1.age,
   "Can drive?",
   person1.canDrive(),
-); // true
+);
 
 console.log(
   "Person 2:",
@@ -405,30 +405,38 @@ console.log(
   person2.age,
   "Can drive?",
   person2.canDrive(),
-); // false
+);
 
-// 2. Class version
+// Class version
 class PersonClass {
   constructor(name, age) {
     this.name = name;
     this.age = age;
     this.human = true;
   }
-
-  // Method: determines if the person can drive (age >= 16)
   canDrive() {
+    // can drive method
     return this.age >= 16;
   }
 }
 
-// Create a third person using the class
-const person3 = new PersonClass("Charlie", 17);
+// people variables
+const person3 = new PersonClass("Charlie", 4);
+const person4 = new PersonClass("Baxter", 17);
 
-// Print out their properties and driving eligibility
+// people properties printed
 console.log(
   "Person 3:",
   person3.name,
   person3.age,
   "Can drive?",
   person3.canDrive(),
-); // true
+);
+
+console.log(
+  "Person 4:",
+  person4.name,
+  person4.age,
+  "Can drive?",
+  person4.canDrive(),
+);

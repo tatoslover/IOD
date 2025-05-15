@@ -1,0 +1,14 @@
+<html>
+    <!-- very basic fetch example demonstrating real-world promises -->
+    <body>
+        <h2>Check the Dev Inspector Console</h2>
+        <script>
+            fetch("https://jsonplaceholder.typicode.com/posts"); // request data from this server
+            // when it completes, access the JSON from the HTTP response sent by resolved
+            promise
+                .then((response) => response.json()) // .json() also returns a promise
+                .then((json) => console.log(json)) // log the returned JSON to the browser console
+                .catch((error) => console.error(error)); // if there was an error, log that too
+        </script>
+    </body>
+</html>

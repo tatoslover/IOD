@@ -154,23 +154,136 @@ Question 5
 ========================
 `);
 
+// original
+function getGreeting(name) {
+  return "Hello " + name + "!";
+}
+console.log(getGreeting("Alice"));
+// Hello Alice!
+
+// function expression syntax
+const getGreetingExpr = function (name) {
+  return "Hello " + name + "!";
+};
+console.log(getGreetingExpr("Bob"));
+// Hello Bob!
+
+// arrow function syntax
+const getGreetingArrow = (name) => {
+  return "Hello " + name + "!";
+};
+console.log(getGreetingArrow("Charlie"));
+// Hello Charlie!
+
 console.log(`
 ========================
 Question 6
 ========================
 `);
 
-console.log(`
-========================
-Question 7
-========================
-`);
+const westley = {
+  name: "Westley",
+  numFingers: 5,
+};
+
+const rugen = {
+  name: "Count Rugen",
+  numFingers: 6,
+};
+
+const inigo = {
+  firstName: "Inigo",
+  lastName: "Montoya", // included last name
+  greeting(person) {
+    let greeting = `Hello ${person.name}, my name is ${this.firstName} ${this.lastName}. `; // included last name
+    console.log(greeting + this.getCatchPhrase(person));
+  },
+  getCatchPhrase: (
+    person, // arrow function
+  ) =>
+    person.numFingers === 6
+      ? "You killed my father. Prepare to die."
+      : "Nice to meet you.",
+};
+
+inigo.greeting(westley);
+// Hello Westley, my name is Inigo Montoya. Nice to meet you.
+
+inigo.greeting(rugen);
+// Hello Count Rugen, my name is Inigo Montoya. You killed my father. Prepare to die.
 
 console.log(`
 ========================
 Question 7
 ========================
 `);
+
+const basketballGame = {
+  score: 0,
+  fouls: 0, // track fouls
+
+  freeThrow() {
+    this.score++;
+    return this; // chaining
+  },
+
+  basket() {
+    this.score += 2;
+    return this; // chaining
+  },
+
+  threePointer() {
+    this.score += 3;
+    return this; // chaining
+  },
+
+  foul() {
+    this.fouls++; // increment foul count
+    return this; // chaining
+  },
+
+  halfTime() {
+    // include fouls in the output
+    console.log(`Halftime score is ${this.score}. Fouls: ${this.fouls}`);
+    return this; // chaining
+  },
+
+  fullTime() {
+    // new method to show full-time score and fouls
+    console.log(`Fulltime score is ${this.score}. Fouls: ${this.fouls}`);
+    return this; // chaining
+  },
+};
+
+basketballGame
+  .basket()
+  .freeThrow()
+  .freeThrow()
+  .basket()
+  .threePointer()
+  .halfTime();
+
+basketballGame
+  .freeThrow()
+  .foul()
+  .threePointer()
+  .basket()
+  .foul()
+  .basket()
+  .halfTime();
+
+basketballGame
+  .freeThrow()
+  .foul()
+  .threePointer()
+  .basket()
+  .foul()
+  .halfTime()
+  .threePointer()
+  .freeThrow()
+  .foul()
+  .basket()
+  .fullTime();
 
 console.log(`
 ========================
@@ -178,14 +291,144 @@ Question 8
 ========================
 `);
 
+function printCityDetails(city) {
+  console.log(`\n--- Details for ${city.name} ---`);
+  for (let property in city) {
+    console.log(`${property}: ${city[property]}`);
+  }
+}
+
+const sydney = {
+  name: "Sydney",
+  population: 5_121_000,
+  state: "NSW",
+  founded: "26 January 1788",
+  timezone: "Australia/Sydney",
+};
+printCityDetails(sydney);
+
+const wellington = {
+  name: "Wellington",
+  population: 215_000,
+  country: "New Zealand",
+  founded: "1840",
+  timezone: "Pacific/Auckland",
+};
+printCityDetails(wellington);
+
 console.log(`
 ========================
 Question 9
 ========================
 `);
 
+// Original
+let teamSports = ["Hockey", "Cricket", "Volleyball"];
+let dog1 = "Bingo";
+let cat1 = { name: "Fluffy", breed: "Siberian" };
+
+// Changes by Reference
+let moreSports = teamSports; // reference copy
+moreSports.push("Tennis");
+moreSports.unshift("Basketball");
+
+let dog2 = dog1; // primitive copy
+dog2 = "Buddy";
+
+let cat2 = cat1; // reference copy
+cat2.name = "Mittens";
+
+console.log("After reference-based changes:");
+console.log("teamSports:", teamSports);
+// changed: [ 'Basketball', 'Hockey', 'Cricket', 'Volleyball', 'Tennis' ]
+console.log("dog1:", dog1);
+// unchanged: 'Bingo'
+console.log("cat1:", cat1);
+// changed: { name: 'Mittens', breed: 'Siberian' }
+
+// Cloning to avoid shared references
+moreSports = [...teamSports]; // array clone
+moreSports.push("Tennis");
+moreSports.unshift("Basketball");
+
+cat2 = { ...cat1 }; // object clone
+cat2.name = "Mittens";
+
+console.log("teamSports:", teamSports);
+// unchanged: [ 'Basketball', 'Hockey', 'Cricket', 'Volleyball', 'Tennis' ]
+console.log("moreSports:", moreSports);
+// further changed: [ 'Basketball', 'Basketball', 'Hockey', 'Cricket', 'Volleyball', 'Tennis', 'Tennis' ]
+
+console.log("dog1:", dog1);
+// unchagned: 'Bingo'
+console.log("dog2:", dog2);
+// new: 'Buddy'
+
+console.log("cat1:", cat1);
+// unchagned: { name: 'Mittens', breed: 'Siberian' }
+console.log("cat2:", cat2);
+// new clone: { name: 'Mittens', breed: 'Siberian' }
+
 console.log(`
 ========================
 Question 10
 ========================
 `);
+
+// Constructor function version
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.human = true;
+  this.canDrive = function () {
+    // can drive method
+    return this.age >= 16;
+  };
+}
+
+// people variables
+const person1 = new Person("Alice", 20);
+const person2 = new Person("Bob", 14);
+
+// people properties printed
+console.log(
+  "Person 1:",
+  person1.name,
+  person1.age,
+  "Can drive?",
+  person1.canDrive(),
+); // true
+
+console.log(
+  "Person 2:",
+  person2.name,
+  person2.age,
+  "Can drive?",
+  person2.canDrive(),
+); // false
+
+// 2. Class version
+class PersonClass {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+    this.human = true;
+  }
+
+  // Method: determines if the person can drive (age >= 16)
+  canDrive() {
+    return this.age >= 16;
+  }
+}
+
+// Create a third person using the class
+const person3 = new PersonClass("Charlie", 17);
+
+// Print out their properties and driving eligibility
+console.log(
+  "Person 3:",
+  person3.name,
+  person3.age,
+  "Can drive?",
+  person3.canDrive(),
+); // true

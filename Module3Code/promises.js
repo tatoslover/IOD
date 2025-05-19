@@ -55,3 +55,64 @@ new Promise((resolve, reject) => {
     return result + start; // increasing result by 10 each time
   });
 // prints 10, 20, 30
+
+console.log(`
+========================
+returning
+========================
+`);
+
+let start2 = 10;
+new Promise((resolve) => setTimeout(() => resolve(start2), start2 * 10))
+  .then((result) => {
+    // promise handler function inside .then()
+    console.log(result);
+    let next = result + start2;
+    return new Promise((resolve) => setTimeout(() => resolve(next), next * 10));
+  })
+  .then((result) => {
+    // can explicitly return new promises
+    console.log(result);
+    let next = result + start2;
+    return new Promise((resolve) => setTimeout(() => resolve(next), next * 10));
+  })
+  .then((result) => {
+    // which use the results of previously resolved promises in the chain
+    console.log(result);
+    let next = result + start2;
+    return new Promise((resolve) => setTimeout(() => resolve(next), next * 10));
+  });
+// prints 10, 20, 30, but with 100, 200 and 300ms delays in between
+
+console.log(`
+========================
+async/await
+========================
+`);
+
+const promise2 = new Promise((resolve) => {
+  setTimeout(() => resolve("Simple successful promise2"), 250);
+});
+// using .then to process asynchronously:
+promise2.then((msg) => console.log(msg));
+// using await to process synchronously (if using await in a function it needs to be async):
+let msg = await promise2;
+console.log(msg);
+
+// async function asyncFunctionDeclaration() { ... } // function declaration syntax
+// const asyncFunctionExpression = async function() { ... } // function expression syntax
+// const asyncFunctionArrow = async () => { ... } // arrow function syntax
+
+async function waitForPromise() {
+  // async function allows synchronous promise handling internally
+  // since we have synchronous code and no .catch(), we use try ... catch for errors
+  try {
+    let promiseResult = await promise; // waits here as long as promise needs to resolve
+    console.log(`Success: ${promiseResult}`); // then continues executing other code
+    return true;
+  } catch (error) {
+    console.error(`Failure: ${error.message}`);
+  }
+  //only gets here if return true above did NOT happen, ie. there was an error
+  return false;
+}

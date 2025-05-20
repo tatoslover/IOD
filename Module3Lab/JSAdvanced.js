@@ -44,90 +44,326 @@ delayMsg("#4: Not delayed at all"); // first
 const timerId = setTimeout(delayMsg, 15000, "#5: Delayed by 15 seconds"); // large delay message
 clearTimeout(timerId); // prevented large delay message
 
-console.log(`
+setTimeout(() => {
+  console.log(`
 ========================
 Question 3
 ========================
-`);
+  `);
 
-function debounce(func, ms) {
-  let timerId;
+  function debounce(func, ms) {
+    let timerId;
 
-  return function (...args) {
-    clearTimeout(timerId);
-    timerId = setTimeout(() => {
-      func.apply(this, args);
-    }, ms);
-  };
-}
+    return function (...args) {
+      clearTimeout(timerId);
+      timerId = setTimeout(() => {
+        func.apply(this, args);
+      }, ms);
+    };
+  }
 
-function printMe(msg) {
-  console.log(`printing debounced message: ${msg}`);
-}
+  function printMe(msg) {
+    console.log(`printing debounced message: ${msg}`);
+  }
 
-printMe = debounce(printMe, 1000);
+  printMe = debounce(printMe, 1000);
 
-// Fire multiple times — only last one runs
-setTimeout(() => printMe("#1"), 100);
-setTimeout(() => printMe("#2"), 200);
-setTimeout(() => printMe("#3"), 300); // Only this one should print (after 1000ms)
+  // Fire multiple times — only last one runs
+  setTimeout(() => printMe("#1"), 100);
+  setTimeout(() => printMe("#2"), 200);
+  setTimeout(() => printMe("#3"), 300); // Only this one should print (after 1000ms)
+}, 1000); // Delay enough to ensure Question 2 appears first
 
-console.log(`
+setTimeout(() => {
+  console.log(`
 ========================
 Question 4
 ========================
-`);
+  `);
 
-function printFibonacci(limit = 10) {
-  let a = 0,
-    b = 1,
-    count = 0;
+  // using setInterval
+  function printFibonacci(limit = 10) {
+    return new Promise((resolve) => {
+      let a = 0,
+        b = 1,
+        count = 0;
 
-  const intervalId = setInterval(() => {
-    console.log(b);
-    [a, b] = [b, a + b];
-    count++;
+      const intervalId = setInterval(() => {
+        console.log(b);
+        [a, b] = [b, a + b];
+        count++;
 
-    if (count >= limit) {
-      clearInterval(intervalId);
+        if (count >= limit) {
+          clearInterval(intervalId);
+          resolve(); // finish and allow chaining
+        }
+      }, 1000);
+    });
+  }
+
+  // using setTimeout
+  function printFibonacciTimeouts(limit = 10) {
+    let a = 0,
+      b = 1,
+      count = 0;
+
+    function printNext() {
+      if (count >= limit) return;
+
+      console.log(b);
+      [a, b] = [b, a + b];
+      count++;
+
+      setTimeout(printNext, 1000);
     }
-  }, 1000);
-}
 
-printFibonacci(10); // prints 10 Fibonacci numbers, one every second
+    printNext(); // initial call
+  }
 
-console.log(`
+  printFibonacci(8).then(() => {
+    printFibonacciTimeouts(8);
+  });
+}, 2500);
+
+setTimeout(() => {
+  console.log(`
 ========================
 Question 5
 ========================
 `);
 
-console.log(`
+  let car = {
+    make: "Porsche",
+    model: "911",
+    year: 1964,
+    description() {
+      console.log(`This car is a ${this.make} ${this.model} from ${this.year}`);
+    },
+  };
+
+  let car2 = {
+    ...car,
+    year: 2020,
+  }; // cloning doesn't alter original so output remains the same
+
+  let car3 = {
+    ...car,
+    model: "Cayenne",
+  };
+
+  setTimeout(car.description.bind(car), 200); // Still logs "911", not "Cayenne"
+
+  car.description(); // works because "this" refers to "car"
+
+  setTimeout(car.description, 200); // when passing car.description directly to setTimeout, it loses its binding to the car object
+
+  setTimeout(() => car.description(), 200); // fixed by wrapping the call inside a function
+
+  setTimeout(car.description.bind(car), 200); // doesn't need a wrapper function & still refers to original
+}, 19000);
+
+setTimeout(() => {
+  console.log(`
 ========================
 Question 6
 ========================
 `);
 
-console.log(`
+  Function.prototype.delay = function (ms) {
+    const originalFunction = this;
+
+    return function (...args) {
+      setTimeout(() => originalFunction(...args), ms);
+    };
+  };
+
+  function multiply(a, b) {
+    console.log(a * b);
+  }
+
+  multiply.delay(500)(5, 5); // prints 25 after 500 milliseconds
+
+  Function.prototype.delay = function (ms) {
+    const originalFunction = this;
+
+    return function (...args) {
+      setTimeout(() => originalFunction.apply(this, args), ms);
+    };
+  };
+
+  function multiplyAll(a, b, c, d) {
+    console.log(a * b * c * d);
+  }
+
+  multiplyAll.delay(1000)(2, 3, 4, 5); // prints 120 after 1 second
+}, 21000);
+
+setTimeout(() => {
+  console.log(`
 ========================
 Question 7
 ========================
 `);
 
-console.log(`
+  class DigitalClock {
+    constructor(prefix) {
+      this.prefix = prefix;
+    }
+    display() {
+      let date = new Date();
+      //create 3 variables in one go using array destructuring
+      let [hours, mins, secs] = [
+        date.getHours(),
+        date.getMinutes(),
+        date.getSeconds(),
+      ];
+      if (hours < 10) hours = "0" + hours;
+      if (mins < 10) mins = "0" + mins;
+      if (secs < 10) secs = "0" + secs;
+      console.log(`${this.prefix} ${hours}:${mins}:${secs}`);
+    }
+    stop() {
+      clearInterval(this.timer);
+    }
+    start() {
+      this.display();
+      this.timer = setInterval(() => this.display(), 1000);
+    }
+  }
+  const myClock = new DigitalClock("my clock:");
+  // myClock.start();
+
+  class PrecisionClock extends DigitalClock {
+    constructor(prefix, precision = 1000) {
+      super(prefix);
+      this.precision = precision;
+    }
+
+    start() {
+      this.display();
+      this.timer = setInterval(() => this.display(), this.precision);
+    }
+  }
+
+  class AlarmClock extends DigitalClock {
+    constructor(prefix, wakeupTime = "07:00:00") {
+      super(prefix);
+      this.wakeupTime = wakeupTime;
+    }
+
+    display() {
+      let date = new Date();
+      let [hours, mins, secs] = [
+        date.getHours(),
+        date.getMinutes(),
+        date.getSeconds(),
+      ];
+
+      if (hours < 10) hours = "0" + hours;
+      if (mins < 10) mins = "0" + mins;
+      if (secs < 10) secs = "0" + secs;
+
+      const timeStr = `${hours}:${mins}:${secs}`;
+      console.log(`${this.prefix} ${hours}:${mins}:${secs}`);
+
+      if (timeStr === this.wakeupTime) {
+        console.log("Wake Up!");
+        this.stop();
+      }
+    }
+  }
+
+  const clock1 = new PrecisionClock("precision clock:", 2000); // ticks every 2 seconds
+  clock1.start();
+
+  setTimeout(() => {
+    clock1.stop();
+    console.log("precision clock stopped after 5 seconds");
+  }, 5000);
+
+  setTimeout(() => {
+    const alarm = new Date(Date.now() + 5000); // 5 seconds from now
+    let hh = alarm.getHours().toString().padStart(2, "0");
+    let mm = alarm.getMinutes().toString().padStart(2, "0");
+    let ss = alarm.getSeconds().toString().padStart(2, "0");
+
+    const clock2 = new AlarmClock("alarm clock:", `${hh}:${mm}:${ss}`);
+    clock2.start();
+  }, 6000);
+}, 23000);
+
+setTimeout(() => {
+  console.log(`
 ========================
 Question 8
 ========================
 `);
 
-console.log(`
+  function orderItems(...itemNames) {
+    return `Order placed for: ${itemNames.join(", ")}`;
+  }
+
+  function validateStringArg(fn) {
+    return function (...args) {
+      for (let arg of args) {
+        if (typeof arg !== "string") {
+          throw new Error("All arguments must be strings");
+        }
+      }
+      return fn(...args);
+    };
+  }
+
+  const validatedOrderItem = validateStringArg(orderItems);
+
+  try {
+    console.log(validatedOrderItem("Apple Watch", "iPhone"));
+  } catch (error) {
+    console.error("Error:", error.message);
+  }
+
+  try {
+    console.log(validatedOrderItem("MacBook", 123));
+  } catch (error) {
+    console.error("Error:", error.message);
+  }
+}, 35000);
+
+setTimeout(() => {
+  console.log(`
 ========================
 Question 9
 ========================
 `);
 
-console.log(`
+  function randomDelay() {
+    const delay = Math.floor(Math.random() * 20) + 1; // 1 to 20 seconds
+    const ms = delay * 1000;
+
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (delay % 2 === 0) {
+          resolve(delay);
+        } else {
+          reject(delay);
+        }
+      }, ms);
+    });
+  }
+
+  randomDelay()
+    .then((delay) => {
+      console.log(`Delay of ${delay} seconds completed successfully.`);
+    })
+    .catch((delay) => {
+      console.log(`Delay of ${delay} seconds failed (odd number).`);
+    });
+}, 36000);
+
+setTimeout(() => {
+  console.log(`
 ========================
 Question 10
 ========================
 `);
+}, 57000);

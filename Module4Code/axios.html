@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <title>JSON Placeholder Axios</title>
+    </head>
+    <body>
+        <h1>Check the console</h1>
+
+        <!-- Include the Axios script -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+
+        <script>
+            // GET request
+            axios
+                .get("https://jsonplaceholder.typicode.com/posts")
+                .then((response) => console.log("GET response:", response.data))
+                .catch((error) => console.error("GET error:", error));
+
+            // POST request
+            axios
+                .post("https://jsonplaceholder.typicode.com/posts", {
+                    title: "The Studio",
+                    body: "Something funny",
+                    userId: 1,
+                })
+                .then((response) =>
+                    console.log("POST response:", response.data),
+                )
+                .catch((error) => console.error("POST error:", error));
+        </script>
+    </body>
+</html>

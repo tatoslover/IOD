@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dynamic Cars</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <!-- Template for Car Cards -->
+        <template id="car-template">
+            <div class="card col-8" style="width: 18rem; margin: 10px">
+                <div class="card-body">
+                    <h5 class="card-title">Car title</h5>
+                    <p class="card-text">Car text.</p>
+                </div>
+            </div>
+        </template>
+
+        <!-- Where cards will be inserted -->
+        <div id="car-list" class="row"></div>
+
+        <script>
+            // Sample car data (replace with your own or fetch dynamically)
+            const carData = [
+                {
+                    title: "Tesla Model S",
+                    description: "Electric sedan with great range.",
+                },
+                {
+                    title: "Ford Mustang",
+                    description: "Classic American muscle car.",
+                },
+                {
+                    title: "Toyota Corolla",
+                    description: "Reliable and fuel-efficient.",
+                },
+            ];
+
+            // Simulate fetching car data
+            function getCars() {
+                return Promise.resolve(carData);
+            }
+
+            // Clone template and populate it
+            function addCard(car) {
+                const template = document
+                    .getElementById("car-template")
+                    .content.cloneNode(true);
+                template.querySelector(".card-title").innerText = car.title;
+                template.querySelector(".card-text").innerText =
+                    car.description;
+                document.querySelector("#car-list").appendChild(template);
+            }
+
+            // Fetch and display cars
+            getCars().then((cars) => cars.forEach((car) => addCard(car)));
+        </script>
+    </body>
+</html>

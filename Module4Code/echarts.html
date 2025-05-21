@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>ECharts Example</title>
+        <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                gap: 40px;
+                padding: 20px;
+            }
+            #instructions {
+                width: 40%;
+            }
+            #main {
+                width: 600px;
+                height: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="instructions">
+            <h2>Getting Started with ECharts</h2>
+            <p>
+                The code on the right will allow you to generate this example
+                chart.
+            </p>
+            <p>Follow the <strong>Get Started</strong> guide to:</p>
+            <ul>
+                <li>📌 Select a <code>&lt;div&gt;</code> to place the chart</li>
+                <li>
+                    ⚙️ Create a chart object using <code>echarts.init</code>
+                </li>
+                <li>
+                    📊 Pass the option data to the chart object and render it
+                    using <code>setOption</code>
+                </li>
+            </ul>
+            <p>
+                ✅ Try adding another bar to the chart and another series to the
+                data!
+            </p>
+        </div>
+
+        <div id="main"></div>
+
+        <script type="text/javascript">
+            let myChart = echarts.init(document.getElementById("main"));
+
+            let option = {
+                title: {
+                    text: "ECharts Getting Started Example",
+                    top: 10, // Push title down a bit
+                    left: "center", // Center-align the title
+                    textStyle: {
+                        fontSize: 18,
+                    },
+                },
+                tooltip: {},
+                legend: {
+                    data: ["Sales", "Returns"],
+                    top: 40, // Move legend below the title
+                },
+                grid: {
+                    top: 80, // Make room for title and legend above the chart
+                },
+                xAxis: {
+                    data: [
+                        "Shirts",
+                        "Cardigans",
+                        "Chiffons",
+                        "Pants",
+                        "Heels",
+                        "Socks",
+                        "Jackets",
+                    ],
+                },
+                yAxis: {},
+                series: [
+                    {
+                        name: "Sales",
+                        type: "bar",
+                        data: [5, 20, 36, 10, 10, 20, 15],
+                    },
+                    {
+                        name: "Returns",
+                        type: "bar",
+                        data: [1, 2, 5, 1, 0, 2, 1],
+                    },
+                ],
+            };
+
+            myChart.setOption(option);
+        </script>
+    </body>
+</html>

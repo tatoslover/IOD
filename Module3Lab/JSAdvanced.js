@@ -366,4 +366,77 @@ setTimeout(() => {
 Question 10
 ========================
 `);
+
+  // Promise-based version
+  function fetchURLData(url) {
+    let fetchPromise = fetch(url).then((response) => {
+      if (response.status === 200) {
+        return response.json();
+      } else {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+    });
+    return fetchPromise;
+  }
+
+  fetchURLData("https://jsonplaceholder.typicode.com/todos/1")
+    .then((data) => console.log("fetchURLData results:", data))
+    .catch((error) => console.error("fetchURLData error:", error.message));
+
+  fetchURLData("https://jsonplaceholder.typicode.com/invalid-endpoint")
+    .then((data) => console.log("fetchURLData results:", data))
+    .catch((error) => console.error("fetchURLData error:", error.message));
+
+  // Async/await version
+  async function fetchURLDataAsync(url) {
+    try {
+      const response = await fetch(url);
+      if (response.status === 200) {
+        return await response.json();
+      } else {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+    } catch (error) {
+      throw new Error(`Fetch failed: ${error.message}`);
+    }
+  }
+
+  fetchURLDataAsync("https://jsonplaceholder.typicode.com/todos/1")
+    .then((data) => console.log("fetchURLDataAsync results:", data))
+    .catch((error) => console.error("fetchURLDataAsync error:", error.message));
+
+  fetchURLDataAsync("https://jsonplaceholder.typicode.com/invalid-endpoint")
+    .then((data) => console.log("fetchURLDataAsync results:", data))
+    .catch((error) => console.error("fetchURLDataAsync error:", error.message));
+
+  // Extension: Multiple URLs
+  async function fetchMultipleURLs(urls) {
+    try {
+      const fetchPromises = urls.map(fetchURLDataAsync);
+      const results = await Promise.all(fetchPromises);
+      return results;
+    } catch (error) {
+      throw new Error(`One of the requests failed: ${error.message}`);
+    }
+  }
+
+  // Valid URLs example
+  const validUrls = [
+    "https://jsonplaceholder.typicode.com/todos/1",
+    "https://jsonplaceholder.typicode.com/todos/2",
+  ];
+
+  fetchMultipleURLs(validUrls)
+    .then((data) => console.log("fetchMultipleURLs results:", data))
+    .catch((error) => console.error("fetchMultipleURLs error:", error.message));
+
+  // One invalid URL
+  const urlsWithInvalid = [
+    "https://jsonplaceholder.typicode.com/todos/1",
+    "https://jsonplaceholder.typicode.com/invalid",
+  ];
+
+  fetchMultipleURLs(urlsWithInvalid)
+    .then((data) => console.log("fetchMultipleURLs results:", data))
+    .catch((error) => console.error("fetchMultipleURLs error:", error.message));
 }, 57000);

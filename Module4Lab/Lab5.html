@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>News Refresh</title>
+        <style>
+            #news-container {
+                max-width: 600px;
+                margin: 2rem auto;
+                font-family: Arial, sans-serif;
+            }
+            .news-item {
+                border-bottom: 1px solid #ccc;
+                padding: 1rem 0;
+            }
+            .news-item:last-child {
+                border-bottom: none;
+            }
+            .news-title {
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+            .news-content {
+                margin-top: 0.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="news-container"></div>
+
+        <script>
+            let news = [
+                {
+                    id: 1,
+                    title: "Election Results",
+                    content: "Newly elected minister...",
+                },
+                {
+                    id: 2,
+                    title: "Sporting Success",
+                    content: "World Cup winners...",
+                },
+                {
+                    id: 3,
+                    title: "Tornado Warning",
+                    content: "Residents should prepare...",
+                },
+            ];
+
+            const newsContainer = document.getElementById("news-container");
+
+            function renderNews() {
+                // Clear existing news items
+                newsContainer.innerHTML = "";
+
+                // Populate container with news from the array
+                news.forEach((item) => {
+                    const newsDiv = document.createElement("div");
+                    newsDiv.classList.add("news-item");
+
+                    const title = document.createElement("div");
+                    title.classList.add("news-title");
+                    title.textContent = item.title;
+
+                    const content = document.createElement("div");
+                    content.classList.add("news-content");
+                    content.textContent = item.content;
+
+                    newsDiv.appendChild(title);
+                    newsDiv.appendChild(content);
+
+                    newsContainer.appendChild(newsDiv);
+                });
+            }
+
+            // Initial render on page load
+            renderNews();
+
+            // Refresh every 5 seconds (5000 ms)
+            setInterval(renderNews, 5000);
+        </script>
+    </body>
+</html>

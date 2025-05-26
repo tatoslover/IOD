@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: #e3f2fd;
+            }
+            .card {
+                padding: 10px;
+                background: white;
+                margin: 10px;
+                border-radius: 10px;
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            }
+            .card-title {
+                font-weight: 600;
+                font-size: 2em;
+                padding-bottom: 5px;
+            }
+            .card-description {
+                font-weight: 400;
+                font-size: 1.2em;
+            }
+            .card-image {
+                max-width: 200px;
+                height: auto;
+                margin-top: 10px;
+                border-radius: 6px;
+                transition:
+                    transform 0.3s ease,
+                    box-shadow 0.3s ease;
+            }
+            .card-image {
+                max-width: 200px;
+                height: auto;
+                margin-top: 10px;
+                border-radius: 6px;
+                cursor: pointer; /* 👈 Add this line */
+            }
+            .card-image:hover {
+                transform: scale(1.1);
+                z-index: 2;
+                position: relative;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            }
+            #lightbox {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.8);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 10000;
+            }
+
+            #lightbox img {
+                max-width: 90%;
+                max-height: 90%;
+                border: 4px solid white;
+                border-radius: 12px;
+                box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+                background: white;
+                cursor: zoom-out;
+            }
+        </style>
+    </head>
+    <body>
+        <template id="card-template">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title"></div>
+                    <div class="card-description"></div>
+                    <img class="card-image" />
+                </div>
+                <div id="lightbox" style="display: none">
+                    <img id="lightbox-img" />
+                </div>
+            </div>
+        </template>
+
+        <div id="card-list"></div>
+
+        <script>
+            // Exercise 1
+
+            function addCard(title, description, imageUrl = null) {
+                const template = document
+                    .getElementById("card-template")
+                    .content.cloneNode(true);
+                template.querySelector(".card-title").innerText = title;
+                template.querySelector(".card-description").innerText =
+                    description;
+
+                const img = template.querySelector(".card-image");
+                if (imageUrl) {
+                    img.src = imageUrl;
+                    img.alt = title;
+                } else {
+                    img.style.display = "none";
+                }
+
+                document.querySelector("#card-list").appendChild(template);
+            }
+
+            // Exercise 2
+
+            addCard("Artist Enthusiasts", "");
+
+            const data = [
+                { name: "Alice", age: 39 },
+                { name: "Bob", age: 23 },
+                { name: "Charlie", age: 31 },
+                { name: "Diana", age: 27 },
+            ];
+
+            data.forEach((person) => {
+                addCard(person.name, `Age: ${person.age}`);
+            });
+
+            // Exercise 3
+
+            addCard("Artist Profiles", "");
+
+            const artists = [
+                {
+                    name: "Vincent van Gogh",
+                    portfolio: [
+                        {
+                            title: "Self Portrait",
+                            url: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/4365%2032/1671316/main-image",
+                        },
+                        {
+                            title: "The Starry Night",
+                            url: "https://mymodernmet.com/wp/wp-content/uploads/2020/11/White-house-night-van-goh-worldwide-2.jpg",
+                        },
+                    ],
+                },
+                {
+                    name: "Frida Kahlo",
+                    portfolio: [
+                        {
+                            title: "Self Portrait",
+                            url: "https://www.fridakahlo.org/assets/img/paintings/self-portrait-with-necklace-of-thorns.jpg",
+                        },
+                        {
+                            title: "Viva la Vida, Watermelons",
+                            url: "https://www.fridakahlo.org/assets/img/paintings/viva-la-vida-watermelons.jpg",
+                        },
+                    ],
+                },
+                {
+                    name: "Gottfried Lindauer",
+                    portfolio: [
+                        {
+                            title: "Self Portrait",
+                            url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Gottfried_Lindaur_-_Self-Portrait_1862.jpg/500px-Gottfried_Lindaur_-_Self-Portrait_1862.jpg",
+                        },
+                        {
+                            title: "The Tohunga-ta-moko at Work",
+                            url: "https://www.lindaueronline.co.nz/media/281639/tohunga-ta-moko-at-work-web.jpg",
+                        },
+                    ],
+                },
+            ];
+
+            artists.forEach((artist) => {
+                addCard(artist.name, "Artist Portfolio:");
+                artist.portfolio.forEach((item) => {
+                    addCard(item.title, "", item.url);
+                });
+            });
+
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+
+            // Delegate click events
+            document
+                .querySelector("#card-list")
+                .addEventListener("click", (e) => {
+                    if (e.target.classList.contains("card-image")) {
+                        lightboxImg.src = e.target.src;
+                        lightbox.style.display = "flex";
+                    }
+                });
+
+            // Hide lightbox on click
+            lightbox.addEventListener("click", () => {
+                lightbox.style.display = "none";
+            });
+        </script>
+    </body>
+</html>

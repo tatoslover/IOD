@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>eCharts - Fake Store</title>
+        <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+    </head>
+    <body>
+        <!-- Chart container -->
+        <div id="main" style="width: 900px; height: 600px"></div>
+
+        <script>
+            // Initialize the echarts instance
+            const myChart = echarts.init(document.getElementById("main"));
+
+            // Specify the configuration items and data for the chart
+            const options = {
+                title: {
+                    text: "Fake Store Categories",
+                },
+                tooltip: {},
+                xAxis: {
+                    type: "category",
+                    data: [], // will fill in categories
+                },
+                yAxis: {
+                    type: "value",
+                },
+                series: [
+                    {
+                        name: "# Products",
+                        type: "bar",
+                        data: [], // will fill in counts
+                    },
+                ],
+            };
+
+            // Fetch data from the Fake Store API
+            fetch("https://fakestoreapi.com/products")
+                .then((response) => response.json())
+                .then((products) => {
+                    // Count products per category
+                    const categoryCounts = {};
+                    products.forEach((product) => {
+                        const category = product.category;
+                        categoryCounts[category] =
+                            (categoryCounts[category] || 0) + 1;
+                    });
+
+                    // Update chart data
+                    options.xAxis.data = Object.keys(categoryCounts);
+                    options.series[0].data = Object.values(categoryCounts);
+
+                    // Apply the updated options to the chart
+                    myChart.setOption(options);
+                });
+        </script>
+    </body>
+</html>

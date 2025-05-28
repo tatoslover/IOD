@@ -4,6 +4,10 @@ const port = 3000;
 const testRoutes = require("./routes/myTestRoutes");
 const calculatorRoutes = require("./routes/calculatorRoutes");
 const userRoutes = require("./routes/userRoutes");
+const swaggerUi = require("swagger-ui-express");
+swaggerDocument = require("./swagger.json");
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(express.json());
 

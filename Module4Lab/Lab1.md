@@ -59,7 +59,7 @@ Unlike general social media platforms, **TatūTahi** is tailored to the Christch
 
 ---
 
-## Core Features (Based on App Flow)
+## Core Features
 
 ### Account Management
 
@@ -102,9 +102,9 @@ Unlike general social media platforms, **TatūTahi** is tailored to the Christch
 
 ## Design Notes
 
-- Dark theme: black and grey base, with an accent color like crimson or jade
-- Use tattoo-style fonts for headers (e.g., Sailor’s Tattoo, Old School Script) — keep them readable
-- Incorporate Christchurch imagery: Avon River outlines, Gothic architectural motifs, Southern Alps silhouettes
+- Dark theme: black and grey base, with accent color jade green.
+- Use tattoo-style fonts.
+- Incorporate Christchurch imagery.
 - Designed mobile-first
 
 ---

@@ -18,7 +18,7 @@
         <!--‑‑‑ Navbar ‑‑‑-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">NBA 2K Ratings</a>
+                <a class="navbar-brand" href="#">NBA Advanced Stat Attack</a>
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -31,15 +31,15 @@
                 <div class="collapse navbar-collapse" id="mainNavbar">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#" id="navPlayers"
+                            <a class="nav-link" href="#" id="navAbout">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="navPlayers"
                                 >Players</a
                             >
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#" id="navArena">Arena</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" id="navAbout">About</a>
                         </li>
                     </ul>
                 </div>
@@ -48,55 +48,13 @@
 
         <!--‑‑‑ Main content ‑‑‑-->
         <main class="container my-4">
-            <!-- Filter + Sort Controls -->
-            <div class="row mb-3" id="player-controls">
-                <!-- Team Filter -->
-                <div class="col-md-3 mb-2">
-                    <select id="teamFilter" class="form-select">
-                        <option value="all">All Teams</option>
-                    </select>
-                </div>
-
-                <!-- Position Filter -->
-                <div class="col-md-3 mb-2">
-                    <select id="positionFilter" class="form-select">
-                        <option value="all">All Positions</option>
-                    </select>
-                </div>
-
-                <!-- Stat Sort -->
-                <div class="col-md-3 mb-2">
-                    <select id="statSort" class="form-select">
-                        <option value="default">Sort by Stat</option>
-                        <option value="overallAttribute">Overall</option>
-                        <option value="threePointShot">3PT</option>
-                        <option value="layup">Layup</option>
-                        <option value="speed">Speed</option>
-                        <option value="stamina">Stamina</option>
-                        <option value="defensiveRebound">
-                            Defensive Rebound
-                        </option>
-                        <option value="passIQ">Pass IQ</option>
-                    </select>
-                </div>
-
-                <!-- Name Search -->
-                <div class="col-md-3 mb-2">
-                    <input
-                        type="text"
-                        id="nameSearch"
-                        class="form-control"
-                        placeholder="Search by name..."
-                    />
-                </div>
-            </div>
-
-            <!-- Player cards go here -->
-            <div id="card-container" class="row g-4"></div>
+            <div id="page-content"></div>
         </main>
 
         <!--‑‑‑ Your JavaScript ‑‑‑-->
-        <script src="js/main.js"></script>
+        <script src="js/utils.js" defer></script>
+        <script src="js/players.js" defer></script>
+        <script src="js/main.js" defer></script>
 
         <!-- Bootstrap JS bundle (required only if you use dropdowns/modal JS features) -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

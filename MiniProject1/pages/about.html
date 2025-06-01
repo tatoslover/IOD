@@ -1,0 +1,137 @@
+<h2>About</h2>
+
+<p>
+    This project showcases NBA players with advanced stats pulled from 2K
+    ratings and the NBA Stats API.
+</p>
+<p>
+    Users can filter players by team, position, and advanced metrics to explore
+    performance insights through an interactive interface.
+</p>
+<p>Created by me, [Your Name], in 2025 as part of a web development project.</p>
+
+<h3>Purpose</h3>
+<p>
+    I built this app to explore how web technologies like JavaScript, APIs, and
+    DOM manipulation can be used to present complex sports data in an accessible
+    way. It's designed to be engaging for NBA fans, while demonstrating key
+    front-end development skills.
+</p>
+
+<h3>How to Use</h3>
+<ol>
+    <li>Navigate using the tabs: About, Players, and Arena.</li>
+    <li>
+        On the Players page, filter by team, position, or sort by advanced
+        metrics like PER, VORP, or TS%.
+    </li>
+    <li>
+        The Arena tab showcases a game-like interaction between teams or players
+        (under development).
+    </li>
+</ol>
+
+<h3>Files</h3>
+<ul>
+    <li>
+        <strong>index.html</strong>: The main entry point that loads tabbed
+        content into a single-page layout.
+    </li>
+    <li>
+        <strong>/pages/</strong>: Contains HTML for each tab (about, players,
+        arena).
+    </li>
+    <li>
+        <strong>/js/</strong>: JavaScript modules organized by responsibility:
+        <ul>
+            <li>
+                <code>main.js</code>: Handles page loading and tab switching.
+            </li>
+            <li>
+                <code>players.js</code>: Initializes and renders player stats.
+            </li>
+            <li>
+                <code>arena.js, arenaLogic.js, arenaUI.js</code>: Power the
+                arena simulation (WIP).
+            </li>
+            <li>
+                <code>utils.js</code>: Shared functions and global variables
+                (e.g. stat labels).
+            </li>
+        </ul>
+    </li>
+    <li>
+        <strong>/data/</strong>: Static JSON and data-fetching scripts.
+        <ul>
+            <li><code>stats.json</code>: Advanced player metrics.</li>
+            <li><code>teams.json</code>: Team metadata.</li>
+            <li>
+                <code>fetch.js</code>: Used to load or simulate fetching data.
+            </li>
+        </ul>
+    </li>
+    <li><strong>/css/style.css</strong>: Basic layout and design styling.</li>
+</ul>
+
+<h3>Presentation Questions & My Answers</h3>
+<ol>
+    <li>
+        <strong
+            >What was your requirements gathering and design process? Was it
+            useful/successful?</strong
+        ><br />
+        I started by defining core features like filtering and tabbed
+        navigation, then sketched a structure to build on. It helped me stay
+        focused and break the app into manageable chunks.
+    </li>
+    <li>
+        <strong
+            >Give a high-level overview of your application and its
+            features</strong
+        ><br />
+        It’s a single-page NBA player browser with advanced stat filtering and a
+        prototype arena interaction. Tabs keep content organized.
+    </li>
+    <li>
+        <strong>Where does its data come from?</strong><br />
+        I scrape some stats from <em>2kratings.com</em> and pull others from the
+        NBA Stats API.
+    </li>
+    <li>
+        <strong>How is this data processed and displayed?</strong><br />
+        The data is loaded as JSON, filtered with JS array functions, and
+        rendered into HTML using templates and DOM manipulation.
+    </li>
+    <li>
+        <strong>How can the user interact with your application?</strong><br />
+        They can switch tabs, select filters, and view updated player lists
+        based on their preferences.
+    </li>
+    <li>
+        <strong>What JS techniques have you used?</strong><br />
+        I’ve used modules, async functions, event handling, DOM manipulation,
+        array methods, and utility functions.
+    </li>
+    <li>
+        <strong>What external tools/libraries have you used?</strong><br />
+        I use Bootstrap for styling and possibly Axios for API calls if needed.
+    </li>
+    <li>
+        <strong>What kinds of HTML elements have you used?</strong><br />
+        Divs, buttons, nav links, headings, paragraphs, dropdowns, and HTML
+        templates.
+    </li>
+    <li>
+        <strong>What kinds of CSS features have you used?</strong><br />
+        Flexbox for layout, Bootstrap for components, and custom styles for
+        spacing, colors, and font tweaks.
+    </li>
+    <li>
+        <strong
+            >How might you extend the features of your application in
+            future?</strong
+        ><br />
+        Add a full player comparison view, chart-based stat visualization, team
+        pages, and more complete arena simulations.
+    </li>
+</ol>

@@ -27,6 +27,15 @@ function initializeArenaTab() {
     return;
   }
 
+  // Add local function if not available from utils
+  const localNormalizePosition = function(pos) {
+    if (!pos) return "";
+    if (pos.includes("G")) return pos.includes("F") ? "SF" : "PG";
+    if (pos.includes("F")) return pos.includes("C") ? "PF" : "SF";
+    if (pos.includes("C")) return "C";
+    return pos;
+  };
+
   let filteredPlayers1 = [];
   let filteredPlayers2 = [];
   let selectedPlayer1 = null;
@@ -38,7 +47,7 @@ function initializeArenaTab() {
   ]).then(([players, teams]) => {
     allPlayers = players.map((p) => ({
       ...p,
-      position: normalizePosition(p.position),
+      position: typeof normalizePosition === 'function' ? normalizePosition(p.position) : localNormalizePosition(p.position),
     }));
     teamNames = teams;
 
@@ -241,13 +250,13 @@ function initializeArenaTab() {
           </div>
         `;
       } else {
-        const randomPlayer = getRandomFromPool(filteredPlayers);
+        const randomPlayer = typeof getRandomFromPool === 'function' ? 
+          getRandomFromPool(filteredPlayers) :
+          filteredPlayers[Math.floor(Math.random() * filteredPlayers.length)];
         display.innerHTML = `
           <div class="text-center">
             <h6 class="text-secondary mb-2">Random from ${filteredPlayers.length} players</h6>
-            <p class="mb-1"><small>Example: <strong>${randomPlayer.playerName}</strong></small></p>
-            <p class="mb-0"><small>${teamNames[randomPlayer.team] || randomPlayer.team} - ${randomPlayer.position}</small></p>
-            <small class="text-muted">Will be randomly selected on compare</small>
+            <small class="text-muted">Player will be randomly selected on compare</small>
           </div>
         `;
       }
@@ -301,10 +310,23 @@ function initializeArenaTab() {
 
   function populateStatSelect(select) {
     select.innerHTML = '<option value="">Select a stat...</option>';
-    Object.keys(statLabels).forEach((stat) => {
+    
+    // Fallback if statLabels is not available
+    const labels = typeof statLabels !== 'undefined' ? statLabels : {
+      per: "PER",
+      tsPercent: "TS%",
+      winShares: "Win Shares",
+      vorp: "VORP",
+      box: "Box +/-",
+      assistPercent: "Assist %",
+      totalReboundPercent: "Total Rebound %",
+      usagePercent: "Usage %"
+    };
+    
+    Object.keys(labels).forEach((stat) => {
       const option = document.createElement("option");
       option.value = stat;
-      option.textContent = statLabels[stat];
+      option.textContent = labels[stat];
       select.appendChild(option);
     });
   }
@@ -327,7 +349,9 @@ function initializeArenaTab() {
         resultDiv.innerHTML = "<div class='alert alert-danger'>No valid players in Player 1 filter pool.</div>";
         return;
       }
-      player1 = getRandomFromPool(filteredPlayers1.filter(p => p[stat] != null));
+      player1 = typeof getRandomFromPool === 'function' ? 
+        getRandomFromPool(filteredPlayers1.filter(p => p[stat] != null)) :
+        filteredPlayers1.filter(p => p[stat] != null)[Math.floor(Math.random() * filteredPlayers1.filter(p => p[stat] != null).length)];
     }
 
     if (selectedPlayer2) {
@@ -342,7 +366,9 @@ function initializeArenaTab() {
       if (availablePool.length === 0) {
         availablePool = filteredPlayers2.filter(p => p[stat] != null);
       }
-      player2 = getRandomFromPool(availablePool);
+      player2 = typeof getRandomFromPool === 'function' ? 
+        getRandomFromPool(availablePool) : 
+        availablePool[Math.floor(Math.random() * availablePool.length)];
     }
 
     if (!player1 || !player2) {
@@ -355,8 +381,13 @@ function initializeArenaTab() {
       return;
     }
 
+    // Get proper stat label from the select options
+    const statSelectElement = document.getElementById('statSelect');
+    const selectedOption = statSelectElement ? statSelectElement.options[statSelectElement.selectedIndex] : null;
+    const statLabel = selectedOption ? selectedOption.textContent : stat;
+    
     if (player1[stat] == null || player2[stat] == null) {
-      resultDiv.innerHTML = `<div class='alert alert-warning'>One or both players have no data for ${statLabels[stat]}.</div>`;
+      resultDiv.innerHTML = `<div class='alert alert-warning'>One or both players have no data for ${statLabel}.</div>`;
       return;
     }
 
@@ -380,57 +411,88 @@ function initializeArenaTab() {
     const selectionInfo1 = selectedPlayer1 ? "Manually Selected" : "Randomly Selected from Filters";
     const selectionInfo2 = selectedPlayer2 ? "Manually Selected" : "Randomly Selected from Filters";
 
+    // Get team colors and player images - with fallbacks
+    const player1Colors = typeof getTeamColors === 'function' ? 
+      getTeamColors(player1.team) : 
+      { primary: '#6c757d', secondary: '#dee2e6' };
+    
+    const player2Colors = typeof getTeamColors === 'function' ? 
+      getTeamColors(player2.team) : 
+      { primary: '#6c757d', secondary: '#dee2e6' };
+    
+    const player1Gradient = typeof getTeamGradient === 'function' ? 
+      getTeamGradient(player1.team) : 
+      'linear-gradient(135deg, #6c757d, #dee2e6)';
+    
+    const player2Gradient = typeof getTeamGradient === 'function' ? 
+      getTeamGradient(player2.team) : 
+      'linear-gradient(135deg, #6c757d, #dee2e6)';
+    
+    const player1Initials = player1.playerName.split(' ').map(n => n[0]).join('');
+    const player2Initials = player2.playerName.split(' ').map(n => n[0]).join('');
+
     resultDiv.innerHTML = `
       <div class="card">
-        <div class="card-header text-center">
-          <h3 class="mb-0">${player1.playerName} <span class="text-muted">vs</span> ${player2.playerName}</h3>
-          <p class="mb-0 text-muted">Comparing ${statLabels[stat]}</p>
+        <div class="card-header text-center" style="background: linear-gradient(135deg, ${player1Colors.primary}, ${player2Colors.primary}); color: white;">
+          <h3 class="mb-0">${player1.playerName} <span class="opacity-75">vs</span> ${player2.playerName}</h3>
+          <p class="mb-0 opacity-75">Comparing ${statLabel}</p>
         </div>
         <div class="card-body">
+          <!-- Winner Badge - Prominently displayed above both players -->
+          <div class="text-center mb-4">
+            <div class="mb-3">${winnerBadge}</div>
+            <p class="mb-0" style="color: ${isPlayer1Better ? player1Colors.primary : player2Colors.primary}; font-weight: 600;">
+              ${isPlayer1Better ? player1.playerName : player2.playerName} has the advantage in ${statLabel}
+            </p>
+          </div>
+          
           <div class="row text-center">
             <div class="col-md-5">
-              <div class="card ${isPlayer1Better ? 'border-primary' : 'border-secondary'}">
-                <div class="card-header ${isPlayer1Better ? 'bg-primary text-white' : 'bg-light'}">
-                  <h4 class="mb-0">${player1.playerName}</h4>
+              <div class="card h-100" style="border: 3px solid ${player1Colors.primary};">
+                <div class="card-header text-white" style="background: ${player1Gradient};">
+                  <h4 class="mb-1">${player1.playerName}</h4>
                   <small class="opacity-75">${selectionInfo1}</small>
                 </div>
+                <div class="position-relative text-center py-4" style="background: ${player1Gradient};">
+                  <h3 class="text-white mb-0">${player1Initials}</h3>
+                </div>
                 <div class="card-body">
-                  <p class="mb-1"><strong>Team:</strong> ${teamNames[player1.team] || player1.team}</p>
+                  <p class="mb-1"><strong>Team:</strong> <span style="color: ${player1Colors.primary};">${teamNames[player1.team] || player1.team}</span></p>
                   <p class="mb-1"><strong>Position:</strong> ${player1.position}</p>
-                  <p class="mb-3"><strong>${statLabels[stat]}:</strong></p>
-                  <h2 class="stat-value ${isPlayer1Better ? 'text-primary' : 'text-secondary'}">${format(player1Stat)}</h2>
+                  <p class="mb-3"><strong>${statLabel}:</strong></p>
+                  <h2 class="stat-value" style="color: ${isPlayer1Better ? player1Colors.primary : '#6c757d'};">${format(player1Stat)}</h2>
                 </div>
               </div>
             </div>
             <div class="col-md-2 d-flex align-items-center justify-content-center">
               <div class="text-center">
                 <i class="fas fa-balance-scale fa-3x text-muted mb-3"></i>
-                <div>${winnerBadge}</div>
               </div>
             </div>
             <div class="col-md-5">
-              <div class="card ${!isPlayer1Better ? 'border-info' : 'border-secondary'}">
-                <div class="card-header ${!isPlayer1Better ? 'bg-info text-white' : 'bg-light'}">
-                  <h4 class="mb-0">${player2.playerName}</h4>
+              <div class="card h-100" style="border: 3px solid ${player2Colors.primary};">
+                <div class="card-header text-white" style="background: ${player2Gradient};">
+                  <h4 class="mb-1">${player2.playerName}</h4>
                   <small class="opacity-75">${selectionInfo2}</small>
                 </div>
+                <div class="position-relative text-center py-4" style="background: ${player2Gradient};">
+                  <h3 class="text-white mb-0">${player2Initials}</h3>
+                </div>
                 <div class="card-body">
-                  <p class="mb-1"><strong>Team:</strong> ${teamNames[player2.team] || player2.team}</p>
+                  <p class="mb-1"><strong>Team:</strong> <span style="color: ${player2Colors.primary};">${teamNames[player2.team] || player2.team}</span></p>
                   <p class="mb-1"><strong>Position:</strong> ${player2.position}</p>
-                  <p class="mb-3"><strong>${statLabels[stat]}:</strong></p>
-                  <h2 class="stat-value ${!isPlayer1Better ? 'text-info' : 'text-secondary'}">${format(player2Stat)}</h2>
+                  <p class="mb-3"><strong>${statLabel}:</strong></p>
+                  <h2 class="stat-value" style="color: ${!isPlayer1Better ? player2Colors.primary : '#6c757d'};">${format(player2Stat)}</h2>
                 </div>
               </div>
             </div>
           </div>
+          
           <hr class="my-4">
           <div class="text-center">
             <h5>Comparison Analysis</h5>
             <p class="mb-2">
               <strong>Difference:</strong> ${diffFormatted} points (${performanceDiff}% difference)
-            </p>
-            <p class="mb-0 text-muted">
-              ${isPlayer1Better ? player1.playerName : player2.playerName} has the advantage in ${statLabels[stat].toLowerCase()}
             </p>
           </div>
         </div>

@@ -19,9 +19,25 @@ async function loadTabContent(navId) {
     });
 
     if (navId === "navPlayers") {
-      initializePlayersTab(); // assumes this is globally available from `players.js`
+      // Small delay to ensure scripts are loaded
+      setTimeout(() => {
+        if (typeof initializePlayersTab === 'function') {
+          initializePlayersTab();
+        } else {
+          console.error("initializePlayersTab function not available");
+          pageContent.innerHTML = `<p class="text-danger">Players functionality not loaded. Please refresh the page.</p>`;
+        }
+      }, 100);
     } else if (navId === "navArena") {
-      initializeArenaTab(); // assumes this is globally available from `arenaUI.js`
+      // Small delay to ensure scripts are loaded
+      setTimeout(() => {
+        if (typeof initializeArenaTab === 'function') {
+          initializeArenaTab();
+        } else {
+          console.error("initializeArenaTab function not available");
+          pageContent.innerHTML = `<p class="text-danger">Arena functionality not loaded. Please refresh the page.</p>`;
+        }
+      }, 100);
     }
   } catch (err) {
     pageContent.innerHTML = `<p class="text-danger">Error loading content: ${err.message}</p>`;

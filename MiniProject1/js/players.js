@@ -1,5 +1,22 @@
 // ----------- Players tab code ------------
 
+// Local fallback functions in case utils.js isn't loaded
+function localNormalizePosition(pos) {
+  if (!pos) return "";
+  if (pos.includes("G")) return pos.includes("F") ? "SF" : "PG";
+  if (pos.includes("F")) return pos.includes("C") ? "PF" : "SF";
+  if (pos.includes("C")) return "C";
+  return pos;
+}
+
+function localGetLastName(fullName) {
+  return fullName.split(" ").slice(-1)[0];
+}
+
+function localGetRandomFromPool(pool) {
+  return pool.length ? pool[Math.floor(Math.random() * pool.length)] : null;
+}
+
 function initializePlayersTab() {
   // Find elements inside loaded players.html
   const container = document.getElementById("card-container");
@@ -29,10 +46,11 @@ function initializePlayersTab() {
       allPlayers = players
         .map((p) => ({
           ...p,
-          position: normalizePosition(p.position),
+          position: typeof normalizePosition === 'function' ? normalizePosition(p.position) : localNormalizePosition(p.position),
         }))
         .sort((a, b) =>
-          getLastName(a.playerName).localeCompare(getLastName(b.playerName)),
+          (typeof getLastName === 'function' ? getLastName(a.playerName) : localGetLastName(a.playerName))
+          .localeCompare(typeof getLastName === 'function' ? getLastName(b.playerName) : localGetLastName(b.playerName)),
         );
 
       teamNames = teams;
@@ -95,6 +113,11 @@ function getLastName(fullName) {
   return fullName.trim().split(" ").slice(-1)[0].toLowerCase();
 }
 
+function getRandomFromPool(pool) {
+  return typeof localGetRandomFromPool === 'function' ? localGetRandomFromPool(pool) : 
+    (pool.length ? pool[Math.floor(Math.random() * pool.length)] : null);
+}
+
 function displayPlayers(players, container) {
   container.innerHTML = "";
 
@@ -102,26 +125,86 @@ function displayPlayers(players, container) {
     const card = document.createElement("div");
     card.className = "col-sm-6 col-md-4 col-lg-3";
 
+    // Define team colors locally if not available from utils
+    const localTeamColors = {
+      'ATL': { primary: '#E03A3E', secondary: '#C1D32F' },
+      'BOS': { primary: '#007A33', secondary: '#BA9653' },
+      'BRK': { primary: '#000000', secondary: '#FFFFFF' },
+      'CHA': { primary: '#1D1160', secondary: '#00788C' },
+      'CHI': { primary: '#CE1141', secondary: '#000000' },
+      'CLE': { primary: '#6F263D', secondary: '#FFB81C' },
+      'DAL': { primary: '#00538C', secondary: '#002B5E' },
+      'DEN': { primary: '#0E2240', secondary: '#FEC524' },
+      'DET': { primary: '#C8102E', secondary: '#006BB6' },
+      'GSW': { primary: '#1D428A', secondary: '#FFC72C' },
+      'HOU': { primary: '#CE1141', secondary: '#000000' },
+      'IND': { primary: '#002D62', secondary: '#FDBB30' },
+      'LAC': { primary: '#C8102E', secondary: '#1D428A' },
+      'LAL': { primary: '#552583', secondary: '#FDB927' },
+      'MEM': { primary: '#5D76A9', secondary: '#12173F' },
+      'MIA': { primary: '#98002E', secondary: '#F9A01B' },
+      'MIL': { primary: '#00471B', secondary: '#EEE1C6' },
+      'MIN': { primary: '#0C2340', secondary: '#236192' },
+      'NOP': { primary: '#0C2340', secondary: '#C8102E' },
+      'NYK': { primary: '#006BB6', secondary: '#F58426' },
+      'OKC': { primary: '#007AC1', secondary: '#EF3B24' },
+      'ORL': { primary: '#0077C0', secondary: '#C4CED4' },
+      'PHI': { primary: '#006BB6', secondary: '#ED174C' },
+      'PHX': { primary: '#1D1160', secondary: '#E56020' },
+      'POR': { primary: '#E03A3E', secondary: '#000000' },
+      'SAC': { primary: '#5A2D81', secondary: '#63727A' },
+      'SAS': { primary: '#C4CED4', secondary: '#000000' },
+      'TOR': { primary: '#CE1141', secondary: '#000000' },
+      'UTA': { primary: '#002B5C', secondary: '#00471B' },
+      'WAS': { primary: '#002B5C', secondary: '#E31837' }
+    };
+
+    // Get team colors for styling
+    const teamColors = localTeamColors[player.team] || { primary: '#6c757d', secondary: '#dee2e6' };
+    const teamGradient = `linear-gradient(135deg, ${teamColors.primary}, ${teamColors.secondary})`;
+
+    // Fallback for usefulStats
+    const statsToShow = typeof usefulStats !== 'undefined' ? usefulStats : [
+      "per", "tsPercent", "winShares", "vorp", "box", "assistPercent", "totalReboundPercent", "usagePercent"
+    ];
+
+    const statLabelsLocal = typeof statLabels !== 'undefined' ? statLabels : {
+      per: "PER",
+      tsPercent: "TS%",
+      winShares: "Win Shares",
+      vorp: "VORP",
+      box: "Box +/-",
+      assistPercent: "Assist %",
+      totalReboundPercent: "Total Rebound %",
+      usagePercent: "Usage %"
+    };
+
     card.innerHTML = `
-      <div class="card h-100 shadow">
+      <div class="card h-100 shadow team-card" style="border: 3px solid ${teamColors.primary}; border-top: 6px solid ${teamColors.primary};">
+        <div class="card-header text-white text-center" style="background: ${teamGradient}; border-bottom: 2px solid ${teamColors.primary};">
+          <h5 class="mb-1" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">${player.playerName}</h5>
+          <h6 class="mb-0 opacity-90" style="font-weight: 600;">${teamNames[player.team] || player.team} • ${player.position}</h6>
+        </div>
         <div class="card-body">
-          <h5 class="card-title">${player.playerName}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">${teamNames[player.team] || player.team} (${player.season})</h6>
-          <p class="card-text">
-            <strong>Position:</strong> ${player.position}<br>
-            ${usefulStats
+          <div class="stats-container">
+            ${statsToShow
               .map((stat) => {
                 const value = player[stat];
                 if (value === undefined || value === null) return "";
-                const label = statLabels[stat];
+                const label = statLabelsLocal[stat] || stat;
                 const formatted =
                   stat === "tsPercent"
                     ? (value * 100).toFixed(1) + "%"
                     : value.toFixed(1);
-                return `<strong>${label}:</strong> ${formatted}<br>`;
+                return `
+                  <div class="stat-row d-flex justify-content-between align-items-center mb-1">
+                    <small class="text-muted">${label}:</small>
+                    <span class="badge" style="background: ${teamGradient}; color: white;">${formatted}</span>
+                  </div>
+                `;
               })
               .join("")}
-          </p>
+          </div>
         </div>
       </div>
     `;
@@ -213,21 +296,27 @@ function createTeamChart(players) {
     }))
     .sort((a, b) => b.avgPER - a.avgPER);
 
-  // Generate colors for all teams
-  const colors = teamData.map((_, index) => {
-    const hue = (index * 137.508) % 360; // Golden angle for better color distribution
+  // Generate colors using actual team colors
+  const colors = teamData.map((team) => {
+    const teamCode = Object.keys(teamNames).find(code => teamNames[code] === team.team);
+    if (teamCode && typeof getTeamColors === 'function') {
+      return getTeamColors(teamCode).primary;
+    }
+    // Fallback to HSL if team not found
+    const index = teamData.indexOf(team);
+    const hue = (index * 137.508) % 360;
     return `hsl(${hue}, 70%, 60%)`;
   });
 
   new Chart(teamCtx, {
     type: 'bar',
     data: {
-      labels: teamData.map(d => d.team),
+      labels: teamData.map(d => Object.keys(teamNames).find(code => teamNames[code] === d.team) || d.team),
       datasets: [{
         label: 'Average PER',
         data: teamData.map(d => d.avgPER),
-        backgroundColor: colors,
-        borderColor: colors.map(color => color.replace('60%', '40%')),
+        backgroundColor: colors.map(color => color.includes('#') ? color + '80' : color),
+        borderColor: colors,
         borderWidth: 2,
         borderRadius: 6,
         borderSkipped: false,
@@ -247,6 +336,10 @@ function createTeamChart(players) {
           borderColor: 'rgba(13, 110, 253, 1)',
           borderWidth: 1,
           callbacks: {
+            title: function(context) {
+              const data = teamData[context[0].dataIndex];
+              return data.team; // Show full team name in title
+            },
             label: function(context) {
               const data = teamData[context.dataIndex];
               return [
@@ -392,7 +485,17 @@ function createTopPerformersChart(players) {
   // Get the currently selected stat for sorting, default to PER
   const statSelect = document.getElementById('statSort');
   const currentStat = statSelect && statSelect.value !== 'default' ? statSelect.value : 'per';
-  const statLabel = statLabels[currentStat] || 'PER';
+  const labels = typeof statLabels !== 'undefined' ? statLabels : {
+    per: "PER",
+    tsPercent: "TS%",
+    winShares: "Win Shares",
+    vorp: "VORP",
+    box: "Box +/-",
+    assistPercent: "Assist %",
+    totalReboundPercent: "Total Rebound %",
+    usagePercent: "Usage %"
+  };
+  const statLabel = labels[currentStat] || 'PER';
 
   // Get top 5 players for the current stat
   const topPlayers = players

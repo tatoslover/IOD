@@ -372,6 +372,105 @@ main.container {
     font-weight: 600;
 }
 
+/* Team Card Enhancements */
+.team-card {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.8s;
+    z-index: 1;
+}
+
+.team-card:hover::before {
+    left: 100%;
+}
+
+.team-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Removed image-specific styles - no longer needed */
+
+/* Stats Container */
+.stats-container {
+    background: rgba(248, 249, 250, 0.8);
+    border-radius: 10px;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.stat-row {
+    padding: 0.25rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.stat-row:last-child {
+    border-bottom: none;
+}
+
+.stat-row .badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Team Color Utilities */
+.team-border-top {
+    border-top: 4px solid currentColor;
+}
+
+.team-text {
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Arena Player Initials Display */
+.arena-player-initials {
+    font-size: 2rem;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Comparison Header */
+.comparison-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 15px 15px 0 0;
+    padding: 1.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced Player Display */
+.player-display {
+    background: linear-gradient(135deg, rgba(248, 249, 250, 0.9), rgba(255, 255, 255, 0.9));
+    border: 2px dashed #dee2e6;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.player-display:hover {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, rgba(13, 110, 253, 0.05), rgba(248, 249, 250, 0.95));
+}
+
+/* Player Card Header Styling */
+.player-card-header {
+    font-size: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 15px 15px 0 0;
+}
+
 .fade-in {
     animation: fadeIn 1s ease-in;
 }
@@ -414,4 +513,62 @@ main.container {
 .text-danger {
     color: var(--danger-color) !important;
     font-weight: 600;
+}
+
+/* Team-specific enhancements */
+.team-card .card-header h5 {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.team-card .card-header h6 {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+/* Arena specific styling */
+.arena-comparison .card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.arena-comparison .card-header {
+    border: none;
+    font-weight: 700;
+}
+
+.arena-comparison .stat-value {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+}
+
+/* Mobile responsiveness for team cards */
+@media (max-width: 768px) {
+    .team-card:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+    
+    .stats-container {
+        padding: 0.5rem;
+    }
+    
+    .stat-row .badge {
+        font-size: 0.7rem;
+    }
+    
+    .arena-comparison .stat-value {
+        font-size: 2rem;
+    }
+    
+    .arena-player-initials {
+        font-size: 1.5rem;
+    }
 }

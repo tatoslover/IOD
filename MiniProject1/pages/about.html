@@ -1,137 +1,538 @@
-<h2>About</h2>
+<section id="tab-about" class="fade-in">
+    <div class="container py-4">
+        <!-- Hero Section -->
+        <header class="text-center mb-5">
+            <h1 class="display-4 text-gradient mb-3">
+                <i class="fas fa-basketball-ball me-3"></i>
+                NBA Advanced Stat Attack
+            </h1>
+            <p class="lead text-muted">Explore NBA player performance through advanced analytics</p>
+            <div class="mt-4">
+                <span class="badge bg-primary me-2">JavaScript</span>
+                <span class="badge bg-success me-2">Bootstrap</span>
+                <span class="badge bg-info me-2">Chart.js</span>
+                <span class="badge bg-warning text-dark">Responsive Design</span>
+            </div>
+        </header>
 
-<p>
-    This project showcases NBA players with advanced stats pulled from 2K
-    ratings and the NBA Stats API.
-</p>
-<p>
-    Users can filter players by team, position, and advanced metrics to explore
-    performance insights through an interactive interface.
-</p>
-<p>Created by me, [Your Name], in 2025 as part of a web development project.</p>
+        <div class="row">
+            <!-- Sidebar Navigation -->
+            <aside class="col-lg-3 mb-4">
+                <nav id="about-nav" class="position-sticky" style="top: 2rem;">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0"><i class="fas fa-list me-2"></i>Contents</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#overview"><i class="fas fa-eye me-2"></i>Overview</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#purpose"><i class="fas fa-bullseye me-2"></i>Purpose</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#data"><i class="fas fa-database me-2"></i>Data</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#features"><i class="fas fa-star me-2"></i>Features</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#technical"><i class="fas fa-code me-2"></i>Technical Details</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#usage"><i class="fas fa-play me-2"></i>How to Use</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#qa"><i class="fas fa-question-circle me-2"></i>Q&A</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </aside>
 
-<h3>Purpose</h3>
-<p>
-    I built this app to explore how web technologies like JavaScript, APIs, and
-    DOM manipulation can be used to present complex sports data in an accessible
-    way. It's designed to be engaging for NBA fans, while demonstrating key
-    front-end development skills.
-</p>
+            <!-- Main Content -->
+            <main class="col-lg-9">
+                <!-- Overview Section -->
+                <section id="overview" class="mb-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="h3 mb-0"><i class="fas fa-eye me-2"></i>Overview</h2>
+                        </div>
+                        <div class="card-body">
+                            <p class="lead">
+                                A comprehensive web application that showcases NBA players with advanced statistical analysis, 
+                                featuring interactive data visualization and player comparison tools.
+                            </p>
+                            <p>
+                                This project demonstrates modern front-end development techniques including responsive design, 
+                                dynamic content loading, data visualization, and advanced user interactions.
+                            </p>
+                            <blockquote class="blockquote text-center mt-4">
+                                <p class="mb-0">"Basketball is a game of numbers, and this app brings those numbers to life."</p>
+                                <footer class="blockquote-footer mt-2">
+                                    Built with <cite title="Source Title">passion and code</cite> in 2025
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </section>
 
-<h3>How to Use</h3>
-<ol>
-    <li>Navigate using the tabs: About, Players, and Arena.</li>
-    <li>
-        On the Players page, filter by team, position, or sort by advanced
-        metrics like PER, VORP, or TS%.
-    </li>
-    <li>
-        The Arena tab showcases a game-like interaction between teams or players
-        (under development).
-    </li>
-</ol>
+                <!-- Purpose Section -->
+                <section id="purpose" class="mb-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="h3 mb-0"><i class="fas fa-bullseye me-2"></i>Purpose</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4><i class="fas fa-graduation-cap me-2"></i>Educational Goals</h4>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Demonstrate HTML/CSS/JavaScript mastery</li>
+                                        <li class="list-group-item">Showcase responsive web design principles</li>
+                                        <li class="list-group-item">Implement data visualization techniques</li>
+                                        <li class="list-group-item">Practice modern front-end frameworks</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4><i class="fas fa-users me-2"></i>User Experience</h4>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Intuitive navigation and filtering</li>
+                                        <li class="list-group-item">Engaging data presentation</li>
+                                        <li class="list-group-item">Interactive player comparisons</li>
+                                        <li class="list-group-item">Mobile-friendly interface</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-<h3>Files</h3>
-<ul>
-    <li>
-        <strong>index.html</strong>: The main entry point that loads tabbed
-        content into a single-page layout.
-    </li>
-    <li>
-        <strong>/pages/</strong>: Contains HTML for each tab (about, players,
-        arena).
-    </li>
-    <li>
-        <strong>/js/</strong>: JavaScript modules organized by responsibility:
-        <ul>
-            <li>
-                <code>main.js</code>: Handles page loading and tab switching.
-            </li>
-            <li>
-                <code>players.js</code>: Initializes and renders player stats.
-            </li>
-            <li>
-                <code>arena.js, arenaLogic.js, arenaUI.js</code>: Power the
-                arena simulation (WIP).
-            </li>
-            <li>
-                <code>utils.js</code>: Shared functions and global variables
-                (e.g. stat labels).
-            </li>
-        </ul>
-    </li>
-    <li>
-        <strong>/data/</strong>: Static JSON and data-fetching scripts.
-        <ul>
-            <li><code>stats.json</code>: Advanced player metrics.</li>
-            <li><code>teams.json</code>: Team metadata.</li>
-            <li>
-                <code>fetch.js</code>: Used to load or simulate fetching data.
-            </li>
-        </ul>
-    </li>
-    <li><strong>/css/style.css</strong>: Basic layout and design styling.</li>
-</ul>
+                <!-- Data Section -->
+                <section id="data" class="mb-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="h3 mb-0"><i class="fas fa-database me-2"></i>Data & Context</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="row mb-4">
+                                <div class="col-12">
+                                    <div class="alert alert-info">
+                                        <h4 class="alert-heading"><i class="fas fa-calendar-alt me-2"></i>2023-24 NBA Season Overview</h4>
+                                        <p class="mb-2">This application features data from the 2023-24 NBA regular season and playoffs. The season concluded with the Boston Celtics defeating the Dallas Mavericks 4-1 in the NBA Finals to claim their 18th championship.</p>
+                                        <hr>
+                                        <p class="mb-0"><strong>Final Team Rankings (Post-Playoffs):</strong></p>
+                                        <div class="row mt-2">
+                                            <div class="col-md-6">
+                                                <ol class="mb-0">
+                                                    <li><strong>Boston Celtics</strong> - Champions</li>
+                                                    <li>Dallas Mavericks - Finals Runner-up</li>
+                                                    <li>Minnesota Timberwolves - Conference Finals</li>
+                                                    <li>Indiana Pacers - Conference Finals</li>
+                                                    <li>Denver Nuggets - Conference Semifinals</li>
+                                                    <li>New York Knicks - Conference Semifinals</li>
+                                                    <li>Oklahoma City Thunder - Conference Semifinals</li>
+                                                    <li>Cleveland Cavaliers - Conference Semifinals</li>
+                                                </ol>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <ol start="9" class="mb-0">
+                                                    <li>Orlando Magic - First Round</li>
+                                                    <li>Los Angeles Lakers - First Round</li>
+                                                    <li>Phoenix Suns - First Round</li>
+                                                    <li>Los Angeles Clippers - First Round</li>
+                                                    <li>Philadelphia 76ers - First Round</li>
+                                                    <li>Miami Heat - First Round</li>
+                                                    <li>Milwaukee Bucks - First Round</li>
+                                                    <li>New Orleans Pelicans - First Round</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4><i class="fas fa-chart-line me-2"></i>Data Sources</h4>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item"><strong>NBA Stats API:</strong> Official NBA statistical data</li>
+                                        <li class="list-group-item"><strong>Basketball Reference:</strong> Advanced metrics calculations</li>
+                                        <li class="list-group-item"><strong>ESPN:</strong> Team and player information</li>
+                                        <li class="list-group-item"><strong>Coverage Period:</strong> 2023-24 Regular Season (82 games per team)</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4><i class="fas fa-calculator me-2"></i>Advanced Statistics Explained</h4>
+                                    <div class="accordion" id="statsAccordion">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePerVorp">
+                                                    PER & VORP
+                                                </button>
+                                            </h2>
+                                            <div id="collapsePerVorp" class="accordion-collapse collapse" data-bs-parent="#statsAccordion">
+                                                <div class="accordion-body">
+                                                    <strong>PER (Player Efficiency Rating):</strong> A per-minute rating that summarizes a player's statistical accomplishments. League average is 15.0.<br>
+                                                    <strong>VORP (Value Over Replacement Player):</strong> How much a player contributes compared to a replacement-level player. Higher is better.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseShooting">
+                                                    Shooting Efficiency
+                                                </button>
+                                            </h2>
+                                            <div id="collapseShooting" class="accordion-collapse collapse" data-bs-parent="#statsAccordion">
+                                                <div class="accordion-body">
+                                                    <strong>True Shooting % (TS%):</strong> Measures shooting efficiency accounting for 2-pointers, 3-pointers, and free throws. League average is ~57%.<br>
+                                                    <strong>Usage %:</strong> Percentage of team plays used by a player while on the court. Higher usage indicates more offensive involvement.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdvanced">
+                                                    Win Shares & Impact
+                                                </button>
+                                            </h2>
+                                            <div id="collapseAdvanced" class="accordion-collapse collapse" data-bs-parent="#statsAccordion">
+                                                <div class="accordion-body">
+                                                    <strong>Win Shares:</strong> Estimate of wins contributed by a player. Combines offensive and defensive contributions.<br>
+                                                    <strong>Box Plus/Minus:</strong> Per-100-possession estimate of points contributed above league average. 0 is average, +5 is All-Star level.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <h4><i class="fas fa-balance-scale me-2"></i>What Comparisons Tell Us</h4>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="card bg-light">
+                                                <div class="card-body text-center">
+                                                    <i class="fas fa-users fa-2x text-primary mb-3"></i>
+                                                    <h5>Player vs Team</h5>
+                                                    <p class="small">Shows how a player performs relative to teammates and reveals team depth</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card bg-light">
+                                                <div class="card-body text-center">
+                                                    <i class="fas fa-running fa-2x text-success mb-3"></i>
+                                                    <h5>Position Comparison</h5>
+                                                    <p class="small">Evaluates players against positional peers to identify elite performers in their role</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card bg-light">
+                                                <div class="card-body text-center">
+                                                    <i class="fas fa-trophy fa-2x text-warning mb-3"></i>
+                                                    <h5>League-Wide Analysis</h5>
+                                                    <p class="small">Identifies outliers and helps understand where a player ranks among all NBA talent</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-<h3>Presentation Questions & My Answers</h3>
-<ol>
-    <li>
-        <strong
-            >What was your requirements gathering and design process? Was it
-            useful/successful?</strong
-        ><br />
-        I started by defining core features like filtering and tabbed
-        navigation, then sketched a structure to build on. It helped me stay
-        focused and break the app into manageable chunks.
-    </li>
-    <li>
-        <strong
-            >Give a high-level overview of your application and its
-            features</strong
-        ><br />
-        It’s a single-page NBA player browser with advanced stat filtering and a
-        prototype arena interaction. Tabs keep content organized.
-    </li>
-    <li>
-        <strong>Where does its data come from?</strong><br />
-        I scrape some stats from <em>2kratings.com</em> and pull others from the
-        NBA Stats API.
-    </li>
-    <li>
-        <strong>How is this data processed and displayed?</strong><br />
-        The data is loaded as JSON, filtered with JS array functions, and
-        rendered into HTML using templates and DOM manipulation.
-    </li>
-    <li>
-        <strong>How can the user interact with your application?</strong><br />
-        They can switch tabs, select filters, and view updated player lists
-        based on their preferences.
-    </li>
-    <li>
-        <strong>What JS techniques have you used?</strong><br />
-        I’ve used modules, async functions, event handling, DOM manipulation,
-        array methods, and utility functions.
-    </li>
-    <li>
-        <strong>What external tools/libraries have you used?</strong><br />
-        I use Bootstrap for styling and possibly Axios for API calls if needed.
-    </li>
-    <li>
-        <strong>What kinds of HTML elements have you used?</strong><br />
-        Divs, buttons, nav links, headings, paragraphs, dropdowns, and HTML
-        templates.
-    </li>
-    <li>
-        <strong>What kinds of CSS features have you used?</strong><br />
-        Flexbox for layout, Bootstrap for components, and custom styles for
-        spacing, colors, and font tweaks.
-    </li>
-    <li>
-        <strong
-            >How might you extend the features of your application in
-            future?</strong
-        ><br />
-        Add a full player comparison view, chart-based stat visualization, team
-        pages, and more complete arena simulations.
-    </li>
-</ol>
+                <!-- Features Section -->
+                <section id="features" class="mb-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="h3 mb-0"><i class="fas fa-star me-2"></i>Key Features</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <div class="text-center">
+                                        <i class="fas fa-search fa-3x text-primary mb-3"></i>
+                                        <h5>Advanced Search</h5>
+                                        <p>Real-time player search with auto-complete functionality</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="text-center">
+                                        <i class="fas fa-chart-bar fa-3x text-success mb-3"></i>
+                                        <h5>Data Visualization</h5>
+                                        <p>Interactive charts showing team and position statistics</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="text-center">
+                                        <i class="fas fa-trophy fa-3x text-warning mb-3"></i>
+                                        <h5>Player Arena</h5>
+                                        <p>Head-to-head player comparisons with detailed analytics</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Technical Details -->
+                <section id="technical" class="mb-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="h3 mb-0"><i class="fas fa-code me-2"></i>Technical Implementation</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4>Frontend Technologies</h4>
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Technology</th>
+                                                <th>Purpose</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>HTML5</strong></td>
+                                                <td>Semantic structure and forms</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>CSS3</strong></td>
+                                                <td>Animations, flexbox, grid layout</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>JavaScript ES6+</strong></td>
+                                                <td>Async/await, modules, DOM manipulation</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Bootstrap 5</strong></td>
+                                                <td>Responsive grid and components</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Chart.js</strong></td>
+                                                <td>Data visualization</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Font Awesome</strong></td>
+                                                <td>Icons and visual elements</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4>JavaScript Techniques Used</h4>
+                                    <div class="accordion" id="techAccordion">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                                    DOM Manipulation
+                                                </button>
+                                            </h2>
+                                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#techAccordion">
+                                                <div class="accordion-body">
+                                                    Dynamic creation of player cards, event listeners, and real-time UI updates
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                                    Async Operations
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#techAccordion">
+                                                <div class="accordion-body">
+                                                    Fetch API for data loading, Promise.all for parallel requests
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                                    Array Methods
+                                                </button>
+                                            </h2>
+                                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#techAccordion">
+                                                <div class="accordion-body">
+                                                    Filter, map, sort, reduce for data processing and transformation
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Usage Guide -->
+                <section id="usage" class="mb-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="h3 mb-0"><i class="fas fa-play me-2"></i>How to Use</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <h4>Players Tab</h4>
+                                    <ol class="list-group list-group-numbered">
+                                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                                            <div class="ms-2 me-auto">
+                                                <div class="fw-bold">Filter by Team</div>
+                                                Use the dropdown to show players from specific NBA teams
+                                            </div>
+                                            <span class="badge bg-primary rounded-pill">1</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                                            <div class="ms-2 me-auto">
+                                                <div class="fw-bold">Filter by Position</div>
+                                                Select PG, SG, SF, PF, or C to narrow results
+                                            </div>
+                                            <span class="badge bg-primary rounded-pill">2</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                                            <div class="ms-2 me-auto">
+                                                <div class="fw-bold">Sort by Stats</div>
+                                                Choose advanced metrics like PER, VORP, or True Shooting %
+                                            </div>
+                                            <span class="badge bg-primary rounded-pill">3</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                                            <div class="ms-2 me-auto">
+                                                <div class="fw-bold">Search Players</div>
+                                                Type player names for instant search results
+                                            </div>
+                                            <span class="badge bg-primary rounded-pill">4</span>
+                                        </li>
+                                    </ol>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h4>Arena Tab</h4>
+                                    <ol class="list-group list-group-numbered">
+                                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                                            <div class="ms-2 me-auto">
+                                                <div class="fw-bold">Select Player</div>
+                                                Use the searchable dropdown to find any NBA player
+                                            </div>
+                                            <span class="badge bg-warning rounded-pill">1</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                                            <div class="ms-2 me-auto">
+                                                <div class="fw-bold">Choose Stat</div>
+                                                Pick the metric you want to compare
+                                            </div>
+                                            <span class="badge bg-warning rounded-pill">2</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                                            <div class="ms-2 me-auto">
+                                                <div class="fw-bold">Set Comparison</div>
+                                                Choose random, team-based, position, or specific player
+                                            </div>
+                                            <span class="badge bg-warning rounded-pill">3</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                                            <div class="ms-2 me-auto">
+                                                <div class="fw-bold">Compare</div>
+                                                Hit the compare button to see detailed results
+                                            </div>
+                                            <span class="badge bg-warning rounded-pill">4</span>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Q&A Section -->
+                <section id="qa" class="mb-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="h3 mb-0"><i class="fas fa-question-circle me-2"></i>Presentation Q&A</h2>
+                        </div>
+                        <div class="card-body">
+                            <dl class="row">
+                                <dt class="col-sm-4">Requirements & Design Process</dt>
+                                <dd class="col-sm-8">
+                                    Started with user stories for NBA fans, created wireframes, and followed an iterative development approach. 
+                                    The design focused on mobile-first responsive layout with clear information hierarchy.
+                                </dd>
+
+                                <dt class="col-sm-4">Data Sources</dt>
+                                <dd class="col-sm-8">
+                                    Player statistics from NBA Stats API and 2K Ratings, stored in JSON format. 
+                                    Data includes advanced metrics like PER, VORP, True Shooting %, and traditional stats.
+                                </dd>
+
+                                <dt class="col-sm-4">Data Processing</dt>
+                                <dd class="col-sm-8">
+                                    JavaScript array methods (filter, map, sort, reduce) process raw data. 
+                                    Chart.js visualizes aggregated statistics. Real-time filtering updates DOM elements dynamically.
+                                </dd>
+
+                                <dt class="col-sm-4">User Interactions</dt>
+                                <dd class="col-sm-8">
+                                    Tabbed navigation, searchable dropdowns, real-time filtering, sortable data tables, 
+                                    interactive charts, and responsive comparison tools.
+                                </dd>
+
+                                <dt class="col-sm-4">HTML Elements Used</dt>
+                                <dd class="col-sm-8">
+                                    <span class="badge bg-secondary me-1">nav</span>
+                                    <span class="badge bg-secondary me-1">main</span>
+                                    <span class="badge bg-secondary me-1">section</span>
+                                    <span class="badge bg-secondary me-1">article</span>
+                                    <span class="badge bg-secondary me-1">aside</span>
+                                    <span class="badge bg-secondary me-1">header</span>
+                                    <span class="badge bg-secondary me-1">form</span>
+                                    <span class="badge bg-secondary me-1">table</span>
+                                    <span class="badge bg-secondary me-1">canvas</span>
+                                    <span class="badge bg-secondary me-1">ol/ul</span>
+                                    <span class="badge bg-secondary me-1">dl</span>
+                                    <span class="badge bg-secondary me-1">blockquote</span>
+                                </dd>
+
+                                <dt class="col-sm-4">CSS Features Used</dt>
+                                <dd class="col-sm-8">
+                                    CSS Grid, Flexbox, animations (@keyframes), custom properties (variables), 
+                                    gradients, transforms, transitions, responsive design (media queries), and custom scrollbars.
+                                </dd>
+
+                                <dt class="col-sm-4">Future Extensions</dt>
+                                <dd class="col-sm-8">
+                                    Real-time NBA API integration, advanced statistical analysis, team comparison pages, 
+                                    player trending charts, social sharing features, and fantasy basketball integration.
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Footer -->
+                <footer class="text-center mt-5 py-4 border-top">
+                    <p class="text-muted mb-2">
+                        <i class="fas fa-code me-2"></i>
+                        Built with HTML5, CSS3, JavaScript ES6+, Bootstrap 5, and Chart.js
+                    </p>
+                    <p class="text-muted">
+                        <i class="fas fa-calendar me-2"></i>
+                        Institute of Data - Mini Project 1 - 2025
+                    </p>
+                    <div class="mt-3">
+                        <a href="#overview" class="btn btn-outline-primary btn-sm me-2">
+                            <i class="fas fa-arrow-up me-1"></i>Back to Top
+                        </a>
+                    </div>
+                </footer>
+            </main>
+        </div>
+    </div>
+</section>

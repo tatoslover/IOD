@@ -1,8 +1,9 @@
-<div id="tab-players">
+<section id="tab-players">
     <!-- Filter + Sort Controls -->
-    <div class="row mb-3" id="player-controls">
+    <header class="row mb-3" id="player-controls">
         <!-- Team Filter -->
         <div class="col-md-3 mb-2">
+            <label for="teamFilter" class="visually-hidden">Team Filter</label>
             <select id="teamFilter" class="form-select">
                 <option value="all">All Teams</option>
             </select>
@@ -10,6 +11,9 @@
 
         <!-- Position Filter -->
         <div class="col-md-3 mb-2">
+            <label for="positionFilter" class="visually-hidden"
+                >Position Filter</label
+            >
             <select id="positionFilter" class="form-select">
                 <option value="all">All Positions</option>
             </select>
@@ -17,6 +21,7 @@
 
         <!-- Stat Sort -->
         <div class="col-md-3 mb-2">
+            <label for="statSort" class="visually-hidden">Stat Sort</label>
             <select id="statSort" class="form-select">
                 <option value="default">Sort by Stat</option>
                 <option value="per">PER</option>
@@ -34,6 +39,9 @@
 
         <!-- Name Search -->
         <div class="col-md-3 mb-2">
+            <label for="nameSearch" class="visually-hidden"
+                >Search by name</label
+            >
             <input
                 type="text"
                 id="nameSearch"
@@ -41,8 +49,49 @@
                 placeholder="Search by name..."
             />
         </div>
-    </div>
+    </header>
 
-    <!-- Player cards go here -->
-    <div id="card-container" class="row g-4"></div>
-</div>
+    <!-- Charts Section -->
+    <section class="mb-4">
+        <!-- Full-width Team Performance Chart -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-chart-bar me-2"></i>Team Performance - Average PER (All Teams)</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="teamChart" height="100"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Dynamic Position and Top Performers Charts -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-chart-pie me-2"></i>Position Distribution (Filtered)</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="positionChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-medal me-2"></i>Top Performers by Stat</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="topPerformersChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Player cards -->
+    <main id="card-container" class="row g-4"></main>
+</section>

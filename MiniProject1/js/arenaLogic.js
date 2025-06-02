@@ -1,3 +1,4 @@
+// Legacy function for compatibility - the new arena uses direct comparison in arenaUI.js
 function updateArenaComparison(
   playerSelect,
   statSelect,
@@ -5,73 +6,49 @@ function updateArenaComparison(
   filterSelect,
   resultDiv,
 ) {
-  const player = allPlayers.find((p) => p.playerName === playerSelect.value);
-  const stat = statSelect.value;
+  // This function is kept for backward compatibility but is no longer used
+  // The new arena interface handles comparison directly in arenaUI.js
+  console.log("Legacy comparison function called - redirecting to new interface");
+  
+  resultDiv.innerHTML = `
+    <div class="alert alert-info">
+      <h5><i class="fas fa-info-circle me-2"></i>Arena Updated!</h5>
+      <p class="mb-0">The Arena now supports direct player-to-player comparisons. Please use the new interface above.</p>
+    </div>
+  `;
+}
 
-  if (!player || player[stat] == null) {
-    resultDiv.innerHTML = "<p class='text-danger'>Invalid player or stat.</p>";
-    return;
+// Utility function for direct player comparison (used by new arena interface)
+function comparePlayersDirectly(player1, player2, stat, teamNames, statLabels) {
+  if (!player1 || !player2 || !stat) {
+    return { error: "Please select both players and a stat to compare." };
   }
 
-  let comparisonPlayer;
-
-  if (compareType.value === "random") {
-    const pool = allPlayers.filter(
-      (p) => p.playerName !== player.playerName && p[stat] != null,
-    );
-    comparisonPlayer = getRandomFromPool(pool);
+  if (player1.playerName === player2.playerName) {
+    return { error: "Please select two different players to compare." };
   }
 
-  if (compareType.value === "team") {
-    const pool = allPlayers.filter(
-      (p) =>
-        p.team === filterSelect.value &&
-        p.playerName !== player.playerName &&
-        p[stat] != null,
-    );
-    comparisonPlayer = getRandomFromPool(pool);
+  if (player1[stat] == null || player2[stat] == null) {
+    return { error: `One or both players have no data for ${statLabels[stat]}.` };
   }
 
-  if (compareType.value === "position") {
-    const pool = allPlayers.filter(
-      (p) =>
-        p.position === filterSelect.value &&
-        p.playerName !== player.playerName &&
-        p[stat] != null,
-    );
-    comparisonPlayer = getRandomFromPool(pool);
-  }
-
-  if (compareType.value === "specific") {
-    comparisonPlayer = allPlayers.find(
-      (p) => p.playerName === filterSelect.value,
-    );
-    if (!comparisonPlayer || comparisonPlayer[stat] == null) {
-      resultDiv.innerHTML =
-        "<p class='text-warning'>Selected comparison player has no data for this stat.</p>";
-      return;
-    }
-  }
-
-  if (!comparisonPlayer) {
-    resultDiv.innerHTML = "<p>No comparison player available.</p>";
-    return;
-  }
-
-  const playerStat = player[stat];
-  const compStat = comparisonPlayer[stat];
-  const diff = (playerStat - compStat).toFixed(2);
+  const player1Stat = player1[stat];
+  const player2Stat = player2[stat];
+  const diff = player1Stat - player2Stat;
 
   const format = (v) =>
     stat === "tsPercent" ? (v * 100).toFixed(1) + "%" : v.toFixed(2);
 
-  resultDiv.innerHTML = `
-    <h5>${player.playerName} vs ${comparisonPlayer.playerName}</h5>
-    <p>
-      <strong>${statLabels[stat]}</strong><br>
-      ${player.playerName}: ${format(playerStat)}<br>
-      ${comparisonPlayer.playerName}: ${format(compStat)}<br>
-      Difference: ${diff > 0 ? "+" : ""}${diff}
-    </p>
-  `;
+  return {
+    player1: player1,
+    player2: player2,
+    stat: stat,
+    player1Stat: player1Stat,
+    player2Stat: player2Stat,
+    difference: diff,
+    isPlayer1Better: diff > 0,
+    formattedPlayer1Stat: format(player1Stat),
+    formattedPlayer2Stat: format(player2Stat),
+    statLabel: statLabels[stat]
+  };
 }

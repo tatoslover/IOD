@@ -20,6 +20,8 @@ async function loadTabContent(navId) {
 
     if (navId === "navPlayers") {
       initializePlayersTab(); // assumes this is globally available from `players.js`
+    } else if (navId === "navArena") {
+      initializeArenaTab(); // assumes this is globally available from `arenaUI.js`
     }
   } catch (err) {
     pageContent.innerHTML = `<p class="text-danger">Error loading content: ${err.message}</p>`;

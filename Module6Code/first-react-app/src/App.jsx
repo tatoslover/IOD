@@ -1,43 +1,58 @@
+/* ============================
+   General imports
+   ============================ */
 import { useState } from "react";
-import React from "react"; // needed for React.createElement
+import React from "react"; // Required for React.createElement
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
+/* ============================
+   Component imports
+   ============================ */
 import DisplayText from "./components/DisplayText";
 import Welcome from "./components/Welcome";
 import ProfileCard from "./components/ProfileCard";
 import PropsDisplayer from "./components/PropsDisplayer";
 import FullName from "./components/FullName";
+import FancyBox from "./components/FancyBox";
+import Callout from "./components/Callout";
 
+/* ============================
+   Greeting component
+   ============================ */
 function Greeting({ name }) {
   return <h2>Hello, {name}!</h2>;
 }
 
+/* ============================
+   Main App component
+   ============================ */
 function App() {
+  // React state hooks
   const [count, setCount] = useState(0);
   const [name, setName] = useState("");
   const [showLogo, setShowLogo] = useState(true);
 
+  // Sample data
   const fruits = ["Apple", "Banana", "Cherry"];
-
   const spiderman = {
     name: "Spiderman",
     alterEgo: "Peter Parker",
     catchPhrase: "With great power comes great responsibility",
   };
 
-  // Standard JSX
+  // JSX element
   const jsxElement = <h1 className="greeting">Hello World</h1>;
 
-  // Bypassing JSX using React.createElement
+  // React.createElement alternative to JSX
   const nojsxElement = React.createElement(
     "h1",
     { className: "greeting" },
     "Hello World",
   );
 
-  // Pure JS representation (for illustration only, not renderable)
+  // Plain JavaScript representation of a JSX-like element
   const jsElement = {
     type: "h1",
     props: {
@@ -46,6 +61,7 @@ function App() {
     },
   };
 
+  // JSX with a wrapper div
   const spideyJSX = (
     <div style={{ border: "1px solid red", padding: "0.5rem" }}>
       <h3>{spiderman.name}</h3>
@@ -54,6 +70,7 @@ function App() {
     </div>
   );
 
+  // Same content using React fragment
   const spideyJSXFragment = (
     <>
       <h3>{spiderman.name}</h3>
@@ -64,12 +81,13 @@ function App() {
 
   return (
     <>
+      {/* App title */}
       <h1>My First React App</h1>
 
-      {/* Greet user */}
+      {/* Greeting message */}
       <Greeting name={name || "Stranger"} />
 
-      {/* User input */}
+      {/* Name input field */}
       <input
         type="text"
         placeholder="Enter your name"
@@ -77,7 +95,7 @@ function App() {
         onChange={(e) => setName(e.target.value)}
       />
 
-      {/* Count controls */}
+      {/* Counter and reset buttons */}
       <div style={{ marginTop: "1rem" }}>
         <button onClick={() => setCount(count + 1)}>Count is {count}</button>
         <button onClick={() => setCount(0)} style={{ marginLeft: "1rem" }}>
@@ -85,14 +103,14 @@ function App() {
         </button>
       </div>
 
-      {/* Toggle logos */}
+      {/* Show/hide logo toggle */}
       <div style={{ marginTop: "1rem" }}>
         <button onClick={() => setShowLogo(!showLogo)}>
           {showLogo ? "Hide Logos" : "Show Logos"}
         </button>
       </div>
 
-      {/* Conditional rendering of native elements */}
+      {/* Conditionally rendered logos */}
       {showLogo && (
         <div className="logos">
           <a href="https://react.dev" target="_blank" rel="noreferrer">
@@ -102,7 +120,7 @@ function App() {
         </div>
       )}
 
-      {/* List rendering */}
+      {/* List rendering example */}
       <div style={{ marginTop: "1rem" }}>
         <h3>Favourite Fruits:</h3>
         <ul>
@@ -112,7 +130,7 @@ function App() {
         </ul>
       </div>
 
-      {/* JSX vs Fragment example */}
+      {/* JSX with div vs fragment */}
       <div style={{ marginTop: "2rem" }}>
         <h3>Spidey JSX (with div):</h3>
         {spideyJSX}
@@ -125,7 +143,7 @@ function App() {
         </div>
       </div>
 
-      {/* JSX vs createElement vs object */}
+      {/* JSX vs createElement vs raw JS */}
       <div style={{ marginTop: "2rem" }}>
         <h3>JSX vs React.createElement</h3>
         <div>{jsxElement}</div>
@@ -137,20 +155,20 @@ function App() {
         </pre>
       </div>
 
-      {/* Reusable component */}
+      {/* Reusable component example */}
       <DisplayText
         title="This is a reusable component"
         message="It was moved to its own file and imported into App.jsx!"
       />
 
-      {/* Welcome component example */}
+      {/* Welcome component with children */}
       <Welcome name="students">
         <p>This is a child element passed to the Welcome component.</p>
       </Welcome>
 
+      {/* Inline CSS styling example */}
       <div style={{ marginTop: "2rem" }}>
         <h3>Inline Styling Example</h3>
-
         <div
           style={{
             backgroundColor: "lightblue",
@@ -166,15 +184,14 @@ function App() {
         </div>
       </div>
 
+      {/* Components with props */}
       <div style={{ marginTop: "2rem" }}>
         <h3>Components and Props Example</h3>
-
         <ProfileCard
           name="Peter Parker"
           role="Photographer / Superhero"
           bio="Loves web development. Literally."
         />
-
         <ProfileCard
           name="Bruce Wayne"
           role="CEO of Wayne Enterprises"
@@ -182,16 +199,17 @@ function App() {
         />
       </div>
 
+      {/* PropsDisplayer examples */}
       <div className="App">
         <h1>Props Demo</h1>
 
         {/* No props */}
         <PropsDisplayer />
 
-        {/* One string prop */}
+        {/* One prop */}
         <PropsDisplayer myProp="first prop" />
 
-        {/* Multiple props with different types */}
+        {/* Multiple props of different types */}
         <PropsDisplayer
           prop1="first"
           prop2="second"
@@ -200,27 +218,21 @@ function App() {
         />
       </div>
 
+      {/* Advanced PropsDisplayer examples */}
       <div style={{ marginTop: "2rem" }}>
         <h3>PropsDisplayer Examples</h3>
 
-        {/* String and numeric props */}
         <PropsDisplayer name="Harry Styles" age={29} />
-
-        {/* Array prop */}
         <PropsDisplayer pets={["cat", "dog", "goldfish"]} />
-
-        {/* Variable props */}
         <PropsDisplayer reactLogo={reactLogo} buttonCount={count} />
 
-        {/* This one is commented out because PropsDisplayer doesn't handle React elements (yet) */}
+        {/* Not yet supported: passing React components as props */}
         {/*
-          <PropsDisplayer component={<ExampleComponent />} />
+        <PropsDisplayer component={<ExampleComponent />} />
         */}
 
         <p className="text-muted" style={{ fontStyle: "italic" }}>
-          Almost any kind of data can be passed to a component as a prop. You
-          can pass strings, numbers, arrays, objects, and even components (as
-          long as the component is equipped to render them).
+          Almost any kind of data can be passed to a component as a prop.
         </p>
         <p className="text-muted" style={{ fontStyle: "italic" }}>
           Access props in your component using <code>props.name</code>,{" "}
@@ -228,19 +240,30 @@ function App() {
         </p>
       </div>
 
+      {/* More props usage examples */}
       <div className="App">
         <h1>Props Demo</h1>
 
-        {/* Composed FullName component */}
         <FullName first="Ai" middle="Mountain" last="Shan" />
 
-        {/* PropsDisplayer examples */}
         <PropsDisplayer name="Maple" age={4} isDog={true} />
         <PropsDisplayer
           user={{ name: "Maple", role: "Dog" }}
           hobbies={["fetch", "swimming", "eating"]}
         />
       </div>
+
+      <FancyBox>
+        <p>This is inside a FancyBox!</p>
+      </FancyBox>
+
+      {/* Composed Callout component */}
+      <Callout
+        title="Nested React Component"
+        message="Simple message with a fancy box applied via composition"
+      >
+        <FullName first="Elon" last="Musk" />
+      </Callout>
     </>
   );
 }

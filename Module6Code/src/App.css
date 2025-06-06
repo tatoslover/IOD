@@ -1,0 +1,964 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+}
+.logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+        animation: logo-spin infinite 20s linear;
+    }
+}
+
+.card {
+    padding: 2em;
+}
+
+.read-the-docs {
+    color: #888;
+}
+
+.MoodChanger.componentBox {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    background-color: #6c757d;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.MoodChanger.componentBox p,
+.MoodChanger.componentBox h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.MoodChanger.componentBox button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.MoodChanger.componentBox button:hover {
+    background-color: #0056b3;
+}
+
+.MoodChanger.componentBox button:active {
+    transform: translateY(1px);
+}
+
+.BirthdayTranslator.componentBox {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    background-color: #495057;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.BirthdayTranslator.componentBox h3,
+.BirthdayTranslator.componentBox p {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.BirthdayTranslator.componentBox button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.BirthdayTranslator.componentBox button:hover {
+    background-color: #0056b3;
+}
+
+.BirthdayTranslator.componentBox button:active {
+    transform: translateY(1px);
+}
+
+.Weather.componentBox {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    background-color: #17a2b8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Weather.componentBox h2,
+.Weather.componentBox h4 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.Weather.componentBox .temperature {
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.Weather.componentBox button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.Weather.componentBox button:hover {
+    background-color: #0056b3;
+}
+
+.Weather.componentBox button:active {
+    transform: translateY(1px);
+}
+
+.MoviesList.componentBox {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    background-color: #28a745;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.MoviesList.componentBox h2 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.MoviesList.componentBox button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.MoviesList.componentBox button:hover {
+    background-color: #0056b3;
+}
+
+.MoviesList.componentBox button:active {
+    transform: translateY(1px);
+}
+
+.CommentSection.componentBox {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    background-color: #6f42c1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.CommentSection.componentBox h2 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.CommentSection.componentBox p {
+    color: #fff;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.CommentSection-footer {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: #fff;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.Comment.componentBox {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.UserInfo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.UserInfo-name {
+    margin-left: 1rem;
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.Avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #6f42c1;
+}
+
+.Comment-text {
+    margin: 1rem 0;
+    color: #333;
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.Comment-date {
+    color: #666;
+    font-size: 0.85rem;
+    text-align: right;
+    margin-top: 0.5rem;
+}
+
+.LoginForm.componentBox {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    background-color: #dc3545;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.LoginForm.componentBox .formRow {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.LoginForm.componentBox label {
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.LoginForm.componentBox input {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-top: 0.25rem;
+    box-sizing: border-box;
+}
+
+.LoginForm.componentBox input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.LoginForm.componentBox button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+.LoginForm.componentBox button:hover {
+    background-color: #0056b3;
+}
+
+.LoginForm.componentBox button:active {
+    transform: translateY(1px);
+}
+
+.LoginForm.componentBox .submitMessage {
+    color: #fff;
+    font-weight: bold;
+    margin: 1rem 0;
+    padding: 0.75rem;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #ffc107;
+}
+
+.LoginForm.componentBox .attemptCounter {
+    color: #fff;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    opacity: 0.8;
+}
+
+.LoginForm.componentBox .formHidden {
+    text-align: center;
+    padding: 2rem;
+}
+
+.LoginForm.componentBox .formHidden p {
+    color: #fff;
+    font-size: 1.1rem;
+    margin: 1rem 0;
+}
+
+.LoginForm.componentBox .formHidden .submitMessage {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.FirstReactAppExamples.componentBox {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    background-color: #007bff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.FirstReactAppExamples.componentBox h1,
+.FirstReactAppExamples.componentBox h2,
+.FirstReactAppExamples.componentBox h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.FirstReactAppExamples.componentBox p,
+.FirstReactAppExamples.componentBox li {
+    color: #fff;
+}
+
+.FirstReactAppExamples.componentBox input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin: 0.5rem;
+}
+
+.FirstReactAppExamples.componentBox button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.FirstReactAppExamples.componentBox button:hover {
+    background-color: #218838;
+}
+
+.FirstReactAppExamples.componentBox button:active {
+    transform: translateY(1px);
+}
+
+.FirstReactAppExamples.componentBox .logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.FirstReactAppExamples.componentBox .logo {
+    height: 4em;
+    padding: 1em;
+    will-change: filter;
+    transition: filter 300ms;
+}
+
+.FirstReactAppExamples.componentBox .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.FirstReactAppExamples.componentBox .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.FirstReactAppExamples.componentBox ul {
+    text-align: left;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.FirstReactAppExamples.componentBox pre {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: left;
+    overflow-x: auto;
+}
+
+.FirstReactAppExamples.componentBox code {
+    color: #fff;
+    font-family: monospace;
+}
+
+.DisplayText.componentBox {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    background-color: #fd7e14;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.DisplayText.componentBox h2,
+.DisplayText.componentBox p {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.Welcome.componentBox {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    background-color: #20c997;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Welcome.componentBox h3,
+.Welcome.componentBox p {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.ProfileCard.componentBox {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    background-color: #e83e8c;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ProfileCard.componentBox h2,
+.ProfileCard.componentBox h4,
+.ProfileCard.componentBox p {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.PropsDisplayer.componentBox {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    background-color: #6610f2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.PropsDisplayer.componentBox h2,
+.PropsDisplayer.componentBox h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+    word-break: break-all;
+}
+
+.FullName.componentBox {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    background-color: #fd7e14;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.NamePart {
+    font-weight: bold;
+}
+
+.FancyBox {
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.FancyBox-blue {
+    border-color: #007bff;
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.Callout-title {
+    color: #007bff;
+    margin: 0 0 1rem 0;
+}
+
+.Callout-message {
+    color: #333;
+    margin: 0 0 1rem 0;
+}
+
+.text-muted {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.ErrorMessage.componentBox {
+    border: 1px solid #dc3545;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    background-color: #f8d7da;
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+    text-align: center;
+}
+
+.ErrorMessage.componentBox h2 {
+    color: #721c24;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.ErrorMessage.componentBox p {
+    color: #721c24;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.ErrorMessage.componentBox .error-details {
+    background-color: #fff;
+    border: 1px solid #dc3545;
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 1rem 0;
+    color: #721c24;
+    font-family: monospace;
+    white-space: pre-wrap;
+    text-align: left;
+    overflow-x: auto;
+}
+
+.ErrorMessage.componentBox button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.ErrorMessage.componentBox button:hover {
+    background-color: #c82333;
+}
+
+.ErrorMessage.componentBox button:active {
+    transform: translateY(1px);
+}
+
+.ExplodingBomb.componentBox {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    background-color: #fd7e14;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.ExplodingBomb.componentBox h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.ExplodingBomb.componentBox p {
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.ExplodingBomb.componentBox button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ExplodingBomb.componentBox button:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.ExplodingBomb.componentBox button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.TVShowsList.componentBox {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    background-color: #6f42c1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.TVShowsList.componentBox h2 {
+    color: #fff;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.TVShowsList.componentBox > p {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.shows-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.show-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.show-card:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.show-card h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.show-year {
+    color: #ffc107;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.show-synopsis {
+    color: #fff;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+.remove-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.2s ease;
+}
+
+.remove-button:hover {
+    background-color: #c82333;
+}
+
+.shows-count {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.shows-count p {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.AddTVShowForm.componentBox {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    background-color: #17a2b8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.AddTVShowForm.componentBox .formRow {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.AddTVShowForm.componentBox label {
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.AddTVShowForm.componentBox input,
+.AddTVShowForm.componentBox textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-top: 0.25rem;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.AddTVShowForm.componentBox textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.AddTVShowForm.componentBox input:focus,
+.AddTVShowForm.componentBox textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.AddTVShowForm.componentBox button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+    width: 100%;
+    max-width: 400px;
+}
+
+.AddTVShowForm.componentBox button:hover {
+    background-color: #218838;
+}
+
+.AddTVShowForm.componentBox button:active {
+    transform: translateY(1px);
+}
+
+.BasicLoginForm.componentBox {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    background-color: #ffc107;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.BasicLoginForm.componentBox .formRow {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.BasicLoginForm.componentBox label {
+    color: #333;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.BasicLoginForm.componentBox input {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-top: 0.25rem;
+    box-sizing: border-box;
+}
+
+.BasicLoginForm.componentBox input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.BasicLoginForm.componentBox button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+.BasicLoginForm.componentBox button:hover {
+    background-color: #0056b3;
+}
+
+.BasicLoginForm.componentBox button:active {
+    transform: translateY(1px);
+}
+
+.TableOfContents.componentBox {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    background-color: #343a40;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.TableOfContents.componentBox h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.TableOfContents.componentBox > p {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.toc-section {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+}
+
+.toc-section h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.toc-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-section li {
+    margin-bottom: 0.5rem;
+}
+
+.toc-section button {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    width: 100%;
+    text-align: left;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toc-section button:hover {
+    background: linear-gradient(135deg, #0056b3, #004085);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.toc-section button:active {
+    transform: translateY(0);
+}
+
+.toc-summary {
+    background-color: rgba(40, 167, 69, 0.2);
+    border: 1px solid #28a745;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.toc-summary p {
+    color: #fff;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.toc-summary strong {
+    color: #28a745;
+}

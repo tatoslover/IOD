@@ -15,11 +15,15 @@
     "friends-mvc": "node exercise5/index.js",
     "calculator-tests": "node exercise6/app.js",
     "enhanced-calculator": "node exercise7/app.js",
+    "ecommerce-api": "node exercise8/app.js",
+    "ecommerce-dev": "cd exercise8 && npm run dev",
     "test": "cd exercise6 && npm test",
     "test:watch": "cd exercise6 && npm run test:watch",
     "test:coverage": "cd exercise6 && npm run test:coverage",
     "test:ex7": "cd exercise7 && npm test",
-    "kill-ports": "kill -9 $(lsof -t -i:3001,3002,3003,3004,3005,3006,3007,3008,3009) 2>/dev/null || true",
+    "test:ex8": "cd exercise8 && npm test",
+    "test:ex8:coverage": "cd exercise8 && npm run test:coverage",
+    "kill-ports": "kill -9 $(lsof -t -i:3001,3002,3003,3004,3005,3006,3007,3008,3009,3010) 2>/dev/null || true",
     "clean": "npm run kill-ports"
   },
   "dependencies": {

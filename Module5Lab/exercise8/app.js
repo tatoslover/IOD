@@ -21,7 +21,7 @@ const swaggerOptions = {
       description: 'Comprehensive API documentation for all Module 5 Lab exercises including Calculator API, Friends API, and eCommerce Store API',
       contact: {
         name: 'Samuel Love',
-        email: 'samuel@example.com'
+        email: 'samuelwelove@icloud.com'
       }
     },
     servers: [

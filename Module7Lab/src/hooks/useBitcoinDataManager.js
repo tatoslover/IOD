@@ -25,7 +25,7 @@ const initialState = {
 // Complex reducer for Bitcoin data management
 function bitcoinDataReducer(state, action) {
   switch (action.type) {
-    case DATA_ACTIONS.ADD_CURRENCY:
+    case DATA_ACTIONS.ADD_CURRENCY: {
       return {
         ...state,
         currencies: {
@@ -38,9 +38,11 @@ function bitcoinDataReducer(state, action) {
           }
         }
       };
+    }
 
-    case DATA_ACTIONS.REMOVE_CURRENCY:
-      const { [action.payload.currency]: removed, ...remainingCurrencies } = state.currencies;
+    case DATA_ACTIONS.REMOVE_CURRENCY: {
+      const remainingCurrencies = { ...state.currencies };
+      delete remainingCurrencies[action.payload.currency];
       const newFavorites = new Set(state.favorites);
       newFavorites.delete(action.payload.currency);
       
@@ -49,8 +51,9 @@ function bitcoinDataReducer(state, action) {
         currencies: remainingCurrencies,
         favorites: newFavorites
       };
+    }
 
-    case DATA_ACTIONS.UPDATE_PRICE:
+    case DATA_ACTIONS.UPDATE_PRICE: {
       return {
         ...state,
         currencies: {
@@ -66,8 +69,9 @@ function bitcoinDataReducer(state, action) {
         lastUpdated: new Date().toISOString(),
         globalError: null
       };
+    }
 
-    case DATA_ACTIONS.SET_LOADING:
+    case DATA_ACTIONS.SET_LOADING: {
       return {
         ...state,
         currencies: {
@@ -78,8 +82,9 @@ function bitcoinDataReducer(state, action) {
           }
         }
       };
+    }
 
-    case DATA_ACTIONS.SET_ERROR:
+    case DATA_ACTIONS.SET_ERROR: {
       return {
         ...state,
         currencies: {
@@ -91,8 +96,9 @@ function bitcoinDataReducer(state, action) {
           }
         }
       };
+    }
 
-    case DATA_ACTIONS.CLEAR_ERROR:
+    case DATA_ACTIONS.CLEAR_ERROR: {
       if (action.payload.currency) {
         return {
           ...state,
@@ -109,8 +115,9 @@ function bitcoinDataReducer(state, action) {
         ...state,
         globalError: null
       };
+    }
 
-    case DATA_ACTIONS.SET_FAVORITE:
+    case DATA_ACTIONS.SET_FAVORITE: {
       const updatedFavorites = new Set(state.favorites);
       if (action.payload.isFavorite) {
         updatedFavorites.add(action.payload.currency);
@@ -122,18 +129,22 @@ function bitcoinDataReducer(state, action) {
         ...state,
         favorites: updatedFavorites
       };
+    }
 
-    case DATA_ACTIONS.TOGGLE_AUTO_REFRESH:
+    case DATA_ACTIONS.TOGGLE_AUTO_REFRESH: {
       return {
         ...state,
         autoRefresh: !state.autoRefresh
       };
+    }
 
-    case DATA_ACTIONS.RESET_ALL:
+    case DATA_ACTIONS.RESET_ALL: {
       return initialState;
+    }
 
-    default:
+    default: {
       throw new Error(`Unhandled action type: ${action.type}`);
+    }
   }
 }
 

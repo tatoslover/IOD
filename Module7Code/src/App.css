@@ -1,0 +1,1001 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #ffffff;
+  color: #333333;
+  min-height: 100vh;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #666;
+}
+
+/* Clock Demo Styles */
+.Clock {
+  padding: 20px;
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
+  margin: 10px auto;
+  background-color: #f9f9f9;
+  max-width: 400px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.Clock h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.Clock .clock-time {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+.Clock small {
+  color: #666;
+  font-size: 12px;
+}
+
+.ClockDisplay {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.ClockDisplay h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.ClockDisplay h4 {
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.dependencies-info {
+  margin-bottom: 20px;
+}
+
+.dependencies-info ul {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ClockDisplay ul {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  border-left: 4px solid #007bff;
+}
+
+.ClockDisplay li {
+  margin: 8px 0;
+  color: #555;
+}
+
+.ClockDisplay button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  transition: background-color 0.3s;
+}
+
+.ClockDisplay button:hover {
+  background-color: #45a049;
+}
+
+.toggle-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.toggle-button.mount {
+  background-color: #4CAF50;
+}
+
+.toggle-button.mount:hover {
+  background-color: #45a049;
+}
+
+.toggle-button.unmount {
+  background-color: #f44336;
+}
+
+.toggle-button.unmount:hover {
+  background-color: #da190b;
+}
+
+.mount-info {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+
+
+.ClockDisplay p {
+  color: #666;
+  margin: 5px 0;
+}
+
+/* UseEffect Examples Styles */
+.UseEffectExamples {
+  padding: 20px;
+  border: 2px solid #2196F3;
+  border-radius: 10px;
+  margin: 10px auto;
+  background-color: #f0f8ff;
+  max-width: 500px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.UseEffectExamples h3 {
+  color: #333;
+  margin-top: 0;
+}
+
+.UseEffectExamples p {
+  color: #555;
+  margin: 10px 0;
+}
+
+.UseEffectExamples button {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s;
+}
+
+.UseEffectExamples button:hover {
+  background-color: #1976D2;
+}
+
+.UseEffectExamples small {
+  color: #666;
+  font-size: 12px;
+  display: block;
+  margin-top: 10px;
+}
+
+/* Examples toggle button */
+.examples-toggle {
+  padding: 8px 16px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.examples-toggle:hover {
+  background-color: #1976D2;
+}
+
+/* Demo navigation styles */
+.demo-navigation {
+  margin: 30px auto;
+  max-width: 900px;
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.demo-navigation h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.demo-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.demo-nav-button {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+.demo-nav-button:hover {
+  background-color: #5a6268;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.demo-nav-button.active {
+  background-color: #007bff;
+  box-shadow: 0 4px 8px rgba(0,123,255,0.3);
+}
+
+/* Demo overview cards */
+.demo-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.demo-card {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.demo-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.demo-card h4 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.demo-card p {
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Learning objectives section */
+.learning-section {
+  margin: 30px auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.learning-section h3 {
+  color: #333;
+  margin-top: 0;
+}
+
+.learning-section h4 {
+  color: #444;
+  margin-top: 20px;
+}
+
+.learning-section p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.learning-section ol,
+.learning-section ul {
+  color: #555;
+  line-height: 1.6;
+}
+
+.learning-section li {
+  margin: 8px 0;
+}
+
+.learning-section strong {
+  color: #333;
+}
+
+/* Button improvements */
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Demo container styles */
+.demo-container {
+  margin: 30px auto;
+  max-width: 900px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.demo-container h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.demo-description {
+  color: #666;
+  text-align: center;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.demo-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.demo-controls .toggle-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.demo-controls .toggle-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+.demo-controls .toggle-button.active {
+  background-color: #28a745;
+}
+
+/* ClockWithTicker styles */
+.ClockWithTicker {
+  padding: 20px;
+  border: 2px solid #17a2b8;
+  border-radius: 10px;
+  margin: 20px auto;
+  background-color: #f8f9fa;
+  max-width: 500px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ClockWithTicker h3 {
+  color: #333;
+  margin-top: 0;
+  text-align: center;
+}
+
+.clock-display {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.clock-display .time {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.clock-display .tick-counter {
+  font-size: 16px;
+  color: #17a2b8;
+  background-color: #e9ecef;
+  padding: 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* ActivityFinder styles */
+.ActivityFinder, 
+.EnhancedActivityFinder,
+.ActivityFinderWithCleanup,
+.ActivityFinderWithoutCleanup {
+  padding: 20px;
+  border: 2px solid #28a745;
+  border-radius: 10px;
+  margin: 20px auto;
+  background-color: #f8fff8;
+  max-width: 600px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ActivityFinderWithoutCleanup {
+  border-color: #dc3545;
+  background-color: #fff8f8;
+}
+
+.ActivityFinder h3,
+.EnhancedActivityFinder h3,
+.ActivityFinderWithCleanup h3,
+.ActivityFinderWithoutCleanup h3 {
+  color: #333;
+  margin-top: 0;
+  text-align: center;
+}
+
+.controls {
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #555;
+  font-weight: 500;
+}
+
+.controls select,
+.city-selector {
+  padding: 10px 15px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: white;
+  color: #333;
+  min-width: 200px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.controls select:focus,
+.city-selector:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.15);
+}
+
+.controls select:hover,
+.city-selector:hover {
+  border-color: #0056b3;
+  background-color: #f8f9fa;
+}
+
+.activity-result {
+  margin: 20px 0;
+  min-height: 60px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #dee2e6;
+}
+
+.activity-result .loading {
+  color: #007bff;
+  font-style: italic;
+  text-align: center;
+  background-color: #e7f3ff;
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 4px solid #007bff;
+}
+
+.activity-result .error {
+  color: #dc3545;
+  font-weight: bold;
+  text-align: center;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 4px solid #dc3545;
+}
+
+.request-counter {
+  margin-top: 10px;
+  text-align: center;
+  color: #666;
+}
+
+.instructions {
+  text-align: center;
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #e7f3ff;
+  border-radius: 4px;
+  border-left: 4px solid #007bff;
+}
+
+.instructions small {
+  color: #495057;
+  line-height: 1.4;
+}
+
+/* Learning points styles */
+.learning-points {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #28a745;
+}
+
+.learning-points h4 {
+  color: #333;
+  margin-top: 0;
+}
+
+.learning-points ul,
+.learning-points ol {
+  color: #555;
+  line-height: 1.6;
+}
+
+.learning-points li {
+  margin: 8px 0;
+}
+
+.learning-points strong {
+  color: #333;
+}
+
+/* Warning box styles */
+.warning-box {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 8px;
+  border-left: 4px solid #ffc107;
+}
+
+.warning-box h4 {
+  color: #856404;
+  margin-top: 0;
+}
+
+.warning-box p {
+  color: #856404;
+  line-height: 1.6;
+}
+
+.warning-box ul {
+  color: #856404;
+}
+
+.warning-box li {
+  margin: 5px 0;
+}
+
+/* Weather App styles */
+.WeatherApp, 
+.WeatherAppDirect {
+  padding: 20px;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  margin: 20px auto;
+  background-color: #f0f8ff;
+  max-width: 600px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.WeatherAppDirect.cors-error-demo {
+  border-color: #dc3545;
+  background-color: #fff5f5;
+}
+
+.WeatherApp h3,
+.WeatherAppDirect h3 {
+  color: #333;
+  margin-top: 0;
+  text-align: center;
+}
+
+.weather-result {
+  margin: 20px 0;
+  min-height: 80px;
+}
+
+.weather-display {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  transition: all 0.3s ease;
+}
+
+.weather-display.success {
+  border-left: 4px solid #28a745;
+  background-color: #f8fff8;
+}
+
+.weather-display h4 {
+  color: #333;
+  margin-top: 0;
+  text-align: center;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+.weather-display.success h4 {
+  color: #28a745;
+  border-bottom-color: #28a745;
+}
+
+.weather-display.success p {
+  color: #155724;
+  font-weight: 500;
+}
+
+.weather-display.success small {
+  color: #666;
+  font-style: italic;
+}
+
+.weather-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.weather-info > div {
+  padding: 8px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border-left: 3px solid #007bff;
+}
+
+.forecast {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #dee2e6;
+}
+
+.forecast h5 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.forecast-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.forecast-item {
+  background-color: #e9ecef;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.cors-error {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 15px 0;
+}
+
+.cors-error h4 {
+  margin-top: 0;
+  color: #721c24;
+}
+
+.cors-error ol {
+  margin-bottom: 0;
+  padding-left: 20px;
+}
+
+.cors-error code {
+  background-color: #f1f3f4;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+}
+
+.cors-explanation {
+  background-color: #e7f3ff;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  border-left: 4px solid #007bff;
+}
+
+.cors-explanation h4 {
+  color: #333;
+  margin-top: 0;
+}
+
+.cors-explanation p {
+  color: #495057;
+  line-height: 1.6;
+}
+
+.code-block {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  padding: 15px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  overflow-x: auto;
+  color: #333;
+  white-space: pre;
+}
+
+.proxy-explanation {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  border-left: 4px solid #28a745;
+}
+
+.proxy-explanation p {
+  margin-top: 0;
+  color: #333;
+  font-weight: 500;
+}
+
+.proxy-explanation ul {
+  margin-bottom: 0;
+  color: #555;
+}
+
+.proxy-explanation li {
+  margin: 5px 0;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+}
+
+.proxy-explanation code {
+  background-color: #f1f3f4;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* UseEffectPatternsDemo styles */
+.UseEffectPatternsDemo {
+  padding: 20px;
+  border: 2px solid #6f42c1;
+  border-radius: 10px;
+  margin: 20px auto;
+  background-color: #f8f6ff;
+  max-width: 600px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.UseEffectPatternsDemo h3 {
+  color: #333;
+  margin-top: 0;
+  text-align: center;
+}
+
+.patterns-content {
+  margin: 20px 0;
+}
+
+.state-display {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  margin-bottom: 15px;
+}
+
+.state-display p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.pattern-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pattern-controls button {
+  background-color: #6f42c1;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pattern-controls button:hover {
+  background-color: #5a32a3;
+}
+
+.patterns-info {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  margin-top: 20px;
+}
+
+.patterns-info h4 {
+  color: #333;
+  margin-top: 0;
+}
+
+.patterns-info ul {
+  margin-bottom: 10px;
+}
+
+.patterns-info li {
+  margin: 5px 0;
+  color: #555;
+}
+
+.patterns-info small {
+  color: #666;
+  font-style: italic;
+}
+
+/* BasicClock styles */
+.BasicClock {
+  padding: 20px;
+  border: 2px solid #28a745;
+  border-radius: 10px;
+  margin: 20px auto;
+  background-color: #f8fff8;
+  max-width: 400px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.BasicClock h3 {
+  color: #333;
+  margin-top: 0;
+  text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+  
+  .Clock,
+  .UseEffectExamples,
+  .ClockWithTicker,
+  .ActivityFinder,
+  .EnhancedActivityFinder,
+  .ActivityFinderWithCleanup,
+  .ActivityFinderWithoutCleanup,
+  .WeatherApp,
+  .WeatherAppDirect,
+  .UseEffectPatternsDemo,
+  .BasicClock {
+    margin: 10px 0;
+    padding: 15px;
+  }
+  
+  .learning-section,
+  .demo-container {
+    margin: 20px 0;
+    padding: 15px;
+  }
+  
+  .demo-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .controls {
+    gap: 15px;
+  }
+  
+  .clock-display .time {
+    font-size: 24px;
+  }
+  
+  .weather-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .forecast-items {
+    grid-template-columns: 1fr;
+  }
+  
+  .pattern-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pattern-controls button {
+    min-width: 180px;
+  }
+  
+  .code-block {
+    font-size: 12px;
+    padding: 10px;
+  }
+  
+  .demo-navigation {
+    margin: 20px 0;
+    padding: 15px;
+  }
+  
+  .demo-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .demo-nav-button {
+    min-width: 200px;
+    padding: 10px 16px;
+  }
+  
+  .demo-overview {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin: 20px 0;
+  }
+  
+  .demo-card {
+    padding: 15px;
+  }
+}

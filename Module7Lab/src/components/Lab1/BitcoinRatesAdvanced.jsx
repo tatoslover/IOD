@@ -16,7 +16,6 @@ function BitcoinRatesAdvanced() {
     currencies: trackedCurrencies,
     favorites,
     autoRefresh,
-    lastUpdated,
     addCurrency,
     removeCurrency,
     fetchPrice,

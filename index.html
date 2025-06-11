@@ -1,1 +1,115 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/IOD/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Module 6 Lab - React Applications"/><title>Module 6 Lab</title><script defer="defer" src="/IOD/static/js/main.ddcd1425.js"></script><link href="/IOD/static/css/main.9477e2a7.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IOD Labs - GitHub Pages</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .labs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .lab-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .lab-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            color: white;
+        }
+        .lab-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .lab-description {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        .status {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        .deployed {
+            background: rgba(40, 167, 69, 0.8);
+        }
+        .coming-soon {
+            background: rgba(108, 117, 125, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 IOD Labs Collection</h1>
+        <p style="text-align: center; font-size: 1.2rem; opacity: 0.9;">
+            Interactive web applications built during the Institute of Data course
+        </p>
+        
+        <div class="labs-grid">
+            <a href="./Module6Lab/" class="lab-card">
+                <div class="lab-title">Module 6 Lab - React Applications</div>
+                <div class="lab-description">
+                    🌈 Rainbow-themed React components including greeting cards, big cats gallery with CRUD operations, emoji mood switcher, and a functional calculator.
+                </div>
+                <span class="status deployed">✅ Live</span>
+            </a>
+            
+            <div class="lab-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="lab-title">Module 7 Lab</div>
+                <div class="lab-description">
+                    Advanced React concepts and state management.
+                </div>
+                <span class="status coming-soon">🚧 Coming Soon</span>
+            </div>
+            
+            <div class="lab-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="lab-title">Module 8 Lab</div>
+                <div class="lab-description">
+                    Backend development and API integration.
+                </div>
+                <span class="status coming-soon">🚧 Coming Soon</span>
+            </div>
+        </div>
+        
+        <footer style="text-align: center; margin-top: 40px; opacity: 0.8;">
+            <p>Built with ❤️ using React, JavaScript, and modern web technologies</p>
+            <p><a href="https://github.com/tatoslover/IOD" style="color: white;">View Source Code</a></p>
+        </footer>
+    </div>
+</body>
+</html>

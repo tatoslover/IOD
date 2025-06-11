@@ -44,6 +44,7 @@ a {
 
 .flex-container {
     display: flex;
+    flex-direction: row; /* Try column, row-reverse, column-reverse */
 }
 
 .flex-item-1 {
@@ -82,11 +83,7 @@ a {
     flex-basis: 25%;
 }
 
-/* Changing direction */
-
-.flex-container {
-    flex-direction: row; /* Try column, row-reverse, column-reverse */
-}
+/* Changing direction - properties added to existing flex-container class above */
 
 /* Flexbox for horizontal navigation */
 
@@ -123,7 +120,7 @@ a {
 
 /* 7.4: Move FAQs to last position */
 .fourth-item {
-    order: 5;
+    order: 5; /* can also be order: 1 */
 }
 
 .flex-menu a {

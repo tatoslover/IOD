@@ -196,7 +196,7 @@ a:visited {
 /* 3. Fluid-width column */
 .fluid-col {
     display: inline-block;
-    width: calc(100% - 350px); /* Subtract width of fixed column */
+    width: calc(100% - 360px); /* Subtract width of fixed column */
     background-color: #90ee90; /* Colour for contrast */
     vertical-align: top;
 }

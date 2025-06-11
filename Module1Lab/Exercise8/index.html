@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dice Generator</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>🎲 Dice Generator</h1>
+
+            <label for="dice-select">Choose a die:</label>
+            <select id="dice-select">
+                <option value="4">D4</option>
+                <option value="6" selected>D6</option>
+                <option value="8">D8</option>
+                <option value="10">D10</option>
+                <option value="12">D12</option>
+                <option value="20">D20</option>
+                <option value="100">D100</option>
+            </select>
+
+            <button onclick="handleRoll()">Roll Dice</button>
+
+            <h3>Roll History</h3>
+
+            <div class="result-area">
+                <div id="result">x</div>
+                <div id="history-container">
+                    <div id="roll-history"></div>
+                    <button id="clear-history" onclick="clearHistory()" style="display: none">
+                        Clear History
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="dice.js"></script>
+        <script src="ui.js"></script>
+    </body>
+</html>

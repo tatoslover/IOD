@@ -108,8 +108,75 @@ npm run build
 # Run tests
 npm test
 
+# Deploy to GitHub Pages
+npm run deploy
+
 # Eject from Create React App (irreversible)
 npm run eject
+```
+
+---
+
+## GitHub Pages Deployment
+
+This project is configured for easy deployment to GitHub Pages.
+
+### Prerequisites
+- GitHub repository with the project
+- GitHub Pages enabled in repository settings
+- GitHub authentication configured (Personal Access Token or SSH)
+
+### Authentication Setup
+
+Before deploying, you need to configure GitHub authentication:
+
+**Option 1: Personal Access Token**
+1. Go to GitHub Settings > Developer settings > Personal access tokens
+2. Generate a new token with `repo` permissions
+3. Configure git to use the token:
+```bash
+git config --global credential.helper store
+```
+
+**Option 2: SSH Key (Recommended)**
+1. Generate SSH key: `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
+2. Add to GitHub: Settings > SSH and GPG keys
+3. Test connection: `ssh -T git@github.com`
+
+### Deployment Steps
+
+1. **Ensure authentication is set up** (see above)
+
+2. **Build the project**:
+```bash
+npm run build
+```
+
+3. **Deploy to GitHub Pages**:
+```bash
+npm run deploy
+```
+
+4. **Access your deployed app**:
+Visit: https://tatoslover.github.io/IOD/Module6Lab
+
+### Deployment Configuration
+
+The project includes:
+- ✅ **Homepage URL**: Set in package.json for GitHub Pages
+- ✅ **Build Scripts**: Automated build process before deployment
+- ✅ **gh-pages**: Dependency for seamless GitHub Pages deployment
+- ✅ **Clean Build**: Optimized production build with gzipped assets
+- ✅ **Authentication Ready**: Supports both token and SSH authentication
+
+### File Structure for Deployment
+```
+build/
+├── static/
+│   ├── css/main.[hash].css     # Minified styles (~2.2 kB gzipped)
+│   └── js/main.[hash].js       # Minified JavaScript (~48.7 kB gzipped)
+├── index.html                  # Production HTML
+└── asset-manifest.json         # Build manifest
 ```
 
 ---

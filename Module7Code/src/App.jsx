@@ -8,7 +8,8 @@ import {
   ClockWithTickerDemo, 
   ActivityFinderDemo, 
   ActivityFinderCleanupDemo,
-  WeatherAppDemo
+  WeatherAppDemo,
+  RefCounterDemo
 } from './components/useEffect-demos/index.js'
 
 function App() {
@@ -77,6 +78,12 @@ function App() {
           >
             🌤️ CORS Proxy Demo
           </button>
+          <button 
+            onClick={() => setActiveDemo('ref')}
+            className={`demo-nav-button ${activeDemo === 'ref' ? 'active' : ''}`}
+          >
+            🔗 useRef Demo
+          </button>
         </div>
       </div>
 
@@ -95,6 +102,7 @@ function App() {
         </div>
       )}
       {activeDemo === 'cors' && <WeatherAppDemo />}
+      {activeDemo === 'ref' && <RefCounterDemo />}
 
       <div className="learning-section">
         <h3>🎓 Complete useEffect Learning Guide</h3>
@@ -124,6 +132,10 @@ function App() {
           <div className="demo-card">
             <h4>🌤️ CORS Proxy Demo</h4>
             <p>Learn how to use Vite proxy to bypass CORS restrictions with external APIs</p>
+          </div>
+          <div className="demo-card">
+            <h4>🔗 useRef Demo</h4>
+            <p>Understand the difference between useRef and regular variables, and why neither triggers re-renders</p>
           </div>
         </div>
         

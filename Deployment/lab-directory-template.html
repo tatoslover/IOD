@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IOD Labs Collection - GitHub Pages</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        .labs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .lab-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .lab-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .lab-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .lab-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: white;
+        }
+        .lab-number {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .lab-description {
+            opacity: 0.9;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        .lab-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .lab-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        .lab-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
+            text-decoration: none;
+            color: white;
+        }
+        .lab-link.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        .status {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        .deployed { background: rgba(40, 167, 69, 0.8); }
+        .coming-soon { background: rgba(108, 117, 125, 0.8); }
+        .static-files { background: rgba(255, 193, 7, 0.8); color: #000; }
+        .backend-only { background: rgba(23, 162, 184, 0.8); }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            opacity: 0.8;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 30px;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .labs-grid {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 25px;
+                margin: 10px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 IOD Labs Collection</h1>
+        <p class="subtitle">
+            Interactive web applications and coding exercises from the Institute of Data course
+        </p>
+        
+        <div class="labs-grid">
+            <!-- Module 1 Lab -->
+            <div class="lab-card">
+                <div class="lab-header">
+                    <div class="lab-title">Module 1 Lab</div>
+                    <div class="lab-number">Lab 1</div>
+                </div>
+                <div class="lab-description">
+                    HTML, CSS fundamentals and responsive design basics. Introduction to semantic markup and modern CSS techniques.
+                </div>
+                <div class="lab-links">
+                    <a href="https://github.com/tatoslover/IOD/tree/main/Module1Lab" class="lab-link">
+                        📂 GitHub
+                    </a>
+                    <a href="https://github.com/tatoslover/IOD/blob/main/Module1Lab/README.md" class="lab-link">
+                        📖 README
+                    </a>
+                    <a href="#" class="lab-link disabled">
+                        🌐 Website
+                    </a>
+                </div>
+                <span class="status static-files">📁 Static Files</span>
+            </div>
+
+            <!-- Module 2 Lab -->
+            <div class="lab-card">
+                <div class="lab-header">
+                    <div class="lab-title">Module 2 Lab</div>
+                    <div class="lab-number">Lab 2</div>
+                </div>
+                <div class="lab-description">
+                    JavaScript fundamentals, DOM manipulation, and interactive web elements. Event handling and basic programming concepts.
+                </div>
+                <div class="lab-links">
+                    <a href="https://github.com/tatoslover/IOD/tree/main/Module2Lab" class="lab-link">
+                        📂 GitHub
+                    </a>
+                    <a href="https://github.com/tatoslover/IOD/blob/main/Module2Lab/README.md" class="lab-link">
+                        📖 README
+                    </a>
+                    <a href="#" class="lab-link disabled">
+                        🌐 Website
+                    </a>
+                </div>
+                <span class="status static-files">📁 Static Files</span>
+            </div>
+
+            <!-- Module 3 Lab -->
+            <div class="lab-card">
+                <div class="lab-header">
+                    <div class="lab-title">Module 3 Lab</div>
+                    <div class="lab-number">Lab 3</div>
+                </div>
+                <div class="lab-description">
+                    Advanced JavaScript, ES6+ features, and modern development practices. Modules, async/await, and API interactions.
+                </div>
+                <div class="lab-links">
+                    <a href="https://github.com/tatoslover/IOD/tree/main/Module3Lab" class="lab-link">
+                        📂 GitHub
+                    </a>
+                    <a href="https://github.com/tatoslover/IOD/blob/main/Module3Lab/README.md" class="lab-link">
+                        📖 README
+                    </a>
+                    <a href="#" class="lab-link disabled">
+                        🌐 Website
+                    </a>
+                </div>
+                <span class="status static-files">📁 Static Files</span>
+            </div>
+
+            <!-- Module 4 Lab -->
+            <div class="lab-card">
+                <div class="lab-header">
+                    <div class="lab-title">Module 4 Lab</div>
+                    <div class="lab-number">Lab 4</div>
+                </div>
+                <div class="lab-description">
+                    Frontend frameworks introduction, build tools, and component-based architecture. Modern development workflow setup.
+                </div>
+                <div class="lab-links">
+                    <a href="https://github.com/tatoslover/IOD/tree/main/Module4Lab" class="lab-link">
+                        📂 GitHub
+                    </a>
+                    <a href="https://github.com/tatoslover/IOD/blob/main/Module4Lab/README.md" class="lab-link">
+                        📖 README
+                    </a>
+                    <a href="#" class="lab-link disabled">
+                        🌐 Website
+                    </a>
+                </div>
+                <span class="status static-files">📁 Static Files</span>
+            </div>
+
+            <!-- Module 5 Lab -->
+            <div class="lab-card">
+                <div class="lab-header">
+                    <div class="lab-title">Module 5 Lab</div>
+                    <div class="lab-number">Lab 5</div>
+                </div>
+                <div class="lab-description">
+                    Node.js and Express.js backend development. RESTful APIs, middleware, routing, and server-side programming concepts.
+                </div>
+                <div class="lab-links">
+                    <a href="https://github.com/tatoslover/IOD/tree/main/Module5Lab" class="lab-link">
+                        📂 GitHub
+                    </a>
+                    <a href="https://github.com/tatoslover/IOD/blob/main/Module5Lab/README.md" class="lab-link">
+                        📖 README
+                    </a>
+                    <a href="#" class="lab-link disabled">
+                        🌐 Website
+                    </a>
+                </div>
+                <span class="status backend-only">🖥️ Backend Only</span>
+            </div>
+
+            <!-- Module 6 Lab -->
+            <div class="lab-card">
+                <div class="lab-header">
+                    <div class="lab-title">Module 6 Lab</div>
+                    <div class="lab-number">Lab 6</div>
+                </div>
+                <div class="lab-description">
+                    🌈 React applications with rainbow-themed components: greeting cards, big cats gallery with CRUD operations, emoji mood switcher, and functional calculator.
+                </div>
+                <div class="lab-links">
+                    <a href="https://github.com/tatoslover/IOD/tree/main/Module6Lab" class="lab-link">
+                        📂 GitHub
+                    </a>
+                    <a href="https://github.com/tatoslover/IOD/blob/main/Module6Lab/README.md" class="lab-link">
+                        📖 README
+                    </a>
+                    <a href="./Module6Lab/" class="lab-link">
+                        🌐 Live Demo
+                    </a>
+                </div>
+                <span class="status deployed">✅ Live</span>
+            </div>
+
+            <!-- Module 7 Lab -->
+            <div class="lab-card">
+                <div class="lab-header">
+                    <div class="lab-title">Module 7 Lab</div>
+                    <div class="lab-number">Lab 7</div>
+                </div>
+                <div class="lab-description">
+                    Advanced React concepts, state management, custom hooks, and performance optimization techniques.
+                </div>
+                <div class="lab-links">
+                    <a href="https://github.com/tatoslover/IOD/tree/main/Module7Lab" class="lab-link">
+                        📂 GitHub
+                    </a>
+                    <a href="https://github.com/tatoslover/IOD/blob/main/Module7Lab/README.md" class="lab-link">
+                        📖 README
+                    </a>
+                    <a href="#" class="lab-link disabled">
+                        🌐 Website
+                    </a>
+                </div>
+                <span class="status coming-soon">🚧 Coming Soon</span>
+            </div>
+
+            <!-- Module 8 Lab -->
+            <div class="lab-card">
+                <div class="lab-header">
+                    <div class="lab-title">Module 8 Lab</div>
+                    <div class="lab-number">Lab 8</div>
+                </div>
+                <div class="lab-description">
+                    Full-stack integration, database connectivity, authentication, and deploying complete web applications.
+                </div>
+                <div class="lab-links">
+                    <a href="https://github.com/tatoslover/IOD/tree/main/Module8Lab" class="lab-link disabled">
+                        📂 GitHub
+                    </a>
+                    <a href="#" class="lab-link disabled">
+                        📖 README
+                    </a>
+                    <a href="#" class="lab-link disabled">
+                        🌐 Website
+                    </a>
+                </div>
+                <span class="status coming-soon">🚧 Coming Soon</span>
+            </div>
+
+            <!-- Module 9 Lab -->
+            <div class="lab-card">
+                <div class="lab-header">
+                    <div class="lab-title">Module 9 Lab</div>
+                    <div class="lab-number">Lab 9</div>
+                </div>
+                <div class="lab-description">
+                    Advanced topics, testing strategies, DevOps practices, and professional development workflows.
+                </div>
+                <div class="lab-links">
+                    <a href="#" class="lab-link disabled">
+                        📂 GitHub
+                    </a>
+                    <a href="#" class="lab-link disabled">
+                        📖 README
+                    </a>
+                    <a href="#" class="lab-link disabled">
+                        🌐 Website
+                    </a>
+                </div>
+                <span class="status coming-soon">🚧 Coming Soon</span>
+            </div>
+
+            <!-- Module 10 Lab -->
+            <div class="lab-card">
+                <div class="lab-header">
+                    <div class="lab-title">Module 10 Lab</div>
+                    <div class="lab-number">Lab 10</div>
+                </div>
+                <div class="lab-description">
+                    Capstone project and portfolio development. Showcasing skills learned throughout the course.
+                </div>
+                <div class="lab-links">
+                    <a href="#" class="lab-link disabled">
+                        📂 GitHub
+                    </a>
+                    <a href="#" class="lab-link disabled">
+                        📖 README
+                    </a>
+                    <a href="#" class="lab-link disabled">
+                        🌐 Website
+                    </a>
+                </div>
+                <span class="status coming-soon">🚧 Coming Soon</span>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Built with ❤️ using React, Node.js, and modern web technologies</p>
+            <p><a href="https://github.com/tatoslover/IOD">🔗 View Complete Repository</a> | <a href="https://github.com/tatoslover">👤 GitHub Profile</a></p>
+        </footer>
+    </div>
+</body>
+</html>

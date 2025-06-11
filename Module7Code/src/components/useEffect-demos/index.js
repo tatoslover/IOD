@@ -5,3 +5,4 @@ export { default as ClockWithTickerDemo, ClockWithTicker } from './ClockWithTick
 export { default as ActivityFinderDemo, ActivityFinder, EnhancedActivityFinder } from './ActivityFinder.jsx';
 export { default as ActivityFinderCleanupDemo, ActivityFinderWithCleanup, ActivityFinderWithoutCleanup } from './ActivityFinderWithCleanup.jsx';
 export { default as WeatherAppDemo, WeatherApp, WeatherAppDirect } from './WeatherApp.jsx';
+export { default as RefCounterDemo, RefCounter } from './RefCounter.jsx';

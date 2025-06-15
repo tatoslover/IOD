@@ -1,0 +1,450 @@
+/* Portfolio-inspired App styles with gradient theme */
+
+/* Navigation Bar */
+.NavBar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    margin: 1rem;
+    padding: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.NavBar ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    gap: 1rem;
+}
+
+.NavBar ul li a {
+    padding: 0.8rem 1.5rem;
+    color: #333;
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.NavBar ul li a:hover {
+    background: rgba(255, 255, 255, 0.8);
+    color: #111;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.NavBar ul li a.active {
+    background: linear-gradient(45deg, rgb(210, 105, 30), rgb(190, 95, 25));
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(210, 105, 30, 0.3);
+}
+
+/* Page containers */
+.Homepage,
+.About,
+.DashboardPage {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+    min-height: 400px;
+    color: #333;
+}
+
+.Homepage:hover,
+.About:hover,
+.DashboardPage:hover {
+    transform: translateY(-5px);
+}
+
+/* Homepage specific styles */
+.Homepage {
+    text-align: left;
+}
+
+.Homepage h1 {
+    color: rgb(210, 105, 30);
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Homepage .intro-section {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    border-left: 4px solid rgb(210, 105, 30);
+}
+
+.Homepage .demo-concepts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.Homepage .concept-card {
+    background: rgba(210, 105, 30, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(210, 105, 30, 0.2);
+    transition: all 0.3s ease;
+}
+
+.Homepage .concept-card:hover {
+    background: rgba(210, 105, 30, 0.15);
+    transform: translateY(-2px);
+}
+
+.Homepage .concept-card h3 {
+    color: rgb(210, 105, 30);
+    margin-bottom: 0.5rem;
+}
+
+/* Navigation button utility class */
+.nav-button {
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(45deg, rgb(210, 105, 30), rgb(190, 95, 25));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(210, 105, 30, 0.3);
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(210, 105, 30, 0.4);
+    color: white;
+}
+
+/* Dashboard Page styles */
+.DashboardPage {
+    text-align: left;
+}
+
+.DashboardPage h1 {
+    color: rgb(210, 105, 30);
+    margin-bottom: 1.5rem;
+}
+
+.DashboardPage .button-group {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.DashboardPage button {
+    margin: 0;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(45deg, rgb(210, 105, 30), rgb(190, 95, 25));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(210, 105, 30, 0.3);
+}
+
+.DashboardPage button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(210, 105, 30, 0.4);
+}
+
+/* Dashboard nested content */
+.DashboardMessages,
+.DashboardTasks {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    border-left: 4px solid rgb(210, 105, 30);
+}
+
+.DashboardMessages h3,
+.DashboardTasks h3 {
+    color: rgb(210, 105, 30);
+    margin-bottom: 1rem;
+}
+
+.tasks {
+    list-style: none;
+    padding: 0;
+}
+
+.tasks li {
+    background: white;
+    padding: 0.8rem 1rem;
+    margin: 0.5rem 0;
+    border-radius: 6px;
+    border-left: 3px solid rgb(210, 105, 30);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.tasks li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.tasks li::before {
+    content: "✓";
+    color: rgb(210, 105, 30);
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+/* Footer styles */
+.Footer {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    margin: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    color: #333;
+    margin-top: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.Footer p {
+    margin: 0;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Page Not Found styles */
+.PageNotFound {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    padding: 3rem;
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.PageNotFound h1 {
+    color: rgb(210, 105, 30);
+    font-size: 4em;
+    margin-bottom: 1rem;
+}
+
+.PageNotFound p {
+    font-size: 1.2em;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.PageNotFound .button-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.PageNotFound button {
+    background: linear-gradient(45deg, #6c757d, #545b62);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.PageNotFound button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.PageNotFound a {
+    background: linear-gradient(45deg, #28a745, #1e7e34);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.PageNotFound a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Component box utility */
+.componentBox {
+    border: 2px solid rgba(210, 105, 30, 0.3);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .NavBar ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .NavBar ul li a {
+        padding: 0.6rem 1rem;
+        font-size: 0.9em;
+    }
+
+    .Homepage,
+    .About,
+    .DashboardPage,
+    .PageNotFound {
+        margin: 0.5rem;
+        padding: 1rem;
+    }
+
+    .Homepage .demo-concepts {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .DashboardPage .button-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .PageNotFound .button-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Footer {
+        margin: 0.5rem;
+        padding: 1rem;
+    }
+}
+
+/* Animation for page transitions */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.Homepage,
+.About,
+.DashboardPage,
+.PageNotFound {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Posts page styling */
+.Posts {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+    min-height: 400px;
+    color: #333;
+}
+
+.Posts:hover {
+    transform: translateY(-5px);
+}
+
+.Posts h1 {
+    color: rgb(210, 105, 30);
+    margin-bottom: 1.5rem;
+}
+
+.posts-list li {
+    background: rgba(210, 105, 30, 0.1);
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    border-left: 3px solid rgb(210, 105, 30);
+    transition: all 0.3s ease;
+}
+
+.posts-list li:hover {
+    background: rgba(210, 105, 30, 0.15);
+    transform: translateX(5px);
+}
+
+.posts-list a {
+    color: rgb(210, 105, 30);
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+}
+
+.posts-list a:hover {
+    color: rgb(190, 95, 25);
+}
+
+.Post {
+    margin-top: 2rem;
+}
+
+.post-content h3 {
+    color: rgb(210, 105, 30);
+    margin-bottom: 1rem;
+}
+
+/* Login form styling */
+.LoginForm {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+    min-height: 400px;
+    color: #333;
+}
+
+.LoginForm:hover {
+    transform: translateY(-5px);
+}
+
+.LoginForm h1 {
+    color: rgb(210, 105, 30);
+    margin-bottom: 1.5rem;
+}

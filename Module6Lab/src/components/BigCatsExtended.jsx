@@ -1,57 +1,64 @@
-import React, { useState } from 'react';
-import SingleCatExtended from './SingleCatExtended';
+import React, { useState } from "react";
+import SingleCatExtended from "./SingleCatExtended";
 
 const BigCatsExtended = () => {
   const cats = [
     {
       id: 1,
-      name: 'Cheetah',
-      latinName: 'Acinonyx jubatus',
-      image: 'https://twpark.com/wp-content/uploads/2023/05/2023MAY02_BABY_CHEETAH_CUBS_KAZI_ZURI_ANDIALEXANDER_0_DSC06575-Enhanced-NR-1-scaled.jpg'
+      name: "Cheetah",
+      latinName: "Acinonyx jubatus",
+      image:
+        "https://i.pinimg.com/736x/3b/61/99/3b6199b2d2ee961169cb4f506d88cdf8.jpg",
     },
     {
       id: 2,
-      name: 'Cougar',
-      latinName: 'Puma concolor',
-      image: 'https://www.shutterstock.com/image-photo/young-cougar-cub-playing-on-600nw-1807736962.jpg'
+      name: "Cougar",
+      latinName: "Puma concolor",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeeTYzCiWbmbJMrbAQcYyMRhDKc-L0B37Xow&s",
     },
     {
       id: 3,
-      name: 'Jaguar',
-      latinName: 'Panthera onca',
-      image: 'https://littlebuddythecat.com/wp-content/uploads/2025/02/jaguar-cub.jpg'
+      name: "Jaguar",
+      latinName: "Panthera onca",
+      image: "https://media.craiyon.com/2025-04-19/1_fflqtkRByZzz8xuBgB8g.webp",
     },
     {
       id: 4,
-      name: 'Leopard',
-      latinName: 'Panthera pardus',
-      image: 'https://africafreak.com/wp-content/uploads/2019/10/baby-leopard-900x600.jpg'
+      name: "Leopard",
+      latinName: "Panthera pardus",
+      image: "https://media.craiyon.com/2025-04-03/8DvV89zXR-K0vA4vdzBJwQ.webp",
     },
     {
       id: 5,
-      name: 'Lion',
-      latinName: 'Panthera leo',
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa9ycBMCeQW15ot48zGp-GUygy1M2wLyjMpw&s'
+      name: "Lion",
+      latinName: "Panthera leo",
+      image:
+        "https://masterpiecer-images.s3.yandex.net/a7f075b43ddf11ee8ecf3a7ca4cc1bdc:upscaled",
     },
     {
       id: 6,
-      name: 'Snow leopard',
-      latinName: 'Panthera uncia',
-      image: 'https://d.newsweek.com/en/full/2084433/snow-leopards-zurich-zoo-wajra.jpg?w=1600&h=1200&q=88&f=56e3bf0c5ca206d1ff7e7ad8e70c2db9'
+      name: "Snow leopard",
+      latinName: "Panthera uncia",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBsvRfHXfr-_quSdnZ4MdJEjON1jIt7JAdlg&s",
     },
     {
       id: 7,
-      name: 'Tiger',
-      latinName: 'Panthera tigris',
-      image: 'https://www.zooborns.com/.a/6a010535647bf3970b02c8d39f9d73200c-800wi'
-    }
+      name: "Tiger",
+      latinName: "Panthera tigris",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoQeBX8oLD8i4MaiYv-WEddHkEr07yuL-xZg&s",
+    },
   ];
 
   const [displayedCats, setDisplayedCats] = useState(cats);
   const [isReversed, setIsReversed] = useState(false);
 
   const sortAlphabetically = () => {
-    const sorted = [...displayedCats].sort((a, b) => a.name.localeCompare(b.name));
+    const sorted = [...displayedCats].sort((a, b) =>
+      a.name.localeCompare(b.name),
+    );
     setDisplayedCats(sorted);
     setIsReversed(false);
   };
@@ -63,7 +70,9 @@ const BigCatsExtended = () => {
   };
 
   const filterPanthera = () => {
-    const pantheraFamily = cats.filter(cat => cat.latinName.includes('Panthera'));
+    const pantheraFamily = cats.filter((cat) =>
+      cat.latinName.includes("Panthera"),
+    );
     setDisplayedCats(pantheraFamily);
     setIsReversed(false);
   };
@@ -90,7 +99,9 @@ const BigCatsExtended = () => {
         </button>
       </div>
       <div className="cats-info">
-        <p>Showing {displayedCats.length} of {cats.length} cats</p>
+        <p>
+          Showing {displayedCats.length} of {cats.length} cats
+        </p>
       </div>
       <div className="cats-grid">
         {displayedCats.map((cat) => (

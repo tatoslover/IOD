@@ -16,7 +16,7 @@ The Module 1 lab exercises progress from basic command line operations to buildi
 - **Development Tools:** VS Code, Live Server, Prettier, debugger
 - **Version Control:** Git workflow, branching, merging, GitHub
 - **Project Management:** User stories, storyboarding, project planning
-- **Professional Development:** Portfolio creation, GitHub Pages deployment
+- **Professional Development:** Portfolio creation, web hosting
 
 ## Lab Exercise 1 - Command Line Basics
 **File:** `Exercise1.sh`, `Exercise1.png`
@@ -189,13 +189,13 @@ You have been hired by devsInc to create a landing page for their new project. T
 
 ---
 
-## Lab Exercise 9 - GitHub Pages Portfolio
-**What it showcases:** Professional portfolio development and GitHub Pages deployment
+## Lab Exercise 9 - Portfolio Website
+**What it showcases:** Professional portfolio development and web hosting
 
 ### Instructions:
-Learning to code is just one step, to make people know that you know how to code will make a difference. Artists have Pinterest, makers have Etsy, we have GitHub! That is where our name will appear, and the first web site most people will google when they want to hire us.
+Learning to code is just one step, to make people know that you know how to code will make a difference. Artists have Pinterest, makers have Etsy, we have our portfolio websites! That is where our name will appear, and the first web site most people will google when they want to hire us.
 
-GitHub offers the possibility to create your own page, so let's make use of it! Simply follow the instructions to create your first page and use what you have learned to make your portfolio site! Maybe it will not look great today, but one day it will!
+Create your own portfolio website using what you have learned so far! Use what you have learned to make your portfolio site! Maybe it will not look great today, but one day it will!
 
 **Free starter templates:** [Bootstrap Portfolio Templates](https://bootstrapmade.com/bootstrap-portfolio-templates/)
 

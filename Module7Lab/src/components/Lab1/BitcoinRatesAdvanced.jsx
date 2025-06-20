@@ -7,10 +7,10 @@ const currencies = ["USD", "AUD", "NZD", "GBP", "EUR", "SGD"];
 function BitcoinRatesAdvanced() {
   const [selectedCurrency, setSelectedCurrency] = useState(currencies[0]);
   const [showAdvanced, setShowAdvanced] = useState(false);
-  
+
   // Simple hook for single currency
   const { price: currentPrice, loading: currentLoading, error: currentError } = useBitcoinPrice(selectedCurrency);
-  
+
   // Advanced hook for multiple currencies management
   const {
     currencies: trackedCurrencies,
@@ -63,14 +63,16 @@ function BitcoinRatesAdvanced() {
   return (
     <div className="BitcoinRatesAdvanced componentBox">
       <h3>Bitcoin Exchange Rate - Advanced Demo</h3>
-      
+
       {/* Simple Single Currency Section */}
       <div className="simple-section">
         <h4>Single Currency (Basic Hook)</h4>
-        <label>
-          Choose currency:
-          <select 
-            value={selectedCurrency} 
+        <div className="currency-selector">
+          <label>
+            Choose currency:
+          </label>
+          <select
+            value={selectedCurrency}
             onChange={(e) => setSelectedCurrency(e.target.value)}
           >
             {currencies.map((curr) => (
@@ -79,8 +81,8 @@ function BitcoinRatesAdvanced() {
               </option>
             ))}
           </select>
-        </label>
-        
+        </div>
+
         <div className="price-display">
           {currentLoading && <p>Loading Bitcoin price...</p>}
           {currentError && <p style={{ color: 'red' }}>Error: {currentError}</p>}
@@ -96,7 +98,7 @@ function BitcoinRatesAdvanced() {
       <div className="advanced-section">
         <div className="section-header">
           <h4>Multi-Currency Manager (Advanced useReducer)</h4>
-          <button 
+          <button
             onClick={() => setShowAdvanced(!showAdvanced)}
             className="toggle-button"
           >
@@ -110,7 +112,7 @@ function BitcoinRatesAdvanced() {
             <div className="controls">
               <div className="control-group">
                 <label>Add Currency to Track:</label>
-                <select 
+                <select
                   onChange={(e) => {
                     if (e.target.value && !trackedCurrencies[e.target.value]) {
                       handleAddCurrency(e.target.value);
@@ -202,7 +204,7 @@ function BitcoinRatesAdvanced() {
                           </button>
                         </div>
                       </div>
-                      
+
                       <div className="currency-content">
                         {data.loading && <p className="loading">Loading...</p>}
                         {data.error && <p className="error">Error: {data.error}</p>}

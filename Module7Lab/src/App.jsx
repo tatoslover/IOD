@@ -1,52 +1,35 @@
-import './App.css'
-import BitcoinRates from './components/Lab1/BitcoinRates'
-import BitcoinRatesAdvanced from './components/Lab1/BitcoinRatesAdvanced'
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider, CssBaseline } from '@mui/material';
+import { EmojiProvider } from './contexts/EmojiContext';
+import { muiTheme } from './theme/muiTheme';
+import MUILayout from './components/Lab5/MUILayout';
+import MUIHomePage from './pages/Lab5/MUIHomePage';
+import MUILoginForm from './components/Lab5/MUILoginForm';
+import BitcoinRatesPage from './pages/BitcoinRatesPage';
+import PostList from './components/Lab5/PostList';
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Module 7 Lab - React Hooks & API Integration</h1>
-        <p>Demonstrating useEffect with API calls and proper cleanup</p>
-      </header>
-      
-      <main className="App-main">
-        <BitcoinRates />
-        
-        <BitcoinRatesAdvanced />
-        
-        <section className="info-section">
-          <h2>About This Demo</h2>
-          <div className="info-content">
-            <p>This demonstration showcases two implementations:</p>
-            
-            <h3>Simple Implementation (useBitcoinPrice hook)</h3>
-            <ul>
-              <li><strong>useEffect Hook:</strong> Fetches data when currency changes</li>
-              <li><strong>useReducer:</strong> Manages loading, data, and error states</li>
-              <li><strong>Cleanup Function:</strong> Prevents memory leaks with cancellation flag</li>
-              <li><strong>Error Handling:</strong> Gracefully handles API failures</li>
-              <li><strong>AbortController:</strong> Cancels ongoing requests on unmount</li>
-            </ul>
-            
-            <h3>Advanced Implementation (useBitcoinDataManager hook)</h3>
-            <ul>
-              <li><strong>Complex useReducer:</strong> Manages multiple currencies and advanced state</li>
-              <li><strong>Multiple Actions:</strong> Add/remove currencies, favorites, auto-refresh</li>
-              <li><strong>State Management:</strong> Tracks loading states per currency</li>
-              <li><strong>Computed Values:</strong> Statistics, sorting, and filtering</li>
-              <li><strong>Auto-refresh:</strong> Periodic updates with cleanup</li>
-              <li><strong>Persistence:</strong> Favorites and settings management</li>
-            </ul>
+    <ThemeProvider theme={muiTheme}>
+      <CssBaseline />
+      <EmojiProvider>
+        <Router>
+          <div className="App">
+            <Routes>
+              <Route path="/" element={<MUILayout />}>
+                <Route index element={<MUIHomePage />} />
+                <Route path="login" element={<MUILoginForm />} />
+                <Route path="bitcoin-rates" element={<BitcoinRatesPage />} />
+                <Route path="posts" element={<PostList />} />
+              </Route>
+            </Routes>
           </div>
-        </section>
-      </main>
-      
-      <footer className="App-footer">
-        <p>Data provided by CoinGecko API</p>
-      </footer>
-    </div>
-  )
+        </Router>
+      </EmojiProvider>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;

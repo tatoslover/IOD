@@ -29,37 +29,6 @@ node mongodb_blog.js
 ```bash
 redis-server
 redis-cli
-
-# Example Redis Usage for Blogging Platform:
-
-# Session Management
-SET session:user1_abc123 '{"userId":1,"username":"johndoe","loginTime":"2024-01-15T10:30:00Z"}'
-EXPIRE session:user1_abc123 3600
-
-# Post Caching
-SET post:1 '{"id":1,"title":"Getting Started with Database Design","likes":15,"views":250}'
-EXPIRE post:1 1800
-
-# Real-time Counters
-INCR post:1:views
-INCR post:1:likes
-HGETALL post:1:stats
-
-# Trending Posts
-ZADD trending:posts 81.2 1 79.1 2 128.2 3
-ZREVRANGE trending:posts 0 4 WITHSCORES
-
-# User Activity
-LPUSH user:1:activity '{"type":"like","postId":3,"timestamp":"2024-01-15T14:30:00Z"}'
-SADD user:1:liked 1 3 5 7
-
-# Search Caching
-SET search:"database design" '[{"id":1,"title":"Getting Started"}]'
-EXPIRE search:"database design" 900
-
-# Performance Monitoring
-INCR cache:hits
-MGET cache:hits cache:misses
 ```
 
 This comprehensive lab demonstrates modern database architecture patterns used in production applications, from initial design through implementation and optimization.
@@ -80,9 +49,8 @@ This comprehensive lab demonstrates modern database architecture patterns used i
 ## Files in This Lab
 
 - `README.md` - This comprehensive guide
-- `mongodb_blog.js` - Node.js MongoDB implementation
+- `mongodb_blog.js` - Node.js MongoDB implementation for Exercise 2
 - `mysql_blog.sql` - MySQL implementation for Exercise 3
-- Integrated Redis examples in README
 
 ## Key Learning Outcomes
 
@@ -518,15 +486,34 @@ async function updatePost(postId, updates) {
 redis-server
 redis-cli
 
-# Session management
-SET session:abc123 '{"userId":1,"username":"johndoe"}'
-EXPIRE session:abc123 3600
+# Example Redis Usage for Blogging Platform:
 
-# Real-time counters
+# Session Management
+SET session:user1_abc123 '{"userId":1,"username":"johndoe","loginTime":"2024-01-15T10:30:00Z"}'
+EXPIRE session:user1_abc123 3600
+
+# Post Caching
+SET post:1 '{"id":1,"title":"Getting Started with Database Design","likes":15,"views":250}'
+EXPIRE post:1 1800
+
+# Real-time Counters
 INCR post:1:views
-HINCRBY post:1:stats likes 1
+INCR post:1:likes
+HGETALL post:1:stats
 
-# Trending content
-ZADD trending:posts 128.2 3 81.2 1
-ZREVRANGE trending:posts 0 2 WITHSCORES
+# Trending Posts
+ZADD trending:posts 81.2 1 79.1 2 128.2 3
+ZREVRANGE trending:posts 0 4 WITHSCORES
+
+# User Activity
+LPUSH user:1:activity '{"type":"like","postId":3,"timestamp":"2024-01-15T14:30:00Z"}'
+SADD user:1:liked 1 3 5 7
+
+# Search Caching
+SET search:"database design" '[{"id":1,"title":"Getting Started"}]'
+EXPIRE search:"database design" 900
+
+# Performance Monitoring
+INCR cache:hits
+MGET cache:hits cache:misses
 ```

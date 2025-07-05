@@ -244,10 +244,67 @@ A sophisticated web application for exploring and comparing NBA player statistic
 
 ---
 
-### Mini Project 2 & 3
-**📁 `MiniProject2/` | `MiniProject3/`**
+### Mini Project 2: BookTracker
+**📁 `MiniProject2/`**
 
-*Projects currently in development - documentation to be completed.*
+**📚 Comprehensive React-Based Reading Tracker**
+
+A sophisticated React application for managing personal reading collections with progress tracking, book discovery, and analytics.
+
+**Key Features:**
+- **Personal Reading Library:** Track books across Wishlist, Currently Reading, and Finished collections
+- **Progress Monitoring:** Visual progress bars and reading statistics with goal tracking
+- **Book Discovery:** Integrated Google Books API search with auto-fill functionality (~40M books)
+- **Interactive Dashboard:** Reading analytics, recently finished books, and motivational insights
+- **Theme Switching:** Light/Dark mode with system preference detection and persistence
+
+**Technical Implementation:**
+- **Frontend:** React 19 with Material-UI and React Router
+- **State Management:** Context API with useReducer for complex state transitions
+- **Data Integration:** Google Books API with real-time search and debouncing
+- **Storage:** localStorage with cross-tab synchronization
+- **Performance:** React.memo, useCallback optimization, and bundle splitting
+
+**React Concepts Demonstrated:**
+- Advanced hooks (useState, useEffect, useReducer, useContext, useCallback, useMemo)
+- Custom hooks for reusable logic (useBookSearch, useLocalStorage)
+- Context API for global state management
+- React Router for client-side navigation
+- Performance optimization techniques
+
+**🔗 [Live Demo](https://booktrackerdemo.netlify.app) | [GitHub Repo](https://github.com/tatoslover/Mini-Project-2)**
+
+---
+
+### Mini Project 3: Barkend
+**📁 `MiniProject3/`**
+
+**🐕 Comprehensive Backend-Driven Application**
+
+A sophisticated backend application demonstrating advanced server-side architecture, API design, and database management through dog breed exploration.
+
+**Key Features:**
+- **Dog Breed Explorer:** Comprehensive breed database with search and filtering capabilities
+- **Random Dog Generator:** On-demand random dog images with breed-specific filtering
+- **CRUD Operations:** Full Create, Read, Update, Delete functionality for dog records
+- **API Analytics:** Real-time usage tracking, health monitoring, and performance metrics
+- **Interactive Documentation:** Swagger UI with live API testing and examples
+
+**Technical Implementation:**
+- **Backend:** Netlify Functions with auto-scaling serverless deployment
+- **Database:** MongoDB Atlas cloud database with intelligent caching
+- **External APIs:** Dog CEO API integration with sophisticated caching strategies
+- **API Design:** RESTful endpoints with OpenAPI 3.0 specification
+- **Performance:** 90% reduction in external API calls through database caching
+
+**Backend Architecture:**
+- **Serverless Functions:** Auto-scaling with zero server maintenance
+- **Database Integration:** MongoDB Atlas with Mongoose ODM
+- **Caching Strategy:** Intelligent caching reduces external API dependency
+- **Security:** Input validation, sanitization, and NoSQL injection prevention
+- **Monitoring:** Real-time health checks and performance analytics
+
+**🔗 [Live Demo](https://barkend.netlify.app) | [GitHub Repo](https://github.com/tatoslover/Mini-Project-3)**
 
 ---
 

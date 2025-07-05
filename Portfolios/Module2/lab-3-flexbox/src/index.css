@@ -1,0 +1,130 @@
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: purple;
+}
+
+.background-1 {
+    background: #68b0ab;
+}
+
+.background-2 {
+    background: #8fc0a9;
+}
+
+.background-3 {
+    background: #c8d5b9;
+}
+
+.background-4 {
+    background: #faf3dd;
+}
+
+.m-20 {
+    margin: 20px;
+}
+
+.h-80 {
+    min-height: 80px;
+}
+
+.h-400 {
+    height: 400px;
+}
+
+.w-80 {
+    width: 80px;
+}
+
+/* 2 basic flexbox */
+
+.flex-container {
+    display: flex;
+    flex-direction: row; /* Try column, row-reverse, column-reverse */
+}
+
+.flex-item-1 {
+    flex: 1;
+}
+.flex-item-2 {
+    flex: 2;
+}
+.flex-item-3 {
+    flex: 3;
+}
+.flex-item-4 {
+    flex: 4;
+}
+
+/* 3 centering with flexbox */
+
+.flex-center {
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+}
+
+/* Assigning leftover space */
+
+.flex-space-between {
+    justify-content: space-between;
+}
+
+/* Wrapping items */
+
+.flex-wrap {
+    flex-wrap: wrap; /* try wrap-reverse too */
+}
+
+.flex-basis-item-50 {
+    flex-basis: 25%;
+}
+
+/* Changing direction - properties added to existing flex-container class above */
+
+/* Flexbox for horizontal navigation */
+
+.flex-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 40px;
+    gap: 10px;
+    width: 100%; /* Ensure full width for justify-content to work */
+}
+
+/* 7.2: Align menu items to the RIGHT */
+.flex-menu.right-align {
+    justify-content: flex-end;
+}
+
+/* 7.3: Align menu items to the CENTER */
+.flex-menu.center-align {
+    justify-content: center;
+}
+
+/* 7.4 + 7.5: FAQs moved to end + equal space distribution */
+.flex-menu.space-evenly {
+    justify-content: space-between; /* or space-evenly */
+}
+
+.flex-menu li {
+    flex-grow: 1; /* Distributes space evenly */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers text horizontally */
+}
+
+/* 7.4: Move FAQs to last position */
+.fourth-item {
+    order: 5; /* can also be order: 1 */
+}
+
+.flex-menu a {
+    text-decoration: none;
+    color: black;
+    padding: 0 10px; /* Improves click area */
+}

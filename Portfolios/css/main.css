@@ -1,0 +1,136 @@
+/* Master CSS File for Portfolio Pages */
+/* Import all portfolio-related stylesheets */
+
+@import url('portfolio.css');
+@import url('calculator.css');
+@import url('demos.css');
+
+/* Additional theme variations */
+:root {
+    --primary-color: rgb(210, 105, 30);
+    --primary-hover: rgb(190, 95, 25);
+    --secondary-color: #667eea;
+    --accent-color: #764ba2;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Theme customization classes */
+.theme-blue {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+}
+
+.theme-green {
+    --primary-color: #28a745;
+    --primary-hover: #1e7e34;
+}
+
+.theme-purple {
+    --primary-color: #6f42c1;
+    --primary-hover: #5a32a3;
+}
+
+.theme-red {
+    --primary-color: #dc3545;
+    --primary-hover: #c82333;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    body.dark-mode {
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    }
+
+    .dark-mode .lab-section {
+        background: #3a3a3a;
+        color: #e0e0e0;
+    }
+
+    .dark-mode .demo-area {
+        background: #2a2a2a;
+        border-color: #555;
+    }
+
+    .dark-mode .form-input,
+    .dark-mode .form-select {
+        background: #2a2a2a;
+        color: #e0e0e0;
+        border-color: #555;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white !important;
+        color: black !important;
+    }
+
+    .lab-section {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+
+    .lab-content {
+        display: block !important;
+    }
+
+    .toggle-icon {
+        display: none !important;
+    }
+
+    .demo-area {
+        border: 1px solid #ddd !important;
+    }
+}
+
+/* Accessibility improvements */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Focus styles for better accessibility */
+*:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .lab-section {
+        border: 2px solid #000;
+    }
+
+    .btn {
+        border: 2px solid #000;
+    }
+
+    .form-input,
+    .form-select {
+        border: 2px solid #000;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -1,82 +1,61 @@
-/* Interactive Demo Components CSS */
+/* Module 1 Specific CSS - Web Development Fundamentals */
 
-/* Exercise 3 Demo - Column Layout */
-.exercise3-demo {
-    display: flex;
-    min-height: 300px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.column {
-    background: goldenrod;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
+/* Form Demo Styles */
+.form-demo {
+    background: white;
     padding: 20px;
-    transition: background-color 0.3s ease;
-    color: white;
-}
-
-.column:nth-child(1) {
-    background: #daa520;
-}
-
-.column:nth-child(2) {
-    background: #b8860b;
-}
-
-.column:nth-child(3) {
-    background: #9a7c0a;
-}
-
-.column img {
     border-radius: 8px;
-    margin: 10px 0;
-    max-width: 100%;
-    height: auto;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-.column input {
-    margin: 10px 0;
-    padding: 8px;
-    border: none;
-    border-radius: 4px;
-    width: 80%;
-    max-width: 200px;
-    text-align: center;
-    font-size: 1em;
+.form-group {
+    margin-bottom: 15px;
 }
 
-.column input:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-}
-
-.column button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: rgb(210, 105, 30);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 1em;
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
     font-weight: bold;
+    color: #333;
 }
 
-.column button:hover {
-    background-color: rgb(190, 95, 25);
-    transform: translateY(-1px);
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
 }
 
-.column button:active {
-    transform: translateY(0);
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: rgb(210, 105, 30);
+    box-shadow: 0 0 5px rgba(210, 105, 30, 0.3);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-output {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border-left: 4px solid rgb(210, 105, 30);
+}
+
+.form-output h4 {
+    margin-bottom: 10px;
+    color: rgb(210, 105, 30);
 }
 
 /* Dice Demo Styles */
@@ -162,64 +141,6 @@
 
 .dice-history-item:last-child {
     border-bottom: none;
-}
-
-/* Form Demo Styles */
-.form-demo {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1em;
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: rgb(210, 105, 30);
-    box-shadow: 0 0 5px rgba(210, 105, 30, 0.3);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-.form-output {
-    background: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 20px;
-    border-left: 4px solid rgb(210, 105, 30);
-}
-
-.form-output h4 {
-    margin-bottom: 10px;
-    color: rgb(210, 105, 30);
 }
 
 /* Array and Object Demo Styles */
@@ -323,21 +244,42 @@
     color: #721c24;
 }
 
-/* Responsive Design for Demos */
+/* Module 1 Specific Demo Section */
+.module1-demo-section {
+    background: #f8f9fa;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.module1-section {
+    margin-bottom: 2rem;
+}
+
+.module1-section h4 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.3em;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.module1-section h4:first-of-type {
+    margin-top: 1rem;
+}
+
+.module1-section .lab-description {
+    margin-bottom: 1.5rem;
+}
+
+.module1-section .lab-description.no-border {
+    margin-bottom: 2rem;
+}
+
+/* Responsive Design for Module 1 */
 @media (max-width: 768px) {
-    .exercise3-demo {
-        flex-direction: column;
-        min-height: auto;
-    }
-
-    .column {
-        min-height: 200px;
-    }
-
-    .dice-result {
-        font-size: 3em;
-    }
-
     .data-controls {
         flex-direction: column;
     }
@@ -345,6 +287,16 @@
     .data-controls button {
         width: 100%;
         margin-bottom: 5px;
+    }
+
+    .dice-result {
+        font-size: 3em;
+    }
+
+    .module1-section h4 {
+        margin-top: 1.5rem;
+        margin-bottom: 0.8rem;
+        font-size: 1.2em;
     }
 }
 

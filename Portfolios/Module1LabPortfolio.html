@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Module 1 Lab Portfolio - Web Development Journey</title>
         <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/module1.css" />
     </head>
     <body>
         <div class="container">
@@ -44,14 +45,14 @@
                     <h2>📚 Module 1 Lab Overview</h2>
                     <span class="toggle-icon">▼</span>
                 </div>
-                <div class="lab-content active">
+                <div class="lab-content active module1-section">
                     <div class="lab-description">
                         <strong>Complete Learning Journey:</strong> From basic
                         command line operations to full-stack web application
                         development
                     </div>
                     <p>
-                        This repository contains lab exercises for Module 1,
+                        This portfolio contains the lab exercises for Module 1,
                         covering fundamental web development concepts including
                         command line operations, HTML, CSS, JavaScript, and Git
                         workflows. The Module 1 lab exercises progress from
@@ -64,11 +65,7 @@
                     <div class="lab-description no-border">
                         <h4>🌟 Complete Source Code & Documentation</h4>
                         <p style="margin: 10px 0">
-                            The GitHub repository contains all source code,
-                            comprehensive README documentation, and project
-                            files. Explore the complete learning journey with
-                            detailed instructions, starter code, extensions, and
-                            professional development practices.
+                            The GitHub repository contains:
                         </p>
                         <ul style="margin: 10px 0">
                             <li>
@@ -98,7 +95,7 @@
                     <h2>🛠️ Skills Developed & Tools Mastered</h2>
                     <span class="toggle-icon">▼</span>
                 </div>
-                <div class="lab-content">
+                <div class="lab-content module1-section">
                     <div
                         style="
                             display: grid;
@@ -184,16 +181,28 @@
                     <h2>🖥️ Exercise 1: Command Line Mastery</h2>
                     <span class="toggle-icon">▼</span>
                 </div>
-                <div class="lab-content">
+                <div class="lab-content module1-section">
                     <div class="lab-description">
-                        <strong>Skills Demonstrated:</strong> File system
-                        navigation, directory management, command line
-                        operations
+                        <strong>Lab Exercise 1:</strong> Practice using the
+                        commands you learnt to solve the following:
                     </div>
-                    <p>
-                        This exercise focused on mastering fundamental command
-                        line operations essential for web development workflow.
-                    </p>
+                    <ul>
+                        <li>Create a new folder</li>
+                        <li>Create another folder inside the first one</li>
+                        <li>Print the contents of the first folder</li>
+                        <li>
+                            Change directory to the second folder, and print the
+                            current path
+                        </li>
+                        <li>
+                            Change directory back to the original starting place
+                        </li>
+                        <li>Delete the first folder</li>
+                        <li>
+                            <strong>Extension:</strong> Research the cp, mv, cat
+                            and find commands, and experiment!
+                        </li>
+                    </ul>
                     <div class="code-display">
                         $ mkdir new-folder<br />
                         $ mkdir new-folder/subfolder<br />
@@ -217,15 +226,40 @@
                     <h2>📄 Exercise 2: HTML Fundamentals & VS Code</h2>
                     <span class="toggle-icon">▼</span>
                 </div>
-                <div class="lab-content">
+                <div class="lab-content module1-section">
                     <div class="lab-description">
-                        <strong>Skills Demonstrated:</strong> HTML5 document
-                        structure, VS Code features, and development workflow
+                        <strong>Lab Exercise 2:</strong> VS Code & HTML Setup
                     </div>
-                    <p>
-                        Created a structured HTML document showcasing lab
-                        exercise steps and common HTML elements.
-                    </p>
+                    <ul>
+                        <li>Open (or create) your Module1 folder in VS Code</li>
+                        <li>
+                            Use the Terminal feature of VS Code to issue
+                            commands to create a new folder inside Module1 for
+                            LabExercises and change into it
+                        </li>
+                        <li>
+                            Inside the above folder, create a new file called
+                            exercise2.html
+                        </li>
+                        <li>
+                            As the first character in this file, type an
+                            exclamation mark ! and use the Emmet abbreviation to
+                            generate a basic HTML skeleton
+                        </li>
+                        <li>
+                            Populate the &lt;body&gt; with basic HTML
+                            representing these lab steps
+                        </li>
+                        <li>Go Live to view and test the HTML</li>
+                        <li>
+                            Install Prettier VSCode extension and format
+                            selected code with Ctrl-K-F
+                        </li>
+                        <li>
+                            Read through Dealing with files on the MDN for more
+                            tips about website file systems
+                        </li>
+                    </ul>
                     <div class="demo-area">
                         <h3>📄 Embedded HTML Exercise - Live Preview</h3>
                         <iframe
@@ -260,15 +294,33 @@
                     <h2>🎨 Exercise 3: Interactive Web Components</h2>
                     <span class="toggle-icon">▼</span>
                 </div>
-                <div class="lab-content">
+                <div class="lab-content module1-section">
                     <div class="lab-description">
-                        <strong>Skills Demonstrated:</strong> CSS Flexbox,
-                        JavaScript DOM manipulation, Event handling, External
-                        file linking
+                        <strong>Lab Exercise 3:</strong> Interactive Web
+                        Components
                     </div>
+                    <p>Using this code as a starter:</p>
+                    <ul>
+                        <li>Add an image to each column</li>
+                        <li>Add a 'Change Me' button under each heading</li>
+                        <li>Style your buttons with CSS</li>
+                        <li>
+                            Add a script tag with two JS functions, one for each
+                            button
+                        </li>
+                        <li>
+                            Clicking each button should change the background
+                            colour and the heading text for that column
+                        </li>
+                    </ul>
                     <p>
-                        Built an interactive two-column layout with dynamic
-                        content changes and user input integration.
+                        <strong>Extension 1:</strong> add text fields under the
+                        headings, and replace the heading text with the value of
+                        the text fields when the buttons are clicked!
+                    </p>
+                    <p>
+                        <strong>Extension 2:</strong> Move the CSS and JS code
+                        into external files linked from the HTML.
                     </p>
                     <div class="demo-area">
                         <h3>🎯 Interactive Demo - Try It!</h3>
@@ -321,16 +373,31 @@
                     <h2>🧮 Exercise 4: JavaScript Functions</h2>
                     <span class="toggle-icon">▼</span>
                 </div>
-                <div class="lab-content">
+                <div class="lab-content module1-section">
                     <div class="lab-description">
-                        <strong>Skills Demonstrated:</strong> Function creation,
-                        Mathematical operations, String concatenation, Error
-                        handling
+                        <strong>Lab Exercise 4:</strong> Simple Functions Design
                     </div>
                     <p>
-                        Developed reusable mathematical functions and string
-                        manipulation utilities with proper error handling.
+                        Use the learnings from this lesson to design some very
+                        simple functions. Call them with different values.
                     </p>
+                    <ul>
+                        <li>
+                            Create 4 functions for the 4 main mathematical
+                            operations (-,+,/,*). Return the calculated value
+                            and then output it to the screen.
+                        </li>
+                        <li>
+                            Create a function that takes the name of a person as
+                            an argument, and prints out "Hello &lt;name&gt;" to
+                            the console.
+                        </li>
+                    </ul>
+                    <p>
+                        <strong>Hint:</strong> search online on how to
+                        concatenate two strings.
+                    </p>
+
                     <div class="demo-area">
                         <h3>🧮 Calculator Demo</h3>
                         <div class="calculator">
@@ -416,16 +483,29 @@
                     <h2>📊 Exercise 5: JavaScript Arrays</h2>
                     <span class="toggle-icon">▼</span>
                 </div>
-                <div class="lab-content">
+                <div class="lab-content module1-section">
                     <div class="lab-description">
-                        <strong>Skills Demonstrated:</strong> Array
-                        manipulation, Debugging techniques, VS Code debugger
-                        usage
+                        <strong>Lab Exercise 5:</strong> Array Manipulation
                     </div>
                     <p>
-                        Mastered array operations including creation,
-                        modification, and manipulation with debugging workflow.
+                        For understanding more about arrays, try creating an
+                        array that has 5 elements.
                     </p>
+                    <ul>
+                        <li>
+                            Replace the value of the element at position 1 and 4
+                        </li>
+                        <li>Add a new element to the beginning of the array</li>
+                        <li>Remove the element at the end of the array</li>
+                        <li>Print the array to the console</li>
+                    </ul>
+                    <p>
+                        <strong>Extension:</strong> attach the VS Code debugger
+                        to your script and add a breakpoint on the first line.
+                        Step through your code line by line to watch how it
+                        executes.
+                    </p>
+
                     <div class="demo-area">
                         <h3>🍎 Fruits Array Operations:</h3>
                         <div class="code-display">
@@ -461,15 +541,27 @@
                     <h2>📚 Exercise 6: JavaScript Objects & JSON</h2>
                     <span class="toggle-icon">▼</span>
                 </div>
-                <div class="lab-content">
+                <div class="lab-content module1-section">
                     <div class="lab-description">
-                        <strong>Skills Demonstrated:</strong> Object creation,
-                        Property manipulation, JSON data structures
+                        <strong>Lab Exercise 6:</strong> JSON Object Creation
                     </div>
+                    <ul>
+                        <li>
+                            Try creating a json object variable for a book. The
+                            book should have a title, description, author and
+                            number of pages
+                        </li>
+                        <li>
+                            Try printing these object property values in your
+                            console individually and via the whole book object
+                        </li>
+                        <li>Update the description of the book</li>
+                    </ul>
                     <p>
-                        Created and manipulated JSON objects representing
-                        real-world data with dynamic property updates.
+                        <strong>Extension:</strong> Create an array of 5 book
+                        objects
                     </p>
+
                     <div class="demo-area">
                         <h3>📚 Library Collection Demo:</h3>
                         <div class="code-display">
@@ -502,15 +594,21 @@
                     <h2>🧪 Exercise 7: Testing & Documentation</h2>
                     <span class="toggle-icon">▼</span>
                 </div>
-                <div class="lab-content">
+                <div class="lab-content module1-section">
                     <div class="lab-description">
-                        <strong>Skills Demonstrated:</strong> Unit testing, Code
-                        documentation, Test-driven development
+                        <strong>Lab Exercise 7:</strong> Testing & Documentation
                     </div>
-                    <p>
-                        Implemented comprehensive testing suite with proper
-                        documentation and edge case handling.
-                    </p>
+                    <p>Using the functions you created for Exercise 4:</p>
+                    <ul>
+                        <li>Write a specification comment for each function</li>
+                        <li>Write at least 3 unit tests for each function</li>
+                        <li>
+                            In the unit tests, try to include both expected and
+                            non-typical test values (such as zero, decimal or
+                            negative numbers)
+                        </li>
+                    </ul>
+
                     <div class="demo-area">
                         <h3>🧪 Comprehensive Test Suite:</h3>
                         <div class="code-display">
@@ -543,17 +641,55 @@
                     <h2>🎲 Exercise 8: Complete Dice Generator Project</h2>
                     <span class="toggle-icon">▼</span>
                 </div>
-                <div class="lab-content">
+                <div class="lab-content module1-section">
                     <div class="lab-description">
-                        <strong>Skills Demonstrated:</strong> Complete project
-                        lifecycle, Git workflow, Modular architecture, Unit
-                        testing, Professional development practices
+                        <strong>Lab Exercise 8:</strong> Dice Project
                     </div>
                     <p>
-                        <strong>Project Brief:</strong> Hired by devsInc to
-                        create a dice generator landing page for tabletop gamers
-                        playing from home.
+                        You have been hired by devsInc to create a landing page
+                        for their new project. They want to support people
+                        playing tabletop games from home and require a Dice
+                        Generator.
                     </p>
+                    <p><strong>Features:</strong></p>
+                    <ul>
+                        <li>
+                            The user should be able to choose different dice,
+                            such as a D6 or a D10 (number of faces)
+                        </li>
+                        <li>
+                            The user should be able to roll their chosen dice to
+                            see the random outcome
+                        </li>
+                    </ul>
+                    <p><strong>Requirements:</strong></p>
+                    <ul>
+                        <li>
+                            Define on paper, all the user stories
+                            (functionalities) you will need for this page
+                        </li>
+                        <li>
+                            Make a simple storyboard of the user using the
+                            system
+                        </li>
+                        <li>Create a git repository for the project</li>
+                        <li>Clone the project locally</li>
+                        <li>
+                            Work on the project creating 2 branches, one for the
+                            UI, and one for rolling the dice, committing and
+                            merging when completed
+                        </li>
+                        <li>
+                            Create the roll dice function by passing an
+                            argument, in order to reutilize the same function
+                            multiple times
+                        </li>
+                        <li>Write unit tests for the roll dice function</li>
+                        <li>
+                            When complete, push the content to your git
+                            repository
+                        </li>
+                    </ul>
 
                     <!-- User Stories & Planning -->
                     <div class="demo-area">
@@ -794,16 +930,37 @@
                     <h2>🌐 Exercise 9: Portfolio Website</h2>
                     <span class="toggle-icon">▼</span>
                 </div>
-                <div class="lab-content">
+                <div class="lab-content module1-section">
                     <div class="lab-description">
-                        <strong>Skills Demonstrated:</strong> GitHub Pages
-                        deployment, portfolio presentation, and professional web
-                        presence
+                        <strong>Lab Exercise 9:</strong> your Git page
                     </div>
                     <p>
-                        Created a professional portfolio website showcasing the
-                        complete learning journey and technical capabilities
-                        developed throughout Module 1.
+                        Learning to code is just one step, to make people know
+                        that you know how to code will make a difference.
+                        Artists have Pinterest, makers have Etsy, we have
+                        GitHub! That is where our name will appear, and the
+                        first web site most people will google when they want to
+                        hire us.
+                    </p>
+                    <p>
+                        GitHub offers the possibility to create your own page,
+                        so let's make use of it! Simply follow the instructions
+                        here to create your first page. Follow this link and use
+                        what you have learned to make your portfolio site! Maybe
+                        it will not look great today, but one day it will!
+                    </p>
+                    <p>
+                        <strong
+                            >Some free starter templates if you need
+                            them:</strong
+                        >
+                        <br />
+                        <a
+                            href="https://bootstrapmade.com/bootstrap-portfolio-templates/"
+                            target="_blank"
+                        >
+                            https://bootstrapmade.com/bootstrap-portfolio-templates/
+                        </a>
                     </p>
 
                     <div class="demo-area">
@@ -884,239 +1041,10 @@
             </div>
         </div>
 
-        <script>
-            // Toggle section functionality
-            function toggleSection(header) {
-                const content = header.nextElementSibling;
-                const icon = header.querySelector(".toggle-icon");
+        <!-- Include the main JavaScript library -->
+        <script src="js/main.js"></script>
 
-                content.classList.toggle("active");
-                icon.style.transform = content.classList.contains("active")
-                    ? "rotate(180deg)"
-                    : "rotate(0deg)";
-            }
-
-            // Exercise 3 functions
-            function changeColumn1() {
-                const column = document.getElementById("column1");
-                const heading = document.getElementById("heading1");
-                const input = document.getElementById("input1");
-
-                column.style.backgroundColor = "lightblue";
-
-                if (input.value.trim() !== "") {
-                    heading.innerText = input.value;
-                } else {
-                    heading.innerText = "Changed!";
-                }
-            }
-
-            function changeColumn2() {
-                const column = document.getElementById("column2");
-                const heading = document.getElementById("heading2");
-                const input = document.getElementById("input2");
-
-                column.style.backgroundColor = "lightcoral";
-
-                if (input.value.trim() !== "") {
-                    heading.innerText = input.value;
-                } else {
-                    heading.innerText = "Updated!";
-                }
-            }
-
-            // Exercise 4 calculator functions
-            function add(a, b) {
-                return a + b;
-            }
-            function subtract(a, b) {
-                return a - b;
-            }
-            function multiply(a, b) {
-                return a * b;
-            }
-            function divide(a, b) {
-                if (b === 0) return "Cannot divide by zero!";
-                return a / b;
-            }
-
-            function calculate(operation) {
-                const num1 = parseFloat(document.getElementById("num1").value);
-                const num2 = parseFloat(document.getElementById("num2").value);
-                const result = document.getElementById("calcResult");
-
-                if (isNaN(num1) || isNaN(num2)) {
-                    result.textContent = "Please enter valid numbers!";
-                    return;
-                }
-
-                let output;
-                switch (operation) {
-                    case "add":
-                        output = add(num1, num2);
-                        break;
-                    case "subtract":
-                        output = subtract(num1, num2);
-                        break;
-                    case "multiply":
-                        output = multiply(num1, num2);
-                        break;
-                    case "divide":
-                        output = divide(num1, num2);
-                        break;
-                }
-
-                result.textContent = `Result: ${output}`;
-            }
-
-            function greetUser() {
-                const name = document.getElementById("greetName").value;
-                const result = document.getElementById("greetResult");
-
-                if (name.trim() === "") {
-                    result.textContent = "Please enter your name!";
-                    return;
-                }
-
-                result.textContent = `Hello ${name}! 👋`;
-            }
-
-            // Exercise 5 array demonstration
-            function demonstrateArrays() {
-                let fruits = [
-                    "apple",
-                    "banana",
-                    "cherry",
-                    "date",
-                    "elderberry",
-                ];
-                const steps = [];
-
-                steps.push(`Initial: [${fruits.join(", ")}]`);
-
-                fruits[1] = "blueberry"; // replaces "banana"
-                fruits[4] = "fig"; // replaces "elderberry"
-                steps.push(`After replacements: [${fruits.join(", ")}]`);
-
-                fruits.unshift("avocado");
-                steps.push(`After unshift: [${fruits.join(", ")}]`);
-
-                fruits.pop();
-                steps.push(`After pop: [${fruits.join(", ")}]`);
-
-                document.getElementById("arrayResult").innerHTML =
-                    steps.join("<br>");
-            }
-
-            // Exercise 6 object demonstration
-            function demonstrateObjects() {
-                let library = [
-                    {
-                        title: "The Hobbit",
-                        description: "A fantasy adventure",
-                        author: "J.R.R. Tolkien",
-                        pages: 310,
-                    },
-                    {
-                        title: "1984",
-                        description: "Dystopian future",
-                        author: "George Orwell",
-                        pages: 328,
-                    },
-                    {
-                        title: "To Kill a Mockingbird",
-                        description: "A novel on racial injustice",
-                        author: "Harper Lee",
-                        pages: 281,
-                    },
-                    {
-                        title: "The Great Gatsby",
-                        description: "Life in the Jazz Age",
-                        author: "F. Scott Fitzgerald",
-                        pages: 180,
-                    },
-                    {
-                        title: "Moby-Dick",
-                        description: "A whale of a tale",
-                        author: "Herman Melville",
-                        pages: 635,
-                    },
-                ];
-
-                // Update the description of the first book
-                library[0].description = "An epic fantasy journey";
-
-                let output = "<strong>📚 Library Collection:</strong><br><br>";
-                library.forEach((book, index) => {
-                    output += `<strong>${index + 1}. ${book.title}</strong><br>`;
-                    output += `Author: ${book.author}<br>`;
-                    output += `Pages: ${book.pages}<br>`;
-                    output += `Description: ${book.description}<br>`;
-                    output += "----------------------<br>";
-                });
-
-                document.getElementById("objectResult").innerHTML = output;
-            }
-
-            // Exercise 7 testing demonstration
-            function runTests() {
-                const tests = [];
-
-                // Tests for add()
-                tests.push(
-                    `add(5, 3) = ${add(5, 3)} (Expected: 8) ${add(5, 3) === 8 ? "✅" : "❌"}`,
-                );
-                tests.push(
-                    `add(0, -4) = ${add(0, -4)} (Expected: -4) ${add(0, -4) === -4 ? "✅" : "❌"}`,
-                );
-                tests.push(
-                    `add(2.5, 3.1) = ${add(2.5, 3.1)} (Expected: 5.6) ${Math.abs(add(2.5, 3.1) - 5.6) < 0.0001 ? "✅" : "❌"}`,
-                );
-
-                // Tests for subtract()
-                tests.push(
-                    `subtract(10, 4) = ${subtract(10, 4)} (Expected: 6) ${subtract(10, 4) === 6 ? "✅" : "❌"}`,
-                );
-                tests.push(
-                    `subtract(0, 0) = ${subtract(0, 0)} (Expected: 0) ${subtract(0, 0) === 0 ? "✅" : "❌"}`,
-                );
-                tests.push(
-                    `subtract(-5, 10) = ${subtract(-5, 10)} (Expected: -15) ${subtract(-5, 10) === -15 ? "✅" : "❌"}`,
-                );
-
-                // Tests for multiply()
-                tests.push(
-                    `multiply(7, 6) = ${multiply(7, 6)} (Expected: 42) ${multiply(7, 6) === 42 ? "✅" : "❌"}`,
-                );
-                tests.push(
-                    `multiply(0, 100) = ${multiply(0, 100)} (Expected: 0) ${multiply(0, 100) === 0 ? "✅" : "❌"}`,
-                );
-                tests.push(
-                    `multiply(-3, 2) = ${multiply(-3, 2)} (Expected: -6) ${multiply(-3, 2) === -6 ? "✅" : "❌"}`,
-                );
-
-                // Tests for divide()
-                tests.push(
-                    `divide(20, 4) = ${divide(20, 4)} (Expected: 5) ${divide(20, 4) === 5 ? "✅" : "❌"}`,
-                );
-                tests.push(
-                    `divide(20, 0) = ${divide(20, 0)} (Expected: "Cannot divide by zero!") ${divide(20, 0) === "Cannot divide by zero!" ? "✅" : "❌"}`,
-                );
-                tests.push(
-                    `divide(-10, 2) = ${divide(-10, 2)} (Expected: -5) ${divide(-10, 2) === -5 ? "✅" : "❌"}`,
-                );
-
-                document.getElementById("testResult").innerHTML =
-                    tests.join("<br>");
-            }
-
-            // Initialize with first section open
-            document.addEventListener("DOMContentLoaded", function () {
-                const firstSection = document.querySelector(".lab-content");
-                const firstIcon = document.querySelector(".toggle-icon");
-                firstSection.classList.add("active");
-                firstIcon.style.transform = "rotate(180deg)";
-            });
-        </script>
+        <!-- Include Module 1 specific functions -->
+        <script src="js/module1.js"></script>
     </body>
 </html>

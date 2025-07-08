@@ -1,0 +1,1381 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Module 4 Lab Portfolio - Advanced Frontend Development</title>
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/module4.css" />
+
+        <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+        <script
+            src="https://kit.fontawesome.com/a076d05399.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG3HuBlAUw3Wu-46hoogyANMHo1VC-tKnE1Q&s"
+                        alt="IOD Logo"
+                        class="header-logo"
+                    />Module 4 Lab Portfolio
+                </h1>
+                <h2 class="header-subtitle">Samuel Love</h2>
+                <p>
+                    Advanced Frontend Development: UX/UI Design, Modern Web
+                    Technologies & API Integration
+                </p>
+            </div>
+
+            <!-- README Overview Section -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>📚 Module 4 Lab Overview</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content active">
+                    <div class="lab-description">
+                        <strong>Advanced Frontend Development Journey:</strong>
+                        From UX/UI design prototyping to complex data
+                        visualization and API integration
+                    </div>
+                    <p>
+                        This portfolio showcases the Module 4 lab exercises,
+                        covering advanced frontend development concepts
+                        including UX/UI design with Figma, responsive Bootstrap
+                        layouts, dynamic DOM manipulation, API integration,
+                        modern JavaScript date/time handling, CSS animations,
+                        and data visualization with ECharts. The progression
+                        demonstrates mastery of modern web development practices
+                        and tools.
+                    </p>
+
+                    <div class="lab-description no-border">
+                        <h4>🌟 Complete Source Code & Documentation</h4>
+                        <p class="margin-10">The GitHub repository contains:</p>
+                        <ul class="margin-10">
+                            <li>
+                                <strong>Full Source Code:</strong> All 10
+                                exercises with working implementations
+                            </li>
+                            <li>
+                                <strong>Complete README:</strong> Detailed
+                                instructions and learning objectives
+                            </li>
+                            <li>
+                                <strong>Project Files:</strong> Tests,
+                                configurations, and documentation
+                            </li>
+                            <li>
+                                <strong>Professional Setup:</strong> .gitignore,
+                                package.json, and best practices
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills & Tools Comprehensive Section -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>🛠️ Skills Developed & Tools Mastered</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content">
+                    <div class="grid-layout">
+                        <div class="lab-description no-border">
+                            <h4>🎨 UX/UI Design</h4>
+                            <ul>
+                                <li>
+                                    <strong>Figma Prototyping:</strong>
+                                    Complete user interface design workflow
+                                </li>
+                                <li>
+                                    <strong>User Research:</strong>
+                                    Target audience analysis and personas
+                                </li>
+                                <li>
+                                    <strong>Design Systems:</strong>
+                                    Color palettes, typography, and visual
+                                    hierarchy
+                                </li>
+                                <li>
+                                    <strong>Interactive Prototypes:</strong>
+                                    Clickable wireframes and user flows
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="lab-description no-border">
+                            <h4>📱 Modern Web Technologies</h4>
+                            <ul>
+                                <li>
+                                    <strong>Bootstrap Framework:</strong>
+                                    Responsive grid system and UI components
+                                </li>
+                                <li>
+                                    <strong>DOM Manipulation:</strong>
+                                    Dynamic content generation and templates
+                                </li>
+                                <li>
+                                    <strong>API Integration:</strong>
+                                    RESTful services and JSON data handling
+                                </li>
+                                <li>
+                                    <strong>ES6+ JavaScript:</strong>
+                                    Modern syntax and asynchronous programming
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="lab-description no-border">
+                            <h4>🚀 Advanced Features</h4>
+                            <ul>
+                                <li>
+                                    <strong>Data Visualization:</strong>
+                                    ECharts library integration and charting
+                                </li>
+                                <li>
+                                    <strong>CSS Animations:</strong>
+                                    Keyframes, transitions, and interactive
+                                    effects
+                                </li>
+                                <li>
+                                    <strong>Date/Time Libraries:</strong>
+                                    Luxon and Moment.js for time calculations
+                                </li>
+                                <li>
+                                    <strong>Search & Filter Systems:</strong>
+                                    Real-time filtering and sorting algorithms
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab 1: Figma UX/UI Design -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>🎨 Lab 1: Figma UX/UI Design Process</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content module4-section module4-project-goals">
+                    <div class="lab-description">
+                        <strong>Project:</strong> Complete UX/UI design process
+                        for a Christchurch tattoo community social media app
+                    </div>
+
+                    <div class="lab-description no-border">
+                        <h4>📝 Lab Requirements</h4>
+                        <p>
+                            <strong>Task:</strong> Create a Figma prototype for
+                            a social media application, where you can post your
+                            content and posts from other users are visible.
+                            Don't just jump into Figma, try to follow the design
+                            procedure by first clarifying the requirements,
+                            understanding the application flow, and sketching a
+                            quick paper mockup.
+                        </p>
+                        <p>
+                            <strong>Personal Design Challenge:</strong> This
+                            could be part of your portfolio, so try to do some
+                            research and come up with a personal design. For
+                            example, it could be a social media application
+                            dedicated to the Warhammer Community, or the Ferrari
+                            Lovers.
+                        </p>
+                        <p>
+                            <strong>My Approach:</strong> I chose to create a
+                            social media app for the Christchurch tattoo
+                            community, combining social features with local
+                            business discovery.
+                        </p>
+                    </div>
+
+                    <h4>🎯 Project Goals</h4>
+                    <ul>
+                        <li>
+                            Build a social platform for Christchurch tattoo
+                            enthusiasts
+                        </li>
+                        <li>Connect local artists with potential clients</li>
+                        <li>
+                            Provide studio discovery with interactive mapping
+                        </li>
+                        <li>
+                            Create a community space for tattoo art showcase
+                        </li>
+                    </ul>
+
+                    <h4>👥 Target Users</h4>
+                    <ul>
+                        <li>Local tattoo clients and prospective clients</li>
+                        <li>Christchurch tattoo artists and studios</li>
+                        <li>Visitors seeking quality tattoo work</li>
+                    </ul>
+
+                    <h4>🔗 Interactive Prototype</h4>
+                    <p>
+                        <a
+                            href="https://www.figma.com/proto/c6QkoL0oX2oXVsJ04vBwJ9/Tat%C5%ABTahi?node-id=2-78&starting-point-node-id=2%3A9&t=hsi6OKGeOvFwQvw8-1"
+                            target="_blank"
+                            class="btn"
+                        >
+                            View Figma Prototype
+                        </a>
+                    </p>
+
+                    <h4>✨ Core Features</h4>
+                    <ul>
+                        <li>
+                            <strong>Account Management:</strong> Multi-role
+                            system (Enthusiast/Artist/Studio)
+                        </li>
+                        <li>
+                            <strong>Social Feed:</strong> Style-filtered content
+                            discovery
+                        </li>
+                        <li>
+                            <strong>Artist Directory:</strong> Searchable local
+                            artist profiles
+                        </li>
+                        <li>
+                            <strong>Studio Map:</strong> Interactive
+                            Christchurch studio locator
+                        </li>
+                        <li>
+                            <strong>Booking System:</strong> Direct
+                            artist/studio consultation booking
+                        </li>
+                    </ul>
+
+                    <h4>🎨 Design System</h4>
+                    <ul>
+                        <li>
+                            <strong>Color Palette:</strong> Dark theme with jade
+                            green accents
+                        </li>
+                        <li>
+                            <strong>Typography:</strong> Tattoo-inspired font
+                            selections
+                        </li>
+                        <li>
+                            <strong>Imagery:</strong> Christchurch-themed visual
+                            elements
+                        </li>
+                        <li>
+                            <strong>Approach:</strong> Mobile-first responsive
+                            design
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Lab 2: Calculator -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>🧮 Lab 2: Calculator Application</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content module4-section">
+                    <div class="lab-description">
+                        <strong>Status:</strong> Supporting documentation and
+                        design refinements for the TatūTahi project
+                    </div>
+
+                    <div class="lab-description no-border">
+                        <h4>📝 Lab Requirements</h4>
+                        <p>
+                            <strong>Task:</strong> Create a calculator
+                            application that takes 2 numbers and supports 4
+                            operations (+, -, ×, ÷). You need to press the
+                            equals button to get the result displayed, and reset
+                            to clear it.
+                        </p>
+                        <p>
+                            <strong>Important:</strong> Do not use the eval()
+                            function - it is a security risk and bypasses custom
+                            logic.
+                        </p>
+                        <p><strong>Development Process:</strong></p>
+                        <ol>
+                            <li>
+                                List the requirements (4 total): a) Get data
+                                (two numbers), b) Choose an operator, c) Get the
+                                result, d) Reset the screen
+                            </li>
+                            <li>
+                                Sketch the application and create a flow diagram
+                            </li>
+                            <li>
+                                Use a tool like Figma to design the application
+                                and test the prototype
+                            </li>
+                            <li>
+                                Develop the application starting from GIT
+                                (create repository, clone locally, create
+                                feature branches)
+                            </li>
+                        </ol>
+                        <p>
+                            <strong>My Implementation:</strong> This was
+                            integrated as supporting documentation for the
+                            TatūTahi project, providing additional design system
+                            refinements.
+                        </p>
+                    </div>
+
+                    <p>
+                        This lab provided additional documentation, user
+                        research, and design system refinements to support the
+                        main UX/UI design project.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Lab 3: Dynamic Card Templates -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>🃏 Lab 3: Dynamic Card Templates with Lightbox</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content module4-section">
+                    <div class="lab-description">
+                        <strong>Focus:</strong> HTML templates, dynamic content
+                        generation, and interactive image galleries
+                    </div>
+
+                    <div class="lab-description no-border">
+                        <h4>📝 Lab Requirements</h4>
+                        <p>
+                            <strong>Exercise 1:</strong> Modify the addCard
+                            function so that you can pass content for the card
+                            dynamically.
+                        </p>
+                        <p>
+                            <strong>Exercise 2:</strong> Call addCard repeatedly
+                            so that your cards are automatically generated based
+                            on data from an array. Use the following array:
+                        </p>
+                        <pre><code>const data = [{name: 'bob', age: 23}, {name: 'alice', age: 39}]</code></pre>
+                        <p>
+                            <strong
+                                >Exercise 3 - The Artist's Portfolio:</strong
+                            >
+                            Populate the page dynamically, by generating an
+                            artist profile card which includes cards
+                            representing the items in an artist's portfolio.
+                            Extension: make an array of artists, all with
+                            multiple portfolio items.
+                        </p>
+                        <p><strong>Required Data Structure:</strong></p>
+                        <pre><code>const artist = {
+    name: "Van Gogh",
+    portfolio: [
+        {title: "portrait", url: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436532/1671316/main-image"},
+        {title: "sky", url: "https://mymodernmet.com/wp/wp-content/uploads/2020/11/White-house-night-van-goh-worldwide-2.jpg"}
+    ]
+}</code></pre>
+                    </div>
+
+                    <h4>🔧 Technical Implementation</h4>
+                    <ul>
+                        <li>
+                            HTML5 <code>&lt;template&gt;</code> element for
+                            reusable card components
+                        </li>
+                        <li>Dynamic content injection with JavaScript</li>
+                        <li>CSS hover effects and smooth animations</li>
+                        <li>Lightbox modal for image viewing</li>
+                    </ul>
+
+                    <div class="demo-area">
+                        <h4>🎭 Artist Gallery Demo</h4>
+                        <div id="artist-gallery" class="artist-gallery-grid">
+                            <!-- Dynamic cards will be generated here -->
+                        </div>
+                        <button
+                            class="btn btn-margin-top"
+                            onclick="loadArtistGallery()"
+                        >
+                            Load Artist Gallery
+                        </button>
+                    </div>
+
+                    <h4>🎨 Template Structure</h4>
+                    <div class="code-display">
+                        <pre><code>&lt;template id="card-template"&gt;
+    &lt;div class="card"&gt;
+        &lt;div class="card-body"&gt;
+            &lt;div class="card-title"&gt;&lt;/div&gt;
+            &lt;div class="card-description"&gt;&lt;/div&gt;
+            &lt;img class="card-image" /&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/template&gt;</code></pre>
+                    </div>
+
+                    <h4>🔧 Dynamic Card Generation</h4>
+                    <div class="code-display">
+                        <pre><code>function addCard(title, description, imageUrl = null) {
+    const template = document.getElementById("card-template")
+        .content.cloneNode(true);
+    template.querySelector(".card-title").innerText = title;
+    template.querySelector(".card-description").innerText = description;
+
+    const img = template.querySelector(".card-image");
+    if (imageUrl) {
+        img.src = imageUrl;
+        img.alt = title;
+    } else {
+        img.style.display = "none";
+    }
+
+    document.querySelector("#card-list").appendChild(template);
+}</code></pre>
+                    </div>
+
+                    <h4>🎯 Artist Portfolio Implementation</h4>
+                    <div class="code-display">
+                        <pre><code>const artists = [
+    {
+        name: "Vincent van Gogh",
+        portfolio: [
+            { title: "Self Portrait", url: "https://collectionapi.metmuseum.org/..." },
+            { title: "The Starry Night", url: "https://mymodernmet.com/..." }
+        ]
+    },
+    {
+        name: "Frida Kahlo",
+        portfolio: [
+            { title: "Self Portrait", url: "https://www.fridakahlo.org/..." },
+            { title: "Viva la Vida", url: "https://www.fridakahlo.org/..." }
+        ]
+    },
+    {
+        name: "Gottfried Lindauer",
+        portfolio: [
+            { title: "Self Portrait", url: "https://upload.wikimedia.org/..." },
+            { title: "The Tohunga-ta-moko", url: "https://www.lindaueronline.co.nz/..." }
+        ]
+    }
+];
+
+artists.forEach(artist => {
+    addCard(artist.name, "Artist Portfolio:");
+    artist.portfolio.forEach(item => {
+        addCard(item.title, "", item.url);
+    });
+});</code></pre>
+                    </div>
+
+                    <h4>🖼️ Lightbox Implementation</h4>
+                    <div class="code-display">
+                        <pre><code>// CSS for lightbox
+#lightbox {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+// JavaScript for lightbox functionality
+document.querySelector("#card-list").addEventListener("click", (e) => {
+    if (e.target.classList.contains("card-image")) {
+        lightboxImg.src = e.target.src;
+        lightbox.style.display = "flex";
+    }
+});
+
+lightbox.addEventListener("click", () => {
+    lightbox.style.display = "none";
+});</code></pre>
+                    </div>
+
+                    <template id="lab3-card-template">
+                        <div class="lab3-card">
+                            <div class="lab3-card-body">
+                                <div class="lab3-card-title"></div>
+                                <div class="lab3-card-description"></div>
+                                <img class="lab3-card-image" />
+                            </div>
+                        </div>
+                    </template>
+
+                    <div class="lab3-lightbox" id="lab3-lightbox">
+                        <img id="lab3-lightbox-img" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab 4: Bootstrap Responsive Cards -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>🎯 Lab 4: Bootstrap Responsive Card Layout</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content module4-section">
+                    <div class="lab-description">
+                        <strong>Project:</strong> Mandarin Numbers educational
+                        cards with Bootstrap grid system
+                    </div>
+
+                    <div class="lab-description no-border">
+                        <h4>📝 Lab Requirements</h4>
+                        <p>
+                            <strong>Task:</strong> Using only Bootstrap
+                            elements, create a grid-based card layout, making it
+                            responsive.
+                        </p>
+                        <p><strong>Responsive Requirements:</strong></p>
+                        <ul>
+                            <li>
+                                4 cards per row on large screens (and above)
+                            </li>
+                            <li>2 cards per row on medium screens</li>
+                            <li>1 card per row on small (and below) screens</li>
+                        </ul>
+                        <p>
+                            <strong>My Implementation:</strong> Created
+                            educational Mandarin Numbers cards with cultural
+                            context and significance explanations.
+                        </p>
+                    </div>
+
+                    <h4>📱 Responsive Design Features</h4>
+                    <ul>
+                        <li>
+                            Bootstrap 5 grid system (col-12 col-md-6 col-lg-3)
+                        </li>
+                        <li>Floating navbar with custom styling</li>
+                        <li>Shadow effects and hover interactions</li>
+                        <li>Cultural context and educational content</li>
+                    </ul>
+
+                    <div class="demo-area">
+                        <h4>🀄 Mandarin Numbers Cards</h4>
+                        <div class="mandarin-cards-grid">
+                            <div>
+                                <div class="demo-card">
+                                    <div class="mandarin-number-display">
+                                        一
+                                    </div>
+                                    <div class="mandarin-card-content">
+                                        <p>
+                                            <strong>yī</strong> (一) — "One".
+                                            The beginning, unity, or
+                                            singularity.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="demo-card">
+                                    <div class="mandarin-number-display">
+                                        二
+                                    </div>
+                                    <div class="mandarin-card-content">
+                                        <p>
+                                            <strong>èr</strong> (二) — "Two".
+                                            Used for counting; represents
+                                            duality.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="demo-card">
+                                    <div class="mandarin-number-display">
+                                        三
+                                    </div>
+                                    <div class="mandarin-card-content">
+                                        <p>
+                                            <strong>sān</strong> (三) — "Three".
+                                            Symbolizes harmony and balance.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="demo-card">
+                                    <div class="mandarin-number-display">
+                                        四
+                                    </div>
+                                    <div class="mandarin-card-content">
+                                        <p>
+                                            <strong>sì</strong> (四) — "Four".
+                                            Sounds like "death" (死 sì) in
+                                            Chinese, considered unlucky.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="demo-card">
+                                    <div class="mandarin-number-display">
+                                        五
+                                    </div>
+                                    <div class="mandarin-card-content">
+                                        <p>
+                                            <strong>wǔ</strong> (五) — "Five".
+                                            Symbol of balance (like five
+                                            elements, directions).
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="demo-card">
+                                    <div class="mandarin-number-display">
+                                        六
+                                    </div>
+                                    <div class="mandarin-card-content">
+                                        <p>
+                                            <strong>liù</strong> (六) — "Six".
+                                            Associated with smoothness and good
+                                            luck.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="demo-card">
+                                    <div class="mandarin-number-display">
+                                        七
+                                    </div>
+                                    <div class="mandarin-card-content">
+                                        <p>
+                                            <strong>qī</strong> (七) — "Seven".
+                                            Represents togetherness and
+                                            sometimes mystery.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="demo-card">
+                                    <div class="mandarin-number-display">
+                                        八
+                                    </div>
+                                    <div class="mandarin-card-content">
+                                        <p>
+                                            <strong>bā</strong> (八) — "Eight".
+                                            Very lucky in Chinese culture
+                                            (sounds like wealth).
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4>🎨 Styling Highlights</h4>
+                    <ul>
+                        <li>Custom floating navbar design</li>
+                        <li>Large Chinese character displays</li>
+                        <li>Cultural significance explanations</li>
+                        <li>
+                            Consistent card heights with Bootstrap utilities
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Lab 5: Dynamic News Feed -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>📰 Lab 5: Dynamic News Feed System</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content module4-section">
+                    <div class="lab-description">
+                        <strong>Features:</strong> Real-time content updates,
+                        form handling, and interval management
+                    </div>
+
+                    <div class="lab-description no-border">
+                        <h4>📝 Lab Requirements</h4>
+                        <p>
+                            <strong>Part 1:</strong> Use the following array to
+                            populate a web page with news. When the page loads,
+                            display all news items. Use an interval function to
+                            read the array every 5 seconds and refresh the
+                            screen.
+                        </p>
+                        <pre><code>let news = [
+    { id: 1, title: 'Election Results', content: "Newly elected minister..." },
+    { id: 2, title: 'Sporting Success', content: "World Cup winners..." },
+    { id: 3, title: 'Tornado Warning', content: "Residents should prepare..." }
+];</code></pre>
+                        <p>
+                            <strong>Part 2:</strong> Create a form to add news
+                            to the array. When the interval function executes,
+                            it should re-populate the page with all articles
+                            including new ones added via the form.
+                        </p>
+                        <p>
+                            <strong>Important:</strong> Prevent form submission
+                            from reloading the page using preventDefault() or by
+                            using inputs with onclick events instead of a form
+                            tag.
+                        </p>
+                        <p>
+                            <strong>Extension:</strong> Include a button to stop
+                            the interval from reloading news items.
+                        </p>
+                    </div>
+
+                    <h4>⚡ Core Functionality</h4>
+                    <ul>
+                        <li>Dynamic news rendering with DOM manipulation</li>
+                        <li>Form-based content addition with validation</li>
+                        <li>Automatic refresh system with setInterval</li>
+                        <li>User-controlled update management</li>
+                    </ul>
+
+                    <div class="demo-area">
+                        <h4>📊 News Feed Demo</h4>
+                        <div id="news-demo-container" class="news-container">
+                            <!-- News items will be populated here -->
+                        </div>
+                        <div class="form-container">
+                            <div class="form-row">
+                                <input
+                                    type="text"
+                                    class="form-input form-input-flex"
+                                    placeholder="News title..."
+                                    id="demo-title"
+                                />
+                                <button class="btn" onclick="addDemoNews()">
+                                    Add News
+                                </button>
+                            </div>
+                            <div class="form-row">
+                                <textarea
+                                    class="form-input form-textarea-flex"
+                                    placeholder="News content..."
+                                    id="demo-content"
+                                ></textarea>
+                                <button
+                                    class="btn"
+                                    onclick="toggleNewsUpdates()"
+                                    id="toggle-btn"
+                                >
+                                    Stop Updates
+                                </button>
+                            </div>
+                            <div class="form-status">
+                                <span id="update-status"
+                                    >News updates: Active (every 5
+                                    seconds)</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4>🔧 Technical Implementation</h4>
+                    <div class="code-display">
+                        <pre><code>let news = [
+    { id: 1, title: 'Election Results', content: "Newly elected minister..." },
+    { id: 2, title: 'Sporting Success', content: "World Cup winners..." },
+    { id: 3, title: 'Tornado Warning', content: "Residents should prepare..." }
+];
+
+let intervalId = null;
+
+function renderNews() {
+    const container = document.getElementById('news-container');
+    container.innerHTML = ''; // Clear previous news
+
+    news.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'news-item';
+        div.innerHTML = `&lt;h3&gt;${item.title}&lt;/h3&gt;&lt;p&gt;${item.content}&lt;/p&gt;`;
+        container.appendChild(div);
+    });
+}
+
+// Handle form submission
+form.addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent page reload
+
+    const title = titleInput.value.trim();
+    const content = contentInput.value.trim();
+
+    if (title && content) {
+        const newId = news.length ? news[news.length - 1].id + 1 : 1;
+        news.push({ id: newId, title, content });
+
+        titleInput.value = '';
+        contentInput.value = '';
+    }
+});
+
+// Start interval updates
+intervalId = setInterval(renderNews, 5000);</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab 6: Bootstrap API Integration -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>🌐 Lab 6: Bootstrap Cards with API Integration</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content module4-section">
+                    <div class="lab-description">
+                        <strong>Objective:</strong> Fetch external data and
+                        display in responsive Bootstrap card layout
+                    </div>
+
+                    <div class="lab-description no-border">
+                        <h4>📝 Lab Requirements</h4>
+                        <p>
+                            <strong>Task:</strong> Create a web page that reads
+                            posts from JSON Placeholder using the fetch API. Set
+                            the limit default to 10. When the page loads, it
+                            will use the default value.
+                        </p>
+                        <p>
+                            <strong>API Endpoint:</strong> JSONPlaceholder posts
+                            API
+                        </p>
+                        <p>
+                            <strong>Implementation:</strong> Use techniques from
+                            previous templating labs, using Bootstrap cards and
+                            grids to layout the returned post data from JSON
+                            Placeholder on the page.
+                        </p>
+                        <p><strong>Requirements:</strong></p>
+                        <ul>
+                            <li>Use fetch API to retrieve data online</li>
+                            <li>Display data using Bootstrap cards</li>
+                            <li>Implement responsive grid layout</li>
+                            <li>Handle loading states and errors</li>
+                        </ul>
+                    </div>
+
+                    <h4>🔄 API Integration</h4>
+                    <ul>
+                        <li>JSONPlaceholder API for demo data</li>
+                        <li>Fetch API with promise handling</li>
+                        <li>Dynamic Bootstrap card generation</li>
+                        <li>Error handling and loading states</li>
+                    </ul>
+
+                    <div class="demo-area">
+                        <h4>📄 API Cards Demo</h4>
+                        <div id="api-cards-demo" class="grid-layout">
+                            <!-- Dynamic cards will be loaded here -->
+                        </div>
+                        <button
+                            class="btn btn-margin-top"
+                            onclick="loadAPIDemoCards()"
+                        >
+                            Load API Data
+                        </button>
+                    </div>
+
+                    <h4>📝 Implementation Pattern</h4>
+                    <div class="code-display">
+                        fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
+                        .then(response => response.json()) .then(posts => { //
+                        Generate Bootstrap cards posts.forEach(post => { //
+                        Create card elements }); }) .catch(error =>
+                        console.error('Error:', error));
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab 7: CSS Animations -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>🎭 Lab 7: CSS Animations and Transitions</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content module4-section">
+                    <div class="lab-description">
+                        <strong>Focus:</strong> Advanced CSS animations,
+                        keyframes, and smooth transitions
+                    </div>
+
+                    <div class="lab-description no-border">
+                        <h4>📝 Lab Requirements</h4>
+                        <p>
+                            <strong>Task:</strong> Make a square slider so that
+                            it slides from the top to the bottom and returns to
+                            its original position, changing background colour in
+                            the process.
+                        </p>
+                        <p><strong>Animation Requirements:</strong></p>
+                        <ul>
+                            <li>Square element that moves vertically</li>
+                            <li>Smooth animation from top to bottom</li>
+                            <li>Color change during animation</li>
+                            <li>Return to original position</li>
+                            <li>Continuous loop animation</li>
+                        </ul>
+                        <p>
+                            <strong>Implementation:</strong> Use CSS @keyframes
+                            and animation properties to create smooth
+                            transitions.
+                        </p>
+                    </div>
+
+                    <h4>🌟 Animation Features</h4>
+                    <ul>
+                        <li>CSS keyframes for complex animations</li>
+                        <li>Color transitions during movement</li>
+                        <li>Smooth easing functions</li>
+                        <li>Infinite loop animations</li>
+                    </ul>
+
+                    <div class="demo-area">
+                        <h4>🎨 Square Slider Animation</h4>
+                        <div class="animation-demo-container">
+                            <div class="animation-track">
+                                <div
+                                    id="animated-square"
+                                    class="animated-square"
+                                ></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4>🎯 CSS Keyframes</h4>
+                    <div class="code-display">
+                        @keyframes slideUpDown { 0% { top: 0; background-color:
+                        blue; } 50% { top: 200px; background-color: red; } 100%
+                        { top: 0; background-color: blue; } }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab 8: Modern Date/Time Libraries -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>⏰ Lab 8: Date/Time Libraries (Luxon & Moment.js)</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content module4-section">
+                    <div class="lab-description">
+                        <strong>Libraries:</strong> Luxon (modern) and Moment.js
+                        (legacy) comparison and implementation
+                    </div>
+
+                    <div class="lab-description no-border">
+                        <h4>📝 Lab Requirements</h4>
+                        <p>
+                            <strong>Primary Task:</strong> Use the Luxon
+                            documentation to solve the following problems:
+                        </p>
+                        <ol>
+                            <li>Calculate days since birth</li>
+                            <li>
+                                Display detailed age breakdown (Example: 24
+                                years, 8 months, and 26 days)
+                            </li>
+                            <li>Handle timezone conversions</li>
+                            <li>Implement date comparisons</li>
+                            <li>Create world clock functionality</li>
+                        </ol>
+                        <p>
+                            <strong>Extension:</strong> Try re-doing the
+                            exercise using the Moment.js library instead and
+                            compare the implementations.
+                        </p>
+                        <p>
+                            <strong>Learning Objectives:</strong> Understand
+                            modern vs legacy date/time libraries and their
+                            different approaches to handling dates and times.
+                        </p>
+                    </div>
+
+                    <h4>📅 Date Calculations Implemented</h4>
+                    <ul>
+                        <li>Age calculation from birthdate</li>
+                        <li>Detailed age breakdown (years, months, days)</li>
+                        <li>Date comparison and proximity detection</li>
+                        <li>Date ordering and chronological analysis</li>
+                        <li>
+                            Timezone handling and international time display
+                        </li>
+                    </ul>
+
+                    <div class="demo-area">
+                        <h4>🎯 Live Date Calculations</h4>
+                        <div class="grid-layout">
+                            <div>
+                                <div class="demo-card">
+                                    <div class="product-card-content">
+                                        <h6>Age Calculator</h6>
+                                        <p id="age-display">
+                                            Days since birth:
+                                            <span id="days-count"
+                                                >Loading...</span
+                                            >
+                                        </p>
+                                        <p id="detailed-age">
+                                            Detailed age:
+                                            <span id="age-breakdown"
+                                                >Loading...</span
+                                            >
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="demo-card">
+                                    <div class="product-card-content">
+                                        <h6>World Clock</h6>
+                                        <p>
+                                            London Time:
+                                            <span id="london-time"
+                                                >Loading...</span
+                                            >
+                                        </p>
+                                        <p>
+                                            Date Comparison:
+                                            <span id="date-comparison"
+                                                >Loading...</span
+                                            >
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-container">
+                            <button
+                                class="btn"
+                                onclick="updateDateCalculations()"
+                            >
+                                Refresh Date Calculations
+                            </button>
+                        </div>
+                    </div>
+
+                    <h4>🔧 Library Comparison</h4>
+                    <div class="code-display">
+                        <pre><code>// Luxon (Modern) - Lab8.mjs
+import { DateTime } from 'luxon';
+
+const birthDate = DateTime.fromISO('1996-09-15');
+const now = DateTime.now();
+const daysBetween = now.diff(birthDate, 'days').days;
+
+// Detailed age breakdown
+const diff = now.diff(birthDate, ['years', 'months', 'days']).toObject();
+console.log(`${Math.floor(diff.years)} years, ${Math.floor(diff.months)} months, ${Math.floor(diff.days)} days`);
+
+// London time
+const londonTime = DateTime.now().setZone('Europe/London');
+console.log(`London time: ${londonTime.toFormat('HH:mm:ss')}`);
+
+// Moment.js (Legacy) - Lab8Ext.mjs
+import moment from 'moment';
+
+const birthDate = moment('1996-09-15');
+const now = moment();
+const daysBetween = now.diff(birthDate, 'days');
+
+// Detailed age breakdown
+const ageYears = now.diff(birthDate, 'years');
+const afterYears = birthDate.clone().add(ageYears, 'years');
+const ageMonths = now.diff(afterYears, 'months');
+const afterMonths = afterYears.clone().add(ageMonths, 'months');
+const ageDays = now.diff(afterMonths, 'days');
+
+// London time
+const londonTime = moment().tz('Europe/London');
+console.log(`London time: ${londonTime.format('HH:mm:ss')}`);</code></pre>
+                    </div>
+
+                    <h4>📋 Implementation Results</h4>
+                    <div class="code-display">
+                        <pre><code>// Console output from Lab8.mjs (Luxon):
+Days since birth: 10332
+Current age: 28 years, 3 months, and 15 days
+Closest date to now is: 2024-12-25
+2024-12-25 is before 2025-01-01
+Current time in London: 14:30:45
+
+// Console output from Lab8Ext.mjs (Moment.js):
+Days since birth: 10332
+Current age: 28 years, 3 months, and 15 days
+Closest date to now: 2024-12-25
+2024-12-25 is before 2025-01-01
+Current time in London: 14:30:45</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab 9: Data Visualization with ECharts -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>📊 Lab 9: Data Visualization with ECharts</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content module4-section">
+                    <div class="lab-description">
+                        <strong>Project:</strong> Interactive bar chart
+                        displaying Fake Store API product categories
+                    </div>
+
+                    <div class="lab-description no-border">
+                        <h4>📝 Lab Requirements</h4>
+                        <p>
+                            <strong>Task:</strong> Adapt the provided code to
+                            make a chart that shows how many items are listed
+                            under each category on the Fake Store API.
+                        </p>
+                        <p><strong>Requirements:</strong></p>
+                        <ul>
+                            <li>
+                                Get data from the FakeStore API (using Fetch or
+                                Axios)
+                            </li>
+                            <li>Have an eChart bar for each category</li>
+                            <li>
+                                Show how many items are listed under each
+                                category
+                            </li>
+                        </ul>
+                        <p>
+                            <strong>API Endpoint:</strong>
+                            https://fakestoreapi.com/products
+                        </p>
+                        <p>
+                            <strong>Implementation:</strong> Process the JSON
+                            data to count products per category and configure
+                            the ECharts options accordingly.
+                        </p>
+                    </div>
+
+                    <h4>📈 Visualization Features</h4>
+                    <ul>
+                        <li>ECharts.js library integration</li>
+                        <li>Real-time API data processing</li>
+                        <li>Dynamic chart generation</li>
+                        <li>Category-based data aggregation</li>
+                    </ul>
+
+                    <div class="demo-area">
+                        <h4>🛍️ Fake Store Categories Chart</h4>
+                        <div id="chart-container" class="chart-container"></div>
+                        <button
+                            class="btn btn-margin-top"
+                            onclick="loadChartData()"
+                        >
+                            Load Chart Data
+                        </button>
+                    </div>
+
+                    <h4>📊 Data Processing</h4>
+                    <div class="code-display">
+                        <pre><code>fetch('https://fakestoreapi.com/products')
+    .then(response => response.json())
+    .then(products => {
+        // Count products per category
+        const categoryCounts = {};
+        products.forEach(product => {
+            const category = product.category;
+            categoryCounts[category] = (categoryCounts[category] || 0) + 1;
+        });
+
+        // Update chart
+        myChart.setOption({
+            xAxis: { data: Object.keys(categoryCounts) },
+            series: [{ data: Object.values(categoryCounts) }]
+        });
+    });</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab 10: Complete E-commerce Interface -->
+            <div class="lab-section">
+                <div class="lab-header" onclick="toggleSection(this)">
+                    <h2>🛒 Lab 10: Complete E-commerce Interface</h2>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="lab-content module4-section">
+                    <div class="lab-description">
+                        <strong>Capstone Project:</strong> Full-featured
+                        e-commerce interface with advanced filtering and search
+                    </div>
+
+                    <div class="lab-description no-border">
+                        <h4>📝 Lab Requirements</h4>
+                        <p>
+                            <strong>Task:</strong> Create a fake eCommerce
+                            website with data from the Fake Store API.
+                        </p>
+                        <p><strong>Core Requirements:</strong></p>
+                        <ul>
+                            <li>Fetch or Axios the API data</li>
+                            <li>
+                                Create Bootstrap cards to display items,
+                                including image, title, price, and description
+                            </li>
+                            <li>
+                                Create a drop-down selection to choose
+                                individual product categories for filtering
+                            </li>
+                        </ul>
+                        <p><strong>Optional Extensions:</strong></p>
+                        <ul>
+                            <li>
+                                <strong>Optional Extra 1:</strong> Create a
+                                search for item feature
+                            </li>
+                            <li>
+                                <strong>Optional Extra 2:</strong> Add custom
+                                icons to each card (to show item category)
+                            </li>
+                            <li>
+                                <strong>Optional Extra 3:</strong> Include a
+                                sorting feature to sort items by price or title
+                            </li>
+                        </ul>
+                        <p>
+                            <strong>API:</strong> Fake Store API
+                            (https://fakestoreapi.com/products)
+                        </p>
+                    </div>
+
+                    <h4>🚀 Advanced Features</h4>
+                    <ul>
+                        <li>
+                            Multi-criteria filtering (category, search, sort)
+                        </li>
+                        <li>Real-time search with debouncing</li>
+                        <li>Dynamic sorting (price, title, alphabetical)</li>
+                        <li>Font Awesome icons for categories</li>
+                        <li>Responsive Bootstrap grid layout</li>
+                        <li>Image optimization and lazy loading</li>
+                    </ul>
+
+                    <div class="demo-area">
+                        <h4>🏪 Sam's Fake Store Demo</h4>
+
+                        <!-- Filters -->
+                        <div class="filter-grid">
+                            <div>
+                                <select
+                                    id="demo-category-filter"
+                                    class="form-select"
+                                >
+                                    <option value="all">All Categories</option>
+                                    <option value="electronics">
+                                        Electronics
+                                    </option>
+                                    <option value="jewelery">Jewelry</option>
+                                    <option value="men's clothing">
+                                        Men's Clothing
+                                    </option>
+                                    <option value="women's clothing">
+                                        Women's Clothing
+                                    </option>
+                                </select>
+                            </div>
+                            <div>
+                                <input
+                                    type="text"
+                                    id="demo-search"
+                                    class="form-input"
+                                    placeholder="Search products..."
+                                />
+                            </div>
+                            <div>
+                                <select id="demo-sort" class="form-select">
+                                    <option value="default">Sort by...</option>
+                                    <option value="priceAsc">
+                                        Price: Low to High
+                                    </option>
+                                    <option value="priceDesc">
+                                        Price: High to Low
+                                    </option>
+                                    <option value="titleAsc">Title: A-Z</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Product Grid -->
+                        <div id="demo-product-grid" class="product-grid">
+                            <div>
+                                <div class="demo-card">
+                                    <div class="product-card-content">
+                                        <h5>Sample Product</h5>
+                                        <h6 class="product-subtitle">
+                                            <i class="fa-solid fa-box"></i>
+                                            Electronics
+                                        </h6>
+                                        <p>Sample product description...</p>
+                                        <div class="product-card-footer">
+                                            <span class="product-price"
+                                                >$29.99</span
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn" onclick="loadStoreProducts()">
+                            Load Store Products
+                        </button>
+                    </div>
+
+                    <h4>🎯 Filter Implementation</h4>
+                    <div class="code-display">
+                        <pre><code>function filterAndSort() {
+    const category = categoryFilter.value;
+    const searchTerm = searchInput.value.toLowerCase();
+    const sort = sortSelect.value;
+
+    let filtered = allProducts.filter(p => {
+        const matchesCategory = category === 'all' || p.category === category;
+        const matchesSearch = p.title.toLowerCase().includes(searchTerm);
+        return matchesCategory && matchesSearch;
+    });
+
+    // Apply sorting logic
+    switch(sort) {
+        case 'priceAsc': filtered.sort((a, b) => a.price - b.price); break;
+        case 'titleAsc': filtered.sort((a, b) => a.title.localeCompare(b.title)); break;
+    }
+
+    displayProducts(filtered);
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <p>&copy; 2024 Samuel Love - Web Development Portfolio</p>
+                <a
+                    href="https://github.com/tatoslover/IOD"
+                    class="github-link"
+                    target="_blank"
+                >
+                    View All Projects on GitHub
+                </a>
+            </div>
+        </div>
+
+        <!-- Include the main JavaScript library -->
+        <script src="js/main.js"></script>
+
+        <!-- Include Module 4 specific functions -->
+        <script src="js/module4.js"></script>
+    </body>
+</html>

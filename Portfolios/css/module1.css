@@ -310,3 +310,135 @@
         font-size: 1em;
     }
 }
+
+/* Inline styles extracted from Module1LabPortfolio.html */
+
+/* Header logo styles */
+.header-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+
+/* Header subtitle styles */
+.header-subtitle {
+    font-size: 1.8em;
+    margin: 10px 0;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Margin utility classes */
+.margin-10 {
+    margin: 10px 0;
+}
+
+/* Grid layout for skills section */
+.skills-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+/* Iframe styles */
+.lab-iframe {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+}
+
+/* Input width utility */
+.input-150 {
+    width: 150px;
+}
+
+/* Demo controls grid */
+.demo-controls-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* User stories list */
+.user-stories-list {
+    font-size: 0.9em;
+}
+
+/* Storyboard text */
+.storyboard-text {
+    font-size: 0.9em;
+}
+
+/* Demo grid layout */
+.demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+/* Demo box variants */
+.demo-box-blue {
+    background: #e3f2fd;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.demo-box-purple {
+    background: #f3e5f5;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.demo-box-green {
+    background: #e8f5e8;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Small code display */
+.code-display-small {
+    font-size: 0.8em;
+}
+
+/* Test output terminal */
+.test-terminal {
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: monospace;
+}
+
+.test-pass {
+    color: #fbb040;
+}
+
+.test-success {
+    color: #68d391;
+}
+
+.test-info {
+    color: #90cdf4;
+}
+
+/* Portfolio showcase */
+.portfolio-showcase {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    color: white;
+}
+
+.portfolio-showcase h4 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.portfolio-showcase p {
+    margin-top: 15px;
+    opacity: 0.9;
+}

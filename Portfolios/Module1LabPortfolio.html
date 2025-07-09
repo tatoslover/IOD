@@ -14,25 +14,10 @@
                     <img
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG3HuBlAUw3Wu-46hoogyANMHo1VC-tKnE1Q&s"
                         alt="IOD Logo"
-                        style="
-                            width: 60px;
-                            height: 60px;
-                            border-radius: 50%;
-                            vertical-align: middle;
-                            margin-right: 15px;
-                        "
+                        class="header-logo"
                     />Module 1 Lab Portfolio
                 </h1>
-                <h2
-                    style="
-                        font-size: 1.8em;
-                        margin: 10px 0;
-                        font-weight: 300;
-                        opacity: 0.9;
-                    "
-                >
-                    Samuel Love
-                </h2>
+                <h2 class="header-subtitle">Samuel Love</h2>
                 <p>
                     A comprehensive showcase of fundamental web development
                     skills
@@ -64,10 +49,8 @@
 
                     <div class="lab-description no-border">
                         <h4>🌟 Complete Source Code & Documentation</h4>
-                        <p style="margin: 10px 0">
-                            The GitHub repository contains:
-                        </p>
-                        <ul style="margin: 10px 0">
+                        <p class="margin-10">The GitHub repository contains:</p>
+                        <ul class="margin-10">
                             <li>
                                 <strong>Full Source Code:</strong> All 9
                                 exercises with working implementations
@@ -96,17 +79,7 @@
                     <span class="toggle-icon">▼</span>
                 </div>
                 <div class="lab-content module1-section">
-                    <div
-                        style="
-                            display: grid;
-                            grid-template-columns: repeat(
-                                auto-fit,
-                                minmax(300px, 1fr)
-                            );
-                            gap: 20px;
-                            margin: 20px 0;
-                        "
-                    >
+                    <div class="skills-grid-layout">
                         <div class="lab-description no-border">
                             <h4>💻 Core Technologies</h4>
                             <ul>
@@ -263,14 +236,10 @@
                     <div class="demo-area">
                         <h3>📄 Embedded HTML Exercise - Live Preview</h3>
                         <iframe
-                            src="Module1/Exercise2.html"
+                            src="Notes/Module1/Exercise2.html"
                             width="100%"
                             height="600px"
-                            style="
-                                border: 1px solid #ddd;
-                                border-radius: 8px;
-                                background: white;
-                            "
+                            class="lab-iframe"
                         >
                             <p>
                                 Your browser does not support iframes.
@@ -446,16 +415,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="demo-area" style="margin-top: 20px">
+                    <div class="demo-area mt-20">
                         <h3>👋 Greeting Demo</h3>
                         <div class="calculator">
                             <div class="calc-row">
                                 <input
                                     type="text"
                                     id="greetName"
-                                    class="calc-input"
+                                    class="calc-input input-150"
                                     placeholder="Your name"
-                                    style="width: 150px"
                                 />
                                 <button
                                     class="calc-button"
@@ -694,16 +662,10 @@
                     <!-- User Stories & Planning -->
                     <div class="demo-area">
                         <h3>📋 Project Planning & User Stories</h3>
-                        <div
-                            style="
-                                display: grid;
-                                grid-template-columns: 1fr 1fr;
-                                gap: 20px;
-                            "
-                        >
+                        <div class="demo-controls-grid">
                             <div class="lab-description no-border">
                                 <h4>🎯 User Stories Defined:</h4>
-                                <ol style="font-size: 0.9em">
+                                <ol class="user-stories-list">
                                     <li>Select from a list of dice types</li>
                                     <li>
                                         Click a "Roll" button to roll the
@@ -727,7 +689,7 @@
                             </div>
                             <div class="lab-description no-border">
                                 <h4>🎬 Storyboard Process:</h4>
-                                <div style="font-size: 0.9em">
+                                <div class="storyboard-text">
                                     <strong>Frame 1:</strong> Landing page with
                                     title, dropdown, roll button<br />
                                     <strong>Frame 2:</strong> User selects dice
@@ -744,28 +706,10 @@
                     <!-- Modular Architecture -->
                     <div class="demo-area">
                         <h3>🏗️ Modular Code Architecture</h3>
-                        <div
-                            style="
-                                display: grid;
-                                grid-template-columns: repeat(
-                                    auto-fit,
-                                    minmax(250px, 1fr)
-                                );
-                                gap: 15px;
-                            "
-                        >
-                            <div
-                                style="
-                                    background: #e3f2fd;
-                                    padding: 15px;
-                                    border-radius: 8px;
-                                "
-                            >
+                        <div class="demo-grid">
+                            <div class="demo-box-blue">
                                 <h4>📄 dice.js - Core Logic</h4>
-                                <div
-                                    class="code-display"
-                                    style="font-size: 0.8em"
-                                >
+                                <div class="code-display code-display-small">
                                     function rollDice(faces) { if (faces < 1)
                                     throw new Error("Invalid number of faces.");
                                     return Math.floor(Math.random() * faces) +
@@ -773,20 +717,11 @@
                                     handling
                                 </div>
                             </div>
-                            <div
-                                style="
-                                    background: #f3e5f5;
-                                    padding: 15px;
-                                    border-radius: 8px;
-                                "
-                            >
+                            <div class="demo-box-purple">
                                 <h4>
                                     🎨 ui.js - Optimized onclick Architecture
                                 </h4>
-                                <div
-                                    class="code-display"
-                                    style="font-size: 0.8em"
-                                >
+                                <div class="code-display code-display-small">
                                     // Clean onclick approach - no event
                                     listeners function handleRoll() { const
                                     faces =
@@ -802,18 +737,9 @@
                                     handleRoll;
                                 </div>
                             </div>
-                            <div
-                                style="
-                                    background: #e8f5e8;
-                                    padding: 15px;
-                                    border-radius: 8px;
-                                "
-                            >
+                            <div class="demo-box-green">
                                 <h4>🧪 dice.test.js - Comprehensive Tests</h4>
-                                <div
-                                    class="code-display"
-                                    style="font-size: 0.8em"
-                                >
+                                <div class="code-display code-display-small">
                                     // Test all dice types with loops const
                                     diceTypes = [4, 6, 8, 10, 12, 20, 100];
                                     diceTypes.forEach(faces => { test(`rollDice
@@ -834,14 +760,10 @@
                         <h3>🎲 Live Demo</h3>
 
                         <iframe
-                            src="Module1/Exercise8/index.html"
+                            src="Notes/Module1/Exercise8/index.html"
                             width="100%"
                             height="500px"
-                            style="
-                                border: 1px solid #ddd;
-                                border-radius: 8px;
-                                background: white;
-                            "
+                            class="lab-iframe"
                         >
                             <p>
                                 Your browser does not support iframes.
@@ -857,59 +779,51 @@
                     <!-- Testing Results -->
                     <div class="demo-area">
                         <h3>🧪 Comprehensive Unit Testing with Jest</h3>
-                        <div
-                            style="
-                                background: #2d3748;
-                                color: #e2e8f0;
-                                padding: 15px;
-                                border-radius: 8px;
-                                font-family: monospace;
-                            "
-                        >
-                            <div style="color: #fbb040">PASS</div>
-                            <div style="color: #68d391">
+                        <div class="test-terminal">
+                            <div class="test-pass">PASS</div>
+                            <div class="test-success">
                                 ✓ rollDice returns a number between 1 and 4 for
                                 a D4 (100 iterations)
                             </div>
-                            <div style="color: #68d391">
+                            <div class="test-success">
                                 ✓ rollDice returns a number between 1 and 6 for
                                 a D6 (100 iterations)
                             </div>
-                            <div style="color: #68d391">
+                            <div class="test-success">
                                 ✓ rollDice returns a number between 1 and 8 for
                                 a D8 (100 iterations)
                             </div>
-                            <div style="color: #68d391">
+                            <div class="test-success">
                                 ✓ rollDice returns a number between 1 and 10 for
                                 a D10 (100 iterations)
                             </div>
-                            <div style="color: #68d391">
+                            <div class="test-success">
                                 ✓ rollDice returns a number between 1 and 12 for
                                 a D12 (100 iterations)
                             </div>
-                            <div style="color: #68d391">
+                            <div class="test-success">
                                 ✓ rollDice returns a number between 1 and 20 for
                                 a D20 (100 iterations)
                             </div>
-                            <div style="color: #68d391">
+                            <div class="test-success">
                                 ✓ rollDice returns a number between 1 and 100
                                 for a D100 (100 iterations)
                             </div>
-                            <div style="color: #68d391">
+                            <div class="test-success">
                                 ✓ rollDice throws an error for invalid input
                             </div>
-                            <div style="color: #68d391">
+                            <div class="test-success">
                                 ✓ rollDice distribution test for D6 (6000 rolls)
                             </div>
                             <br />
-                            <div style="color: #90cdf4">
+                            <div class="test-info">
                                 Test Suites: 1 passed, 1 total
                             </div>
-                            <div style="color: #90cdf4">
+                            <div class="test-info">
                                 Tests: 9 passed, 9 total
                             </div>
-                            <div style="color: #90cdf4">Snapshots: 0 total</div>
-                            <div style="color: #90cdf4">Time: 0.847 s</div>
+                            <div class="test-info">Snapshots: 0 total</div>
+                            <div class="test-info">Time: 0.847 s</div>
                         </div>
                     </div>
 
@@ -965,22 +879,8 @@
 
                     <div class="demo-area">
                         <h3>🚀 Live Portfolio Website</h3>
-                        <div
-                            style="
-                                text-align: center;
-                                padding: 30px;
-                                background: linear-gradient(
-                                    135deg,
-                                    #667eea 0%,
-                                    #764ba2 100%
-                                );
-                                border-radius: 12px;
-                                color: white;
-                            "
-                        >
-                            <h4 style="margin-bottom: 20px; font-size: 1.5em">
-                                Visit My Professional Portfolio
-                            </h4>
+                        <div class="portfolio-showcase">
+                            <h4>Visit My Professional Portfolio</h4>
                             <a
                                 href="https://tatoslover.github.io"
                                 target="_blank"
@@ -988,7 +888,7 @@
                             >
                                 🌟 https://tatoslover.github.io
                             </a>
-                            <p style="margin-top: 15px; opacity: 0.9">
+                            <p class="portfolio-showcase p">
                                 GitHub Pages deployment showcasing professional
                                 development skills
                             </p>
@@ -997,7 +897,7 @@
 
                     <div class="lab-description no-border">
                         <h4>🎯 Portfolio Features</h4>
-                        <ul style="margin: 10px 0">
+                        <ul class="margin-10">
                             <li>
                                 <strong>Professional Presentation:</strong>
                                 Clean, modern design optimized for employer

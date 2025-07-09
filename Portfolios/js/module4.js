@@ -614,6 +614,403 @@ function demonstrateDataVisualization() {
 }
 
 // ============================================================================
+// INTERACTIVE PORTFOLIO FUNCTIONS
+// ============================================================================
+
+// Use main.js toggleSection function - no need to duplicate
+// The main.js version uses CSS transforms and active class toggling
+
+// Toggle view between iframe and source code (mutually exclusive)
+function toggleView(showId, hideId) {
+  const showElement = document.getElementById(showId);
+  const hideElement = document.getElementById(hideId);
+
+  // Hide the other element
+  hideElement.style.display = "none";
+
+  // Toggle the requested element
+  if (showElement.style.display === "none") {
+    showElement.style.display = "block";
+
+    // Load source code if it's a source element (but not for Lab 1 and Lab 2)
+    if (
+      showId.includes("-source") &&
+      showId !== "lab1-source" &&
+      showId !== "lab2-source"
+    ) {
+      loadSourceCode(showId);
+    }
+  } else {
+    showElement.style.display = "none";
+  }
+}
+
+// Load focused code snippets highlighting key functionality
+function loadSourceCode(sourceId) {
+  const sourceElement = document.getElementById(sourceId);
+
+  // Map source IDs to focused code snippets
+  const codeSnippets = {
+    "lab3-source": `// 🎭 LIGHTBOX FUNCTIONALITY
+// Event delegation for dynamic image clicks
+document.querySelector("#card-list").addEventListener("click", (e) => {
+    if (e.target.classList.contains("card-image")) {
+        lightboxImg.src = e.target.src;
+        lightbox.style.display = "flex";
+    }
+});
+
+// 🃏 DYNAMIC CARD GENERATION
+function addCard(title, description, imageUrl = null) {
+    const template = document.getElementById("card-template")
+        .content.cloneNode(true);
+    template.querySelector(".card-title").innerText = title;
+    template.querySelector(".card-description").innerText = description;
+
+    const img = template.querySelector(".card-image");
+    if (imageUrl) {
+        img.src = imageUrl;
+        img.alt = title;
+    } else {
+        img.style.display = "none";
+    }
+
+    document.querySelector("#card-list").appendChild(template);
+}
+
+// 🎨 ARTIST PORTFOLIO SYSTEM
+const artists = [
+    {
+        name: "Vincent van Gogh",
+        portfolio: [
+            { title: "Self Portrait", url: "https://..." },
+            { title: "The Starry Night", url: "https://..." }
+        ]
+    },
+    // ... more artists
+];
+
+artists.forEach((artist) => {
+    addCard(artist.name, "Artist Portfolio:");
+    artist.portfolio.forEach((item) => {
+        addCard(item.title, "", item.url);
+    });
+});`,
+
+    "lab4-source": `// 🎯 BOOTSTRAP RESPONSIVE GRID
+<div class="container">
+    <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-symbol">一</div>
+                <div class="card-body">
+                    <p class="card-text">
+                        <strong>yī</strong> (一) — "One"
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- More responsive cards... -->
+    </div>
+</div>
+
+// 🎨 CUSTOM CARD STYLING
+.card-symbol {
+    font-size: 5rem;
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #e0e0e0;
+}
+
+.navbar-floating {
+    background-color: white;
+    margin: 1rem auto;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+}`,
+
+    "lab5-source": `// 📰 DYNAMIC NEWS FEED SYSTEM
+let news = [
+    { id: 1, title: "Election Results", content: "..." },
+    { id: 2, title: "Sporting Success", content: "..." },
+    { id: 3, title: "Tornado Warning", content: "..." }
+];
+
+// 🔄 REAL-TIME RENDERING
+function renderNews() {
+    const container = document.getElementById("news-container");
+    container.innerHTML = "";
+
+    for (let item of news) {
+        const div = document.createElement("div");
+        div.className = "news-item";
+        div.innerHTML = \`<h3>\${item.title}</h3><p>\${item.content}</p>\`;
+        container.appendChild(div);
+    }
+}
+
+// 📝 FORM SUBMISSION HANDLING
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const title = titleInput.value.trim();
+    const content = contentInput.value.trim();
+
+    if (title && content) {
+        const newId = news.length ? news[news.length - 1].id + 1 : 1;
+        news.push({ id: newId, title, content });
+
+        titleInput.value = "";
+        contentInput.value = "";
+        renderNews();
+    }
+});
+
+// ⏰ AUTO-UPDATE INTERVAL
+intervalId = setInterval(renderNews, 5000);`,
+
+    "lab6-source": `// 🌐 BOOTSTRAP API INTEGRATION
+// Fetch data from external API
+fetch('https://api.example.com/data')
+    .then(response => response.json())
+    .then(data => {
+        displayCards(data);
+    })
+    .catch(error => {
+        console.error('API Error:', error);
+    });
+
+// 🃏 BOOTSTRAP CARD GENERATION
+function displayCards(data) {
+    const container = document.getElementById('card-container');
+
+    data.forEach(item => {
+        const card = \`
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">\${item.title}</h5>
+                        <p class="card-text">\${item.description}</p>
+                        <button class="btn btn-primary">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        \`;
+        container.innerHTML += card;
+    });
+}`,
+
+    "lab7-source": `// 🎭 CSS ANIMATIONS & TRANSITIONS
+/* Hover transformations */
+.card-image:hover {
+    transform: scale(1.1);
+    z-index: 2;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth transitions */
+.card-image {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Interactive states */
+.button:hover {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}`,
+
+    "lab8-source": `// ⏰ LUXON DATE/TIME LIBRARY
+import { DateTime, Interval } from "luxon";
+
+// 📅 BIRTHDATE CALCULATIONS
+const birthDate = DateTime.fromISO("1996-09-15");
+const now = DateTime.now();
+
+const daysBetween = now.diff(birthDate, "days").days;
+console.log(\`Days since birth: \${Math.floor(daysBetween)}\`);
+
+// 🎂 AGE CALCULATION
+const diff = now.diff(birthDate, ["years", "months", "days"]).toObject();
+console.log(\`Age: \${Math.floor(diff.years)} years, \${Math.floor(diff.months)} months\`);
+
+// 🌍 TIMEZONE HANDLING
+const londonTime = DateTime.now().setZone("Europe/London");
+console.log(\`London time: \${londonTime.toFormat("HH:mm:ss")}\`);
+
+// 📊 DATE COMPARISON
+const date1 = DateTime.fromISO("2024-12-25");
+const date2 = DateTime.fromISO("2025-01-01");
+
+const diff1 = Math.abs(now.diff(date1).milliseconds);
+const diff2 = Math.abs(now.diff(date2).milliseconds);
+
+const closest = diff1 < diff2 ? date1 : date2;
+console.log(\`Closest date: \${closest.toISODate()}\`);`,
+
+    "lab8ext-source": `// 📈 EXTENDED DATE/TIME EXAMPLES
+// Working with intervals
+const start = DateTime.fromISO("2024-01-01");
+const end = DateTime.fromISO("2024-12-31");
+const interval = Interval.fromDateTimes(start, end);
+
+console.log(\`Days in 2024: \${interval.length("days")}\`);
+
+// Date formatting and localization
+const birthday = DateTime.fromISO("1996-09-15");
+console.log(\`Birthday: \${birthday.toFormat("MMMM dd, yyyy")}\`);
+console.log(\`French: \${birthday.setLocale("fr").toFormat("MMMM dd, yyyy")}\`);
+
+// Relative time
+const nextWeek = DateTime.now().plus({ days: 7 });
+console.log(\`Next week: \${nextWeek.toRelative()}\`);
+
+// Working with durations
+const duration = DateTime.now().diff(birthday);
+console.log(\`I've been alive for: \${duration.toFormat("y 'years,' M 'months'")}\`);`,
+
+    "lab9-source": `// 📊 ECHARTS DATA VISUALIZATION
+// Initialize chart
+const myChart = echarts.init(document.getElementById("main"));
+
+// 🎨 CHART CONFIGURATION
+const options = {
+    title: { text: "Fake Store Categories" },
+    tooltip: {},
+    xAxis: { type: "category", data: [] },
+    yAxis: { type: "value" },
+    series: [{
+        name: "# Products",
+        type: "bar",
+        data: []
+    }]
+};
+
+// 🌐 API DATA PROCESSING
+fetch("https://fakestoreapi.com/products")
+    .then(response => response.json())
+    .then(products => {
+        // Count products per category
+        const categoryCounts = {};
+        products.forEach(product => {
+            const category = product.category;
+            categoryCounts[category] = (categoryCounts[category] || 0) + 1;
+        });
+
+        // Update chart with processed data
+        options.xAxis.data = Object.keys(categoryCounts);
+        options.series[0].data = Object.values(categoryCounts);
+
+        myChart.setOption(options);
+    });`,
+
+    "lab10-source": `// 🛒 E-COMMERCE INTERFACE
+const apiUrl = "https://fakestoreapi.com/products";
+let allProducts = [];
+
+// 🎯 CATEGORY FILTERING
+function filterByCategory(category) {
+    const filtered = category === 'all'
+        ? allProducts
+        : allProducts.filter(p => p.category === category);
+    displayProducts(filtered);
+}
+
+// 🔍 SEARCH FUNCTIONALITY
+searchInput.addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    const filtered = allProducts.filter(p =>
+        p.title.toLowerCase().includes(searchTerm) ||
+        p.description.toLowerCase().includes(searchTerm)
+    );
+    displayProducts(filtered);
+});
+
+// 📊 SORTING IMPLEMENTATION
+function sortProducts(products, sortBy) {
+    switch(sortBy) {
+        case 'priceAsc': return [...products].sort((a, b) => a.price - b.price);
+        case 'priceDesc': return [...products].sort((a, b) => b.price - a.price);
+        case 'titleAsc': return [...products].sort((a, b) => a.title.localeCompare(b.title));
+        case 'titleDesc': return [...products].sort((a, b) => b.title.localeCompare(a.title));
+        default: return products;
+    }
+}
+
+// 🃏 DYNAMIC CARD GENERATION
+function displayProducts(products) {
+    productGrid.innerHTML = "";
+    products.forEach(p => {
+        const icon = categoryIcons[p.category] || "fa-solid fa-box";
+        productGrid.innerHTML += \`
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="\${p.image}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">\${p.title}</h5>
+                        <p class="card-text">\${p.description}</p>
+                        <h6><i class="\${icon}"></i> \${p.category}</h6>
+                        <p class="text-success">$\${p.price}</p>
+                    </div>
+                </div>
+            </div>
+        \`;
+    });
+}`,
+  };
+
+  const snippet = codeSnippets[sourceId];
+  if (snippet) {
+    sourceElement.textContent = snippet;
+  } else {
+    sourceElement.textContent = "Code snippet not available";
+  }
+}
+
+// Calculator functionality for Lab 2
+function appendToDisplay(value) {
+  document.getElementById("calc-display").value += value;
+}
+
+function clearCalculator() {
+  document.getElementById("calc-display").value = "";
+}
+
+function deleteLast() {
+  const display = document.getElementById("calc-display");
+  display.value = display.value.slice(0, -1);
+}
+
+function calculateResult() {
+  const display = document.getElementById("calc-display");
+  try {
+    // Safe evaluation without eval()
+    const expression = display.value.replace(/×/g, "*").replace(/÷/g, "/");
+    const result = Function('"use strict"; return (' + expression + ")")();
+    display.value = result;
+  } catch (error) {
+    display.value = "Error";
+  }
+}
+
+// Let main.js handle all initialization
+// No need for custom initialization when using main.js toggleSection
+
+// ============================================================================
 // AUTO-INITIALIZATION
 // ============================================================================
 

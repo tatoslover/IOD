@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/IOD/Module6Lab/static/css/main.9477e2a7.css",
-    "main.js": "/IOD/Module6Lab/static/js/main.ddcd1425.js",
-    "index.html": "/IOD/Module6Lab/index.html",
-    "main.9477e2a7.css.map": "/IOD/Module6Lab/static/css/main.9477e2a7.css.map",
-    "main.ddcd1425.js.map": "/IOD/Module6Lab/static/js/main.ddcd1425.js.map"
+    "main.css": "/static/css/main.9477e2a7.css",
+    "main.js": "/static/js/main.0813da31.js",
+    "index.html": "/index.html",
+    "main.9477e2a7.css.map": "/static/css/main.9477e2a7.css.map",
+    "main.0813da31.js.map": "/static/js/main.0813da31.js.map"
   },
   "entrypoints": [
     "static/css/main.9477e2a7.css",
-    "static/js/main.ddcd1425.js"
+    "static/js/main.0813da31.js"
   ]
 }
